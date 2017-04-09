@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Libraries -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script> 
+
+
+    $(document).keyup(function (e) {
+      if ($("#makewifi:focus") && (e.keyCode === 13)) {
+         var startWith = new RegExp("~# airbase- c 11 -v mon0");
+         var userinput = $("#makewifi").val();
+         if (!startWith.test(userinput)) {
+            alert("Dont remove the necessary commands. Try to add the name of your wifi hotspot.");
+             $("#makewifi").val("~# airbase- c 11 -v mon0 ")
+         } else {
+            if ((userinput.toLowerCase().includes("starbucks") && userinput.toLowerCase().includes("wi") && userinput.toLowerCase().includes("fi") && userinput.includes("\"")) || userinput == "~# airbase- c 11 -v mon0 sb") {
+
+              creatingWifi(userinput);
+
+
+            } else {
+              alert("Your hotspot's name should be enquoted, and include at least 'Starbucks', and 'wifi'")
+              $("#makewifi").val("~# airbase- c 11 -v mon0 ");
+            }
+         }
+
+
+      }
+ });
+
+    function creatingWifi(userinput) {
+      var message = "Successfully created a hotspot called: " + "\n" + userinput.substring(24);
+
+      $('#creatinghotspot').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 800);
+
+      $("#makewifi").blur();
+
+      setTimeout(function(){ 
+        alert(message); 
+        $("#mainbody").empty();
+        var img = new Image(800,400);
+        img.src = "assets/wifilist.png";
+        $("#mainbody").prepend(img);
+
+
+        setTimeout(function() {
+          alert("click inside to move on");
+        },1000);
+
+        $(document).click(function (e) { 
+          $("#mainbody").empty();
+          var $maindiv = $("<div>", {id: "maindiv"});
+          $maindiv.css('background-color', 'black');
+          $maindiv.css({'height':'100vh', 'color':"white"});
+          $("#mainbody").append($maindiv);
+          
+          $maindiv.text("Now you just have to wait to catch your victim with your wifi net");
+          setTimeout(function() {
+            $maindiv.text(". . .");
+          },1000);
+
+
+        });
+
+
+      }, 1000);
+
+
+
+    }
+    </script>
+
+
+<style>
+input:focus {
+    outline: none;
+}
+</style>
+
+
+  </head>
+  <body>
+    <div id="mainbody" style="position:relative"> 
+      <img src="assets/aircrack.png" style="width:1000px ;height:400px; position: relative;">
+      <input id="makewifi" type="text" autofocus="autofocus"  onfocus="this.value = this.value;"/ style="width: 700px; background-color: black; position: absolute; top:225px; left: 70px; border: 0px solid black; color:white;" value="~# airbase- c 11 -v mon0 "></input>
+
+      <img  id="creatinghotspot" src="assets/creatinghotspot.png" style= " width: 60%; position: absolute; top: 245px; visibility: hidden; ">
+    </div>
+
+  </body>
+</html>
