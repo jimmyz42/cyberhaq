@@ -13,6 +13,7 @@
         loadQuestion();
         $('#submit').click(function() {
           $('#error').remove();
+
           if(checkAnswer()) {
             cnt++;
             if(cnt <= 3) {
@@ -23,6 +24,9 @@
           } else {
             $('body').append('<p id="error" style="color:red">Incorrect response. Try again.</p>');
           }
+
+          $('#answer').val('');
+          $('#answer').focus();
         });
       });
 

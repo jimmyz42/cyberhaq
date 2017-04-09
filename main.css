@@ -1,0 +1,30 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 50px;
+  height: 100%;
+}
+
+iframe {
+  width: 100%;
+  height: 90%;
+}
+
+#urlbar {
+  width: 100%;
+}
+
+#instructions {
+  float: right;
+  width: 25%;
+}
+
+#browser {
+  background-color: #87cefa;
+  padding: 10px;
+  width: 70%;
+  height: 70%;
+  float: left;
+}
