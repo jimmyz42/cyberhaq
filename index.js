@@ -15,6 +15,10 @@ $( document ).ready(function() {
 	   		document.getElementById("instruction-text").innerHTML = "You intercepted an encrypted message between the targeted drug lord and one of their super wealthy,"
 	   			+ " valued customers. Break the cipher to get more information on the client!";
 	   }
+	   if ($(this).val() == "https://www.fakebook.com") {
+	   		document.getElementById('webpage-iframe').src = "fakebook/fakebook.html"
+	   		document.getElementById("instruction-text").innerHTML = "Enter the username and password for Fakebook.";
+	   }
 	});
 
 	$('#urlbar').keyup(function(e){
