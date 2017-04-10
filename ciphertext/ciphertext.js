@@ -4,11 +4,16 @@ var messageTexts = [
   "IHEARTCRACK420 HERE. LET US MEET IN THE CAFE IN THE KENDALL MARIOTT LOBBY FOR OUR DEAL.",
 ];
 
+var text = messageTexts[Math.floor(Math.random() * (messageTexts.length))];
+
 $( document ).ready(function() {
+
+	var lives = 10;
+
+	document.getElementById("attempts-left").innerHTML = "Attempts Left: " + lives;
+
 	generateCipher(function(mapping) {
-		text = messageTexts[Math.floor(Math.random() * (messageTexts.length))];
 		encryptText(mapping, text, function(ciphertext) {
-			$(".message").append("<input type='hidden' class='cipher' id='cipher' value = '" + text + "'>");
 			$( ".ciphertext" ).html(ciphertext);
 			ciphertextList = ciphertext.split("");
 			ciphertextList.forEach(function(element, index) {
@@ -17,6 +22,9 @@ $( document ).ready(function() {
 				} 
 				else if (element == ".") {
 					$(".message").append("<input type='text' disabled class='message-letter space-box' maxlength='1' value='.'>");
+				} 
+				else if (element == ",") {
+					$(".message").append("<input type='text' disabled class='message-letter space-box' maxlength='1' value=','>");
 				} 
 				else {
 					$(".message").append("<input type='text' class='message-letter' maxlength='1'>");
@@ -31,26 +39,37 @@ $( document ).ready(function() {
     });
 
     $('.test-message').click(function() {
-    	var text = $('#cipher').val();
+    	var correct = true;
     	var textlist = text.split('');
     	$(".message-letter").each(function(index, obj) {
     		if ($(this).val() == textlist[index]) {
     			$(this).prop('disabled', true);
     		} else {
     			$(this).val("");
+    			correct = false;
     		}
     	})
+    	if (correct) {
+    		document.getElementById("win-text").innerHTML = "Yayyyyy u win";
+    	} else if (lives == 0) {
+    		$("input.message-letter").attr("disabled", true);
+    		document.getElementById("win-text").innerHTML = "Oh nooooo u loseeeeee";
+    	} else {
+    		lives--;
+    		document.getElementById("attempts-left").innerHTML = "Attempts Left: " + lives;
+    	}
     })
 });
 
 var generateCipher = function(callback) {
 	alphanum = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".split('');
 	k = Math.floor(Math.random() * (alphanum.length - 1)) + 1;
-	ciphermapping = {" " : " ", "." : "."}
+	ciphermapping = {" " : " ", "." : ".", "," : ","}
 	alphanum.forEach(function(element, index) {
 		newIndex = (index + k) % alphanum.length;
 	    ciphermapping[element] = alphanum[newIndex];
 	    if (index == alphanum.length - 1) {
+	    	console.log(ciphermapping);
 	    	callback(ciphermapping);
 	    }
 	});
