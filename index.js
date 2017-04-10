@@ -16,8 +16,8 @@ $( document ).ready(function() {
 	   			+ " valued customers. Break the cipher to get more information on the client!";
 	   }
 	   if ($(this).val() == "https://www.fakebook.com") {
-	   		document.getElementById('webpage-iframe').src = "fakebook/fakebook.html"
-	   		document.getElementById("instruction-text").innerHTML = "Enter the username and password for Fakebook.";
+			document.getElementById('webpage-iframe').src = "fakebook/fakebook.html"
+			document.getElementById("instruction-text").innerHTML = "Enter the username and password for Fakebook.";
 	   }
 	});
 
