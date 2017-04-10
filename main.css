@@ -28,3 +28,25 @@ iframe {
   height: 70%;
   float: left;
 }
+
+div.ciphertext {
+  margin: 5px;
+  font-size: 15px;
+}
+
+div.message {
+  margin: 5px;
+}
+
+input.message-letter
+{
+    width: 20px;
+    border: 1px solid black;
+    margin: 1px;
+}
+
+input.space-box
+{
+    width: 20px;
+    border: none;
+}
