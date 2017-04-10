@@ -13,7 +13,8 @@ $( document ).ready(function() {
 	   if ($(this).val() === "https://www.breakmycipher.io") {
 	   		document.getElementById('webpage-iframe').src = "ciphertext/ciphertext.html"
 	   		document.getElementById("instruction-text").innerHTML = "You intercepted an encrypted message between the targeted drug lord and one of their super wealthy,"
-	   			+ " valued customers. Break the cipher to get more information on the client!";
+	   			+ " valued customers. Break the cipher to get more information on the client. Be careful though, if there are too many"
+	   			+ " attempts you will leave a trail for the drug lord to trace back to you!"
 	   }
 	   if ($(this).val() === "https://www.fakebook.com") {
 	   		document.getElementById('webpage-iframe').src = "fakebook/fakebook.html"
