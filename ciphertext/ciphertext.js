@@ -8,7 +8,7 @@ var text = messageTexts[Math.floor(Math.random() * (messageTexts.length))];
 
 $( document ).ready(function() {
 
-	var lives = 5;
+	var lives = 10;
 
 	document.getElementById("attempts-left").innerHTML = "Attempts Left: " + lives;
 
@@ -51,6 +51,9 @@ $( document ).ready(function() {
     	})
     	if (correct) {
     		document.getElementById("win-text").innerHTML = "Yayyyyy u win";
+    	} else if (lives == 0) {
+    		$("input.message-letter").attr("disabled", true);
+    		document.getElementById("win-text").innerHTML = "Oh nooooo u loseeeeee";
     	} else {
     		lives--;
     		document.getElementById("attempts-left").innerHTML = "Attempts Left: " + lives;
