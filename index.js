@@ -26,7 +26,7 @@ $( document ).ready(function() {
        }
 	   if ($(this).val() === "https://www.cybermail.com") {
 			document.getElementById('webpage-iframe').src = "email/compose.html"
-			document.getElementById("instruction-text").innerHTML = "Your job is to choose good phishing email (subject options) to get the person's cybermail password. Make sure to select most convincing phishing email.";
+			document.getElementById("instruction-text").innerHTML = "Your job is to choose good phishing email (subject options) to get the person's cybermail password. Make sure to select most convincing phishing email. Access the person's cybermail and use it to reset their Fakebook password.";
 	   }
        if ($(this).val() === "terminal") {
             document.getElementById('webpage-iframe').src = "wifihack/index.html"
