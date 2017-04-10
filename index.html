@@ -7,16 +7,17 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="main.css"></link>
+    <script src="index.js"></script>
   </head>
   <body>
   <div id="browser">
     <input type="text" id="urlbar" value="https://www.galacticbank.com"></input>
     <br><br>
-    <iframe src="bank/login.html"></iframe>
+    <iframe id="webpage-iframe" src="bank/login.html"></iframe>
   </div>
   <div id="instructions">
     <h1>Instructions</h1>
-    <p>
+    <p id="instruction-text">
     Your job is to hack into this person's bank account.
     Use the URL bar to navigate to different webpages.
     </p>
