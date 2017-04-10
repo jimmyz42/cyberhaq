@@ -24,6 +24,10 @@ $( document ).ready(function() {
             document.getElementById('webpage-iframe').src = "bank/login.html"
             document.getElementById("instruction-text").innerHTML = "Your job is to hack into this person's bank account. Use the URL bar to navigate to different webpages.";
        }
+       if ($(this).val() === "terminal") {
+            document.getElementById('webpage-iframe').src = "wifihack/index.html"
+            document.getElementById("instruction-text").innerHTML = "Your job is to hack into this person's bank account. Use the URL bar to navigate to different webpages.";
+       }
 	});
 
 	$('#urlbar').keyup(function(e){
