@@ -1,5 +1,14 @@
 $( document ).ready(function() {
 
+	var urldata = "https://www.galacticbank.com https://www.breakmycipher.io".split(" ");
+	$(".autocomplete").autocomplete({
+		source: urldata,
+		messages: {
+			noResults: '',
+			results: function() {}
+    	}
+    });
+
 	$('#urlbar').bind("enterKey",function(e){
 	   if ($(this).val() == "https://www.breakmycipher.io") {
 	   		document.getElementById('webpage-iframe').src = "ciphertext/ciphertext.html"
