@@ -1,0 +1,26 @@
+html {
+  height: 100%;
+  background-color: #098bdc;
+}
+
+div {
+  text-align: center;
+  color: white;
+  background-color: #098bdc;
+}
+
+#zr-logo {
+  width: 150px;
+  height: 150px;
+}
+
+#title {
+  text-shadow: 2px 2px black;
+  margin-top: 10%;
+  font: 60pt arial;
+}
+
+#subtitle {
+  padding: 20px;
+  font: italic 16pt georgia;
+}

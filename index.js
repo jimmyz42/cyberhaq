@@ -42,7 +42,7 @@ $( document ).ready(function() {
       tabNum++;
       $('.x-btn').css({ display: '' });
       var item = $('<li class="nav-item"></li>').appendTo('ul.nav-tabs');
-      var tab = $('<a data-toggle="tab" href="#tab' + tabNum + '">Bank&nbsp;&nbsp;</a>').appendTo(item);
+      var tab = $('<a data-toggle="tab" href="#tab' + tabNum + '">New Tab&nbsp;&nbsp;</a>').appendTo(item);
       var xbtn = $('<button type="button" class="close x-btn">&times;</button>').appendTo(item);
       xbtn.click(function() {
         var tab = $('a[href="#tab' + this.tabNum + '"]').parent();
@@ -54,20 +54,21 @@ $( document ).ready(function() {
       }.bind( { tabNum : tabNum } ));
 
       var pane = $('<div id="tab' + tabNum + '" class="tab-pane fade fill"></div>').appendTo('.tab-content');
-      var urlBar = $('<input type="text" class="urlbar autocomplete" value="https://www.galacticbank.com"></input>').appendTo(pane);
+      var urlBar = $('<input type="text" class="urlbar autocomplete" placeholder="Type here to browse sites!"></input>').appendTo(pane);
       urlBar.autocomplete(autocompleteParams);
-      pane.append('<br><br><iframe class="webpage-iframe" src="bank/login.html"></iframe>');
+      $('<iframe class="webpage-iframe" src="misc/splash.html"></iframe>').appendTo(pane);
       tab.tab('show');
     });
 
     var fixTabs = function(active, index) {
+      console.log(index);
+      console.log(active);
       if($('.x-btn').length === 1) $('.x-btn').css({ display: 'none' });
       if(active) {
         if(index >= $('li.nav-item').length) {
-          $('li:last a').tab('show');
-        } else {
-          $('li:eq(' + index + ') a').tab('show');
+          index = $('li.nav-item').length-1;
         }
+        $('li:eq(' + index + ') a').tab('show');
       }
     };
 });
