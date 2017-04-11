@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Libraries -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-select.min.css" rel="stylesheet"/>
+    <link href="css/compose.css" rel="stylesheet"/>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/compose.js"></script>
+  </head>
+  <body>
+      <!-- /.modal compose message -->
+          <div class="modal show" id="modalCompose">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title">Compose Message</h4>
+                </div>
+                <div class="modal-body">
+                  <form role="form" class="form-horizontal">
+                      <div class="form-group">
+                        <label class="col-sm-2" for="inputTo">To</label>
+                        <div class="col-sm-10"><input type="email" class="form-control" id="inputTo" placeholder="comma separated list of recipients" readonly></div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-sm-2" for="inputSubject">Subject</label>
+                        <div class="col-sm-10">
+                            <!--<input type="text" class="form-control" id="inputSubject" placeholder="subject">-->
+                            <select class="selectpicker subject-options">
+                                <optgroup label="Phishing">
+                                  <option value="update-email">Update E-mail Server</option>
+                                  <option value="mail-update">Mail Update</option>
+                                  <option value="confirm-account">Confirm Your Account Information</option>
+                                </optgroup>
+                                <optgroup label="Virus">
+                                  <option value="dropbox-file">Daniel Shared a Dropbox File with you</option>
+                                  <option value="please-view">Please View!</option>
+                                  <option value="dating-app">Best Desktop Dating App</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-sm-12" for="inputBody">Message</label>
+                        <div class="col-sm-12 email-content"><textarea class="form-control" id="inputBody" rows="18"></textarea></div>
+                      </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
+                  <!--<button type="button" class="btn btn-warning pull-left">Save Draft</button>-->
+                  <button type="button" class="btn btn-primary send-phishing-email">Send <i class="fa fa-arrow-circle-right fa-lg"></i></button>
+
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal compose message -->
+  </body>
+</html>

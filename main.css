@@ -46,17 +46,30 @@ iframe {
 div.ciphertext {
   margin: 5px;
   font-size: 15px;
+  font-family: 'Anonymous Pro', monospace;
 }
 
 div.message {
   margin: 5px;
 }
 
+div.message-char {
+  text-align: center;
+  display: inline-block;
+}
+
 input.message-letter
 {
     width: 20px;
+    text-align: center;
     border: 1px solid black;
     margin: 1px;
+    font-family: 'Anonymous Pro', monospace;
+}
+
+input.correct {
+  color: green;
+  border: none;
 }
 
 input.space-box
