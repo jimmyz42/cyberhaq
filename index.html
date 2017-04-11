@@ -6,21 +6,40 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+
+    <!-- Our css/js files -->
     <link rel="stylesheet" href="main.css"></link>
+    <script src="data/webpages.js"></script>
     <script src="index.js"></script>
   </head>
   <body>
-  <div id="browser">
-    <input type="text" id="urlbar" class="autocomplete" value="https://www.galacticbank.com"></input>
-    <br><br>
-    <iframe id="webpage-iframe" src="bank/login.html"></iframe>
-  </div>
-  <div id="instructions">
-    <h1>Instructions</h1>
-    <p id="instruction-text">
-    Your job is to hack into this person's bank account.
-    Use the URL bar to navigate to different webpages.
-    </p>
+  <div class="container-fluid fill">
+    <div class="row fill">
+      <div class="col-lg-8 fill" id="browser">
+        <button type="button" class="btn btn-primary" id="add-tab">+</button>
+        <ul class="nav nav-tabs nav-fill">
+          <li class="active nav-item">
+            <a data-toggle="tab" href="#tab1">Bank&nbsp;&nbsp;</a>
+            <button type="button" class="close x-btn">&times;</button>
+          </li>
+        </ul>
+        <div class="tab-content fill">
+          <div id="tab1" class="tab-pane fade in active fill">
+            <input type="text" class="urlbar autocomplete" value="https://www.galacticbank.com"></input>
+            <br><br>
+            <iframe class="webpage-iframe" src="bank/login.html"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4" id="instructions">
+        <h1>Instructions</h1>
+        <p id="instruction-text">
+        Your job is to hack into this person's bank account.
+        Use the URL bar to navigate to different webpages.
+        </p>
+      </div>
+    </div>
   </div>
   </body>
 </html>

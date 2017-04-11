@@ -1,39 +1,53 @@
 $( document ).ready(function() {
 
-	var urldata = "https://www.galacticbank.com https://www.breakmycipher.io https://www.fakebook.com".split(" ");
-	$(".autocomplete").autocomplete({
-		source: urldata,
-		messages: {
-			noResults: '',
-			results: function() {}
-    	}
+    var autocompleteParams = {
+        source: _.map(webpage_data, 'url'),
+        messages: {
+            noResults: '',
+            results: function() {}
+        }
+    };
+
+	$(document).on('enterKey', '.urlbar', function(e) {
+      var data = _.find(webpage_data, { url: $(this).val() });
+      if(data) {
+        $(this).siblings('.webpage-iframe').attr('src', data.src);
+        $('#instruction-text').html(data.instructions);
+        var tabID = $(this).parent().attr('id');
+        $('a[href="#' + tabID + '"]').html(data.title + '&nbsp;&nbsp;');
+      }
+	});
+
+    $(document).on('keyup', '.urlbar', function(e) {
+	  if(e.keyCode == 13)
+	  {
+	    $(this).trigger("enterKey");
+	  }
+	});
+
+// TAB STUFF
+
+    var tabNum = 1; // Each tab created gets UNIQUE tab ID
+    $('.x-btn').click(function() {
+      $('a[href="#tab1"]').parent().remove();
+      $('#tab1').remove();
+    });
+    $('.autocomplete').autocomplete(autocompleteParams);
+
+    $('#add-tab').click(function() {
+      tabNum++;
+      var item = $('<li class="nav-item"></li>').appendTo('ul.nav-tabs');
+      $('<a data-toggle="tab" href="#tab' + tabNum + '">Bank&nbsp;&nbsp;</a>').appendTo(item);
+      var xbtn = $('<button type="button" class="close x-btn">&times;</button>').appendTo(item);
+      xbtn.click(function() {
+        $('a[href="#tab' + this.tabNum + '"]').parent().remove();
+        $('#tab' + this.tabNum).remove();
+      }.bind( { tabNum : tabNum } ));
+
+      var pane = $('<div id="tab' + tabNum + '" class="tab-pane fade fill"></div>').appendTo('.tab-content');
+      var urlBar = $('<input type="text" class="urlbar autocomplete" value="https://www.galacticbank.com"></input>').appendTo(pane);
+      urlBar.autocomplete(autocompleteParams);
+      pane.append('<br><br><iframe class="webpage-iframe" src="bank/login.html"></iframe>');
     });
 
-	$('#urlbar').bind("enterKey",function(e){
-	   if ($(this).val() === "https://www.breakmycipher.io") {
-	   		document.getElementById('webpage-iframe').src = "ciphertext/ciphertext.html"
-	   		document.getElementById("instruction-text").innerHTML = "You intercepted an encrypted message between the targeted drug lord and one of their super wealthy,"
-	   			+ " valued customers. Break the cipher to get more information on the client. Be careful though, if there are too many"
-	   			+ " attempts you will leave a trail for the drug lord to trace back to you!"
-	   }
-	   if ($(this).val() === "https://www.fakebook.com") {
-	   		document.getElementById('webpage-iframe').src = "fakebook/fakebook.html"
-	   		document.getElementById("instruction-text").innerHTML = "Enter the username and password for Fakebook.";
-	   }
-       if ($(this).val() === "https://www.galacticbank.com") {
-            document.getElementById('webpage-iframe').src = "bank/login.html"
-            document.getElementById("instruction-text").innerHTML = "Your job is to hack into this person's bank account. Use the URL bar to navigate to different webpages.";
-       }
-       if ($(this).val() === "terminal") {
-            document.getElementById('webpage-iframe').src = "wifihack/index.html"
-            document.getElementById("instruction-text").innerHTML = "Your job is to hack into this person's bank account. Use the URL bar to navigate to different webpages.";
-       }
-	});
-
-	$('#urlbar').keyup(function(e){
-	    if(e.keyCode == 13)
-	    {
-	        $(this).trigger("enterKey");
-	    }
-	});
 });
