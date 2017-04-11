@@ -22,8 +22,13 @@ webpage_data = [
   {
     "title": "Terminal",
     "url": "terminal",
-    "src": "wifihack/index.html",
-    "instructions": "Try to spoof the wifi to trick people into using your fake wifi instead of real Starbucks wifi.",
+    "src": "wifihack/aircrack.html",
+    "instructions": "<ul>" + 
+   "<li>  Victim usually goes to Starbucks near Central Square Sunday morning 8-9am </li>" +
+   "<li> Starbucks official free wifi is called -Google Starbucks Free Wi-Fi-</li>" +
+   "<li> Using a software called Aircrack-ng, you want to set up a rogue wifi hotspot called -Starbucks Coffee Free Wi-Fi-. You can access to the internet data of whoever naively accesses to your hotspot instead of Starbucks' official </li>" +
+   "<li> You wait. Your victim </li>" +
+   "</ul>",
   },
   {
     "title": "Mail",
