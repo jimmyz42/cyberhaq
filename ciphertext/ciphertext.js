@@ -1,18 +1,7 @@
-var messageTexts = [
-  "WE WILL MEET AT THE STARBUCKS ON BROADWAY. I WILL BE WEARING GOLD SUNGLASSES SMOKING WEED.",
-  "MY NAME IS JACK POTT, AKA IHEARTCRACK. MEET ME IN THE STARBUCKS IN KENDALL SQ",
-  "IHEARTCRACK HERE. LET US MEET IN THE CAFE IN THE KENDALL MARIOTT LOBBY FOR OUR DEAL. BRING THE STUFF.",
-  "THIS IS IHEARTCRACK. I WILL CALL YOU FROM THE STARBUCKS IN KENDALL AT FOUR TWENTY.",
-  "WILL BE WAITING IN MY CAR IN FRONT OF THE STARBUCKS IN KENDALL SQ. I WILL BE SNORTING WHITE POWDER FROM MY DASHBOARD."
-];
 
-var text = messageTexts[Math.floor(Math.random() * (messageTexts.length))];
+var text = JSON.parse(window.sessionStorage.getItem("puzzleData"))["ciphertext"];
 
 $( document ).ready(function() {
-
-	var lives = 10;
-
-	document.getElementById("attempts-left").innerHTML = "Attempts Left: " + lives;
 
 	generateCipher(function(mapping) {
 		encryptText(mapping, text, function(ciphertext) {
@@ -68,12 +57,6 @@ $( document ).ready(function() {
     	})
     	if (correct) {
     		document.getElementById("win-text").innerHTML = "Yayyyyy u win";
-    	} else if (lives == 0) {
-    		$("input.message-letter").attr("disabled", true);
-    		document.getElementById("win-text").innerHTML = "Oh nooooo u loseeeeee";
-    	} else {
-    		lives--;
-    		document.getElementById("attempts-left").innerHTML = "Attempts Left: " + lives;
     	}
     })
 });

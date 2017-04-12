@@ -1,5 +1,13 @@
 $( document ).ready(function() {
 
+	if (typeof(window.sessionStorage) !== "undefined") {
+		var selectedPuzzleData = puzzleData[Math.floor(Math.random() * (puzzleData.length))];
+		window.sessionStorage.setItem("puzzleData", JSON.stringify(selectedPuzzleData));
+		console.log("Stored Data")
+	} else {
+	    console.log("Fuck.")
+	}
+
     var autocompleteParams = {
         source: _.map(webpage_data, 'url'),
         messages: {
