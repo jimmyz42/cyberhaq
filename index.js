@@ -53,7 +53,7 @@ $( document ).ready(function() {
         fixTabs(active, index);
       }.bind( { tabNum : tabNum } ));
 
-      var pane = $('<div id="tab' + tabNum + '" class="tab-pane fade fill"></div>').appendTo('.tab-content');
+      var pane = $('<div id="tab' + tabNum + '" class="tab-pane fill"></div>').appendTo('.tab-content');
       var urlBar = $('<input type="text" class="urlbar autocomplete" placeholder="Type here to browse sites!"></input>').appendTo(pane);
       urlBar.autocomplete(autocompleteParams);
       $('<iframe class="webpage-iframe" src="misc/splash.html"></iframe>').appendTo(pane);

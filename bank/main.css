@@ -2,3 +2,44 @@
   color: red;
   display: none;
 }
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: url(images/galaxy.jpg);
+}
+
+.login-contain {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.login-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px black;
+}
+
+.logo {
+  width: 100%;
+}
+
+input.form-control {
+  margin-top: 20px;
+}
+
+#submit {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+#next {
+  margin-top: 10px;
+  float: right;
+}
