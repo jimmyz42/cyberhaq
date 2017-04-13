@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  margin: 50px;
+  margin: 40px;
   height: 100%;
 }
 
@@ -13,7 +13,7 @@ body {
 
 iframe {
   width: 100%;
-  height: 84%;
+  height: 85%;
 }
 
 .urlbar {
@@ -36,7 +36,7 @@ iframe {
 #browser {
   background-color: #87cefa;
   padding: 10px;
-  height: 80%;
+  height: 85%;
   float: left;
   border-radius: 10px;
   box-shadow: 6px 6px 3px gray;

@@ -9,7 +9,8 @@ html {
 
 body {
   height: 100%;
-  background: url(images/galaxy.jpg);
+  background: url(images/galaxy.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 .login-contain {

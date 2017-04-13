@@ -6,22 +6,37 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="fakebook.js"></script>
-    <link rel="stylesheet" href="../main.css"></link>
+
+    <!-- Our libraries -->
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
-  	<button onclick="myFunction()">On 2012, I...</button>
+    <img class="logo" src="images/logo.png">
+    <button type="button" class="login-btn btn btn-default" data-toggle="modal" data-target="#login">Login</button>
+    <div class="slogan">
+      <p>A Book lets you dream.</p>
+      <p>FakeBook lets your dreams come true.</p>
+    </div>
 
-	<div id="myDIV" style="display:none">
-  	Lucy and I broke up :(
-    <br/>
-    I was born in ... Portland
-    <br/>
-    I love watching Mulan on Sundays.
-	</div>
-
-    <div class="ciphertext"></div>
-    <div class="message"></div>
-    
+    <!-- Modal -->
+    <div class="modal fade" id="login">
+      <div class="modal-dialog" id="inner" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span id="sign-in">Sign in to continue to FakeBook</span>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input class="form-control" id="username" type="text" placeholder="Username"></input>
+            <input class="form-control" id="password" type="password" placeholder="Password"></input>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,0 +1,40 @@
+html {
+  height: 100%;
+}
+
+body {
+  background: url(images/bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+}
+
+.slogan {
+  color: white;
+  font: 18pt cursive;
+  position: absolute;
+  left: 5%;
+  bottom: 2%;
+}
+
+.logo {
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.login-btn {
+  float: right;
+  margin: 15px;
+}
+
+#inner {
+  width: 50%;
+  margin: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#sign-in {
+  font: 14pt arial;
+}

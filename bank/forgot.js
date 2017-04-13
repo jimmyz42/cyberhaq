@@ -2,6 +2,10 @@
       var NUM_QUESTIONS = 3;
       $(function() {
         loadQuestion();
+        $('#answer').keyup(function(e) {
+          $('.error').css({ display: 'none' });
+          if(e.keyCode === 13) $('#next').click();
+        });
         $('#next').click(function() {
           $('.error').css({ display: 'none' });
 
