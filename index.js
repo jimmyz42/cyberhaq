@@ -45,6 +45,7 @@ $( document ).ready(function() {
       fixTabs(active, index);
     }).css({ display: 'none' });
     $('.autocomplete').autocomplete(autocompleteParams);
+    $('.urlbar').focus();
 
     $('#add-tab').click(function() {
       tabNum++;
@@ -66,6 +67,7 @@ $( document ).ready(function() {
       urlBar.autocomplete(autocompleteParams);
       $('<iframe class="webpage-iframe" src="misc/splash.html"></iframe>').appendTo(pane);
       tab.tab('show');
+      urlbar.focus();
     });
 
     var fixTabs = function(active, index) {

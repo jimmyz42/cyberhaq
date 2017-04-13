@@ -8,6 +8,13 @@ body {
   height: 100%;
 }
 
+.error {
+  color: red;
+  display: none;
+  text-align: center;
+  margin-top: 5px;
+}
+
 .slogan {
   color: white;
   font: 18pt cursive;

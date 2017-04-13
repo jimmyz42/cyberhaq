@@ -1,4 +1,5 @@
 html, body {
+  background-color: #006400;
   height: 100%;
 }
 
@@ -13,7 +14,6 @@ html, body {
 }
 
 .main {
-  background-color: #006400;
   margin-left: 20%;
   height: 100%;
 }
@@ -75,5 +75,29 @@ html, body {
   box-shadow: 3px 3px 3px black;
 }
 
+.fb-item img {
+  width: 100%;
+  margin-top: 20px;
+}
 
+.fb-item .title {
+  font: 24pt verdana;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
+.fb-item .status-update {
+  font: italic 18pt arial;
+  text-align: center;
+}
+
+.fb-item .friend {
+  text-align: center;
+  font-size: 16pt;
+}
+
+.fb-item .friend-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
