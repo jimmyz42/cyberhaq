@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="main.css"></link>
     <script src="data/webpages.js"></script>
     <script src="data/puzzleData.js"></script>
+    <script src="data/todoItems.js"></script>
     <script src="index.js"></script>
   </head>
   <body>
@@ -34,14 +35,24 @@
         </div>
       </div>
       <div class="col-xs-4" id="instructions">
-        <h1>Instructions</h1>
-        <p id="instruction-text">
-        You are investigating the illegal doings of a crack gang.
-        Your job is to hack into their accounts and confiscate their money.
-        Use the Zirconium&trade; browser to begin.
-        </p>
+        <div id="instructions">
+          <h1>Instructions</h1>
+          <p id="instruction-text">
+          You are investigating the illegal doings of a crack gang.
+          Your job is to hack into their accounts and confiscate their money.
+          Use the Zirconium&trade; browser to begin.
+          </p>
+        </div>
+        <div class="row">
+            <div class="todolist not-done">
+             <h1>Tasks</h1>
+                <hr>
+                <ul id="sortable" class="list-unstyled">
+                </ul>
+            </div>
+            <div class="win-text"></div>
+        </div>
       </div>
-    </div>
   </div>
   </body>
 </html>

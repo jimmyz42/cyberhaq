@@ -81,4 +81,52 @@ $( document ).ready(function() {
         $('li:eq(' + index + ') a').tab('show');
       }
     };
+
+	$("#sortable").sortable();
+	// $("#sortable").disableSelection();
+
+	$.each(todoListItems, function(index, task) {
+		createTodo(task);
+	});
+
+	// $( document.body ).click(function() {
+	// 	console.log("sdf")
+	//   	// $( "div:hidden:first" ).show();
+	//   	$( "div:hidden:first" ).removeClass("hidden").addClass("item-fade-in");
+	//   	// $( "div:hidden:first" ).fadeIn( "slow" );
+	// });
+	addNextTask();
+
+	// mark task as done
+	$('.todolist').on('change','#sortable li input[type="checkbox"]',function(){
+		console.log($( "div.hidden" ).length);
+	    if($(this).prop('checked')){
+	    	if ($( "div.hidden" ).length == 0) {
+		    	$('.win-text').append('<h3 class="correct">Conglaturation!!! You have completed a great game. And prooved the justice of our culture. Now go and rest our heroes!</h3>');
+		    }
+	    	$(this).attr("disabled", "disabled"); 
+	        var doneItem = $(this).parent().parent().find('label').text();
+	        var label = $(this).parent().parent().find('label');
+	        $(label).css('textDecoration','line-through');
+	        addNextTask();
+	    }
+	});
+
 });
+
+function addNextTask() {
+	$( "div:hidden:first" ).removeClass("hidden").addClass("item-fade-in");
+}
+
+//create task
+function createTodo(text){
+    var markup = '<div class="hidden"><li class="todo-item ui-state-default"><div class="checkbox"><label><input type="checkbox" value="" />'+ text +'</label></div></li></div>';
+    // var markup = '<li class="todo-item ui-state-default"><div class="checkbox"><label><input type="checkbox" value="" />'+ text +'</label></div></li>';
+    $('#sortable').append(markup);
+    $('.add-todo').val('');
+}
+
+//remove done task from list
+function removeItem(element){
+    $(element).parent().remove();
+}
