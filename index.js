@@ -67,7 +67,7 @@ $( document ).ready(function() {
       urlBar.autocomplete(autocompleteParams);
       $('<iframe class="webpage-iframe" src="misc/splash.html"></iframe>').appendTo(pane);
       tab.tab('show');
-      urlbar.focus();
+      urlBar.focus();
     });
 
     var fixTabs = function(active, index) {
