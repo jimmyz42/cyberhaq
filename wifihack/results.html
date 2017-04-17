@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Libraries -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+     <script src="https://use.fontawesome.com/9f03d0cffe.js"></script>
+
+
+
+
+    <script>
+    $(document ).ready(function() {
+      var dt = new Date();
+
+      var hour = parseInt(dt.getHours());
+      var min = parseInt(dt.getMinutes());
+      var sec = parseInt(dt.getSeconds());
+      var date = dt.getFullYear()+ "-" + (parseInt(dt.getMonth())+1) + "-" + dt.getDate();
+
+
+      var t1 = Math.max(1,hour-1) + ":" + Math.max(3,min-15) + ":" + Math.max(20,sec-10);
+      var t2 = Math.max(1,hour-1) + ":" + Math.min(7,min-8) + ":" + Math.max(40,sec-1);
+      var t3 = Math.max(1,hour) + ":" + Math.min(10,min-5) + ":" + Math.max(30,sec-8);
+      var t4 = Math.max(1,hour) + ":" + Math.min(15,min-3) + ":" + Math.max(50,sec-5);
+      var trip1 = Math.floor(Math.random()*999+100);
+      var trip2 = Math.floor(Math.random()*999+100);
+      var trip3 = Math.floor(Math.random()*999+100);
+      var trip4 = Math.floor(Math.random()*999+100);
+
+      var w1 = ["(www.facebook.com):", "(www.candycrushsaga.com):", "(boston.craigslist.org):"];
+      var w2 = ["(accounts.google.com):", "(www.paypal.com):", "(drive.google.com):", "(www.youtube.com):"];
+      var w4 = "(www.espn.com):"
+
+      function ran(length)
+        {
+            var text = "";
+            var possible = "!@#$%^&*%$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+            for( var i=0; i < length; i++ )
+                text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+            return text;
+        }
+
+      $("#1").text(date +" , "+ t1 + " - " + trip1 + " SECURE POST Data " + w1[0]);
+      $("#2").text(ran(20)+ " %^email=awesomeman@exchange.mit.edu&pass=wonderwoman%$" + ran(35));
+      $("#3").text(date +" , "+ t2 + " - " + trip2 + " SECURE POST Data " + "www.cybermail.com");
+      $("#4").text(ran(40)+ " %^email=jack@pot.com&pass=undyingweed%$" + ran(12));
+      $("#5").text(date +" , "+ t3 + " - " + trip3 + " SECURE POST Data " + w2[0]);
+      $("#6").text(ran(31)+ " %^login=purplecow@hotmail.com&pass=yellowhorse%$" + ran(19));
+      $("#7").text(date +" , "+ t4 + " - " + trip4 + " SECURE POST Data " + w2[1]);
+      $("#8").text(ran(37)+ " %^email=pumpskin@gmail.com&pass=superfast123%$ " + ran(15));
+
+    });
+
+
+   $(document).on('click', '#submit', function( event ) {
+    if ($("#user").val().toLowerCase() == "jack@pot.com") {
+      alert("You have successfully identified the big shark!")
+      $(document.body).empty();
+      var $next = $("<div>");
+      $next.css({'margin-top':'20px','margin-left':'20px', 'margin-right':'20px'});
+      $next.css('font-family', '"Ubuntu Mono", monospace');
+      $next.addClass("alert alert-success");
+      $next.text("jack@pot.com it is! Your next step is to phish for Jack cybermail email account's password.")
+      $(document.body).append($next);
+    }
+   });
+
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
+    <style>
+
+    #main {
+      background-color: black;
+      color: white;
+      font-family: 'Ubuntu Mono', monospace;
+      height: 350px;
+    }
+    #answer {
+     position:absolute;
+     font-family: 'Ubuntu Mono', monospace;
+     bottom:0;
+    }
+
+    </style>
+  </head>
+
+
+  <body>
+    <div id="main">
+      <div> <img src="assets/3.png" width="100%"> </div>
+      <div id="1"> </div>
+      <div id="2">   </div>    
+      <div id="3">   </div>
+      <div id="4">   </div>
+      <div id="5">   </div>
+      <div id="6">   </div>
+      <div id="7">   </div>
+      <div id="8">   </div>
+    </div>
+
+
+    <form id="answer" class="form-inline">
+      <label for="user">Which email has the potential to be a starting point for your hack to the inner works of Bexley Co.? (hint: read the story) </label>
+        <div class="input-group">
+          <div class="input-group-addon">@</div>
+          <input autofocus="autofocus"  type="text" class="form-control" id="user" placeholder="potential email">
+        </div>
+        <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+
+
+  </body>
+</html>

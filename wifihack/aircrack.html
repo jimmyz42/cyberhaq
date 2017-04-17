@@ -36,41 +36,18 @@
     function creatingWifi(userinput) {
       var message = "Successfully created a hotspot called: " + "\n" + userinput.substring(24);
 
+
+      var roguename = userinput.substring(24);
+      var realname = "Google Starbucks Free Wi-Fi";
+
       $('#creatinghotspot').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 800);
 
       $("#makewifi").blur();
 
-      setTimeout(function(){ 
-        alert(message); 
-        $("#mainbody").empty();
-        var img = new Image(800,400);
-        img.src = "assets/wifilist.png";
-        $("#mainbody").prepend(img);
-
-
-        setTimeout(function() {
-          alert("click inside to move on");
-        },1000);
-
-        $(document).click(function (e) { 
-          $("#mainbody").empty();
-          var $maindiv = $("<div>", {id: "maindiv"});
-          $maindiv.css('background-color', 'black');
-          $maindiv.css({'height':'100vh', 'color':"white"});
-          $("#mainbody").append($maindiv);
-          
-          $maindiv.text("Now you just have to wait to catch your victim with your wifi net");
-          setTimeout(function() {
-            $maindiv.text(". . .");
-          },1000);
-
-
-        });
-
-
-      }, 1000);
-
-
+      setTimeout(function() {
+        alert(message);
+        window.location.href = "wifilist.html?realname="+realname + "&roguename="+roguename;
+      },1500);
 
     }
     </script>
@@ -87,7 +64,8 @@ input:focus {
   <body>
     <div id="mainbody" style="position:relative"> 
       <img src="assets/aircrack.png" style="width:1000px ;height:400px; position: relative;">
-      <input id="makewifi" type="text" autofocus="autofocus"  onfocus="this.value = this.value;"/ style="width: 700px; background-color: black; position: absolute; top:225px; left: 70px; border: 0px solid black; color:white;" value="~# airbase- c 11 -v mon0 "></input>
+      <input id="makewifi" type="text" autofocus="autofocus"  
+      onfocus="this.value = this.value;"/ style="width: 700px; background-color: black; position: absolute; top:225px; left: 70px; border: 0px solid black; color:white;" value="~# airbase- c 11 -v mon0 "></input>
 
       <img  id="creatinghotspot" src="assets/creatinghotspot.png" style= " width: 60%; position: absolute; top: 245px; visibility: hidden; ">
     </div>

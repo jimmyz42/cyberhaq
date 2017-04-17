@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Libraries -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+     <script src="https://use.fontawesome.com/9f03d0cffe.js"></script>
+
+
+
+
+    <script>
+
+    var realname = getQueryVariable("realname").replace(/%20/g, " ");
+    var roguename = getQueryVariable("roguename").replace(/%20/g, " ");
+
+    function getQueryVariable(variable)
+    {
+           var query = window.location.search.substring(1);
+           var vars = query.split("&");
+           for (var i=0;i<vars.length;i++) {
+                   var pair = vars[i].split("=");
+                   if(pair[0] == variable){return pair[1];}
+           }
+           return(false);
+    }
+
+
+
+
+    $(document ).ready(function() {
+        $("#rogue").html(roguename);
+        $("#real").html(realname);
+    });
+
+
+    $(document).on('click', '#rogue', function( event ) {
+        $('#two').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 500);
+        setTimeout(function() {
+            $('#three').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 600);
+        },1000);
+        
+    });
+
+     $(document).on('click', '#three', function( event ) {
+      $('#four').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 500);
+     });
+
+
+    </script>
+
+  </head>
+
+
+  <body>
+
+
+    <div class="dropdown" style="text-align: right;">
+
+      <button style="background-color: #00FFFF; " class="btn btn-default btn-md dropdown-toggle" type="button" data-toggle="dropdown">
+        <i class="fa fa-wifi"></i>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right">
+        <li><a href="#" id="rogue"></a></li>
+        <li><a href="#" id="real"></a></li>
+        <li><a href="#" id="extra1"> KIC SMARTDoc </a></li>
+        <li><a href="#" id="extra2"> CVS Secure</a></li>
+        <li><a href="#" id="extra3"> Xfinity</a></li>
+        <li><a href="#" id="extra3"> --------------------</a></li>
+        <li><a href="#" id="extra4"> Join Other Network...</a></li>
+        <li><a href="#" id="extra5"> Create Network...</a></li>
+        <li><a href="#" id="extra6"> Open Network Preferences...</a></li>
+
+
+      </ul>
+    </div>
+    <div style="margin-top:20px; margin-left:20px; margin-right:20px;">
+        <div id="one"> Now let's check if your rogue hotspot is visible among the available networks. <br> Connect to it and make sure it is online. </div>
+
+      <div id="two" class="alert alert-success" style="visibility: hidden;"> <strong> Your wifi net is up! </strong>  Whoever accesses to this wifi will have their internet connection compromised. </div>
+        <div> <a id ="three" href="#" style="visibility: hidden;"><b> <u> You wait. . . </u> </b></a>
+        </div>
+        <br>
+        <div>
+        <a id="four" href="results.html" style="visibility: hidden;"><b> <u>Two hours has passed. Let's see your catches. </u> </b></a>
+        </div>
+    </div>
+  </body>
+</html>
