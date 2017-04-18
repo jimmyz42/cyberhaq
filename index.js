@@ -104,7 +104,7 @@ $( document ).ready(function() {
 	    	if ($( "div.hidden" ).length == 0) {
 		    	$('.win-text').append('<h3 class="correct">Conglaturation!!! You have completed a great game. And prooved the justice of our culture. Now go and rest our heroes!</h3>');
 		    }
-	    	$(this).attr("disabled", "disabled"); 
+	    	$(this).attr("disabled", "disabled");
 	        var doneItem = $(this).parent().parent().find('label').text();
 	        var label = $(this).parent().parent().find('label');
 	        $(label).css('textDecoration','line-through');
