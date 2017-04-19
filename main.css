@@ -71,6 +71,10 @@ input.message-letter
     font-family: 'Anonymous Pro', monospace;
 }
 
+.anonymous-font {
+  font-family: 'Anonymous Pro', monospace;
+}
+
 .correct {
   color: green;
   border: none;
@@ -80,6 +84,10 @@ input.space-box
 {
     width: 20px;
     border: none;
+}
+
+.test-message {
+  margin: 20px;
 }
 
 .ui-autocomplete {

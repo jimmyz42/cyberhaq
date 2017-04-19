@@ -52,6 +52,7 @@ $( document ).ready(function() {
     		if ($.inArray(textlist[index], correctletters) >= 0 || $(this).val() == textlist[index]) {
     			$(this).val(textlist[index]);
     			$(this).addClass("correct");
+    			$(this).css("border", "none");
     			$(this).prop('disabled', true);
     		} else {
     			$(this).val("");
