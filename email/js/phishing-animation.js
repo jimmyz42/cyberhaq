@@ -32,7 +32,7 @@ function spawnStartingFish() {
 function stirPond(event) {
   spawnFish(event.clientX, event.clientY);
   if ($('.fish').length == 20) {
-      if (window.sessionStorage.getItem("phishingSuccess") == true) {
+      if (window.sessionStorage.getItem("phishingSuccess") == "true") {
           window.location.href = "success.html";
       } else {
           window.location.href = "fail.html";
