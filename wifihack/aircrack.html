@@ -9,8 +9,10 @@
 
     <script> 
 
-
+    var realname = JSON.parse(window.sessionStorage.getItem("puzzleData"))["wifi"];
+    alert(realname);
     $(document).keyup(function (e) {
+
       if ($("#makewifi:focus") && (e.keyCode === 13)) {
          var startWith = new RegExp("~# airbase- c 11 -v mon0");
          var userinput = $("#makewifi").val();
@@ -18,27 +20,37 @@
             alert("Dont remove the necessary commands. Try to add the name of your wifi hotspot.");
              $("#makewifi").val("~# airbase- c 11 -v mon0 ")
          } else {
-            if ((userinput.toLowerCase().includes("starbucks") && userinput.toLowerCase().includes("wi") && userinput.toLowerCase().includes("fi") && userinput.includes("\"")) || userinput == "~# airbase- c 11 -v mon0 sb") {
 
-              creatingWifi(userinput);
+            //wifi dependable:
+            if (realname == "Mariot Hotel Wi-fi") {
+              validateWifi(realname, userinput, "mariot");
+            };
+            if (realname == "Hyat Hotel Guest Wi-fi") {
+              validateWifi(realname, userinput, "hyat");
+            };
+            if (realname == "Endall Hotel Free Wi-fi") {
+              validateWifi(realname, userinput, "endall");
+            };
 
-
-            } else {
-              alert("Your hotspot's name should be enquoted, and include at least 'Starbucks', and 'wifi'")
-              $("#makewifi").val("~# airbase- c 11 -v mon0 ");
-            }
          }
 
 
       }
  });
+    function validateWifi(realname, input, needinclude) {
+      if ((input.toLowerCase().includes(needinclude) && input.toLowerCase().includes("wi") && input.toLowerCase().includes("fi") && (input.includes("\"") || input.includes("\'"))) || input == "~# airbase- c 11 -v mon0 sb") {
+        creatingWifi(input);
+      } else {
+        alert("Your hotspot's name should include at least '"+ needinclude+ "', and 'wifi'. Also remember to enquote the name.")
+        $("#makewifi").val("~# airbase- c 11 -v mon0 ");
+      }
+    }
 
-    function creatingWifi(userinput) {
-      var message = "Successfully created a hotspot called: " + "\n" + userinput.substring(24);
+    function creatingWifi(input) {
+      var message = "Successfully created a hotspot called: " + "\n" + input.substring(24);
 
 
-      var roguename = userinput.substring(24);
-      var realname = "Google Starbucks Free Wi-Fi";
+      var roguename = input.substring(24);
 
       $('#creatinghotspot').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 800);
 

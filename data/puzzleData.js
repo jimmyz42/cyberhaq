@@ -1,7 +1,7 @@
 var puzzleData = [
 	{
 		"ciphertext": "HEY I GOT THE MONEY. I WILL MEET YOU IN THE KENDAL MARIOT HOTEL FOR OUR DEAL. ALSO SWIPE RIGHT ON MY INDER PROFILE. SENT YOU THE INVITATION.",
-		"wifi": "Kendal Hotel Wi-fi",
+		"wifi": "Mariot Hotel Wi-fi",
 		"phishing": "inder"
 	},
 	{

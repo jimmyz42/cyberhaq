@@ -25,9 +25,8 @@ webpage_data = [
     "src": "wifihack/aircrack.html",
     "instructions": "<ul>" +
    "<li>  Your next hack takes place at the meeting place at the scheduled time </li>" +
-   "<li> Starbucks official free wifi is called -Google Starbucks Free Wi-Fi</li>" +
-   "<li> You need to create a rogue wifi hotspot that is named similarly to Stabucks' </li>" +
-
+   "<li> You need to create a rogue wifi hotspot that is named similarly to the official free wifi at the meeting place </li>" +
+   "<li> Your goal is to attract people to access to the internet through your wifi </li>" +
    "</ul>",
 
 
