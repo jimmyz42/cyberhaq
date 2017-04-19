@@ -23,11 +23,11 @@ webpage_data = [
     "title": "Terminal",
     "url": "terminal",
     "src": "wifihack/aircrack.html",
-    "instructions": "<ul>" + 
+    "instructions": "<ul>" +
    "<li>  Your next hack takes place at the meeting place at the scheduled time </li>" +
    "<li> Starbucks official free wifi is called -Google Starbucks Free Wi-Fi</li>" +
    "<li> You need to create a rogue wifi hotspot that is named similarly to Stabucks' </li>" +
-  
+
    "</ul>",
 
 
@@ -37,6 +37,6 @@ webpage_data = [
     "title": "Mail",
     "url": "https://www.cybermail.com",
     "src": "email/compose.html",
-    "instructions": "Your job is to choose good phishing email (subject options) to get the person's cybermail password. Make sure to select most convincing phishing email. Access the person's cybermail and use it to reset their Fakebook password.",
+    "instructions": "Your job is to choose good phishing email (subject options) to get the drug lord's cybermail password. Make sure to select the phishing email which will not raise any suspision. Use the credentials to access their Fakebook page.",
   },
 ];

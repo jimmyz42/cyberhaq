@@ -1,0 +1,134 @@
+@import url(http://fonts.googleapis.com/css?family=Lilita+One);
+
+* { user-select: none; }
+
+html { height: 100%; }
+
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: #1d3f59;
+  backface-visibility: hidden;
+}
+
+h1 {
+  position: absolute;
+  top: calc(50% - 125px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0 20px;
+  color: #1d3f59;
+  font: 250px/1 'Lilita One', sans-serif;
+  white-space: nowrap;
+  text-align: right;
+  text-shadow: 0 0 80px rgba(255, 255, 255, 0.3);
+}
+
+.pond {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.fish {
+  position: absolute;
+  margin: -15px 0 0 -30px;
+  opacity: 0;
+  transition: transform 10s;
+  animation: spawn .5s forwards;
+}
+@keyframes spawn {
+  100% { opacity: 1; }
+}
+
+.fish-bob {
+  position: relative;
+  margin-top: -20px;
+  animation: bob 6s infinite;
+}
+@keyframes bob {
+  50% { transform: translateY(40px); }
+}
+
+.fish-direction {
+  position: relative;
+  transition: transform .5s;
+}
+
+.fish-body {
+  position: relative;
+  margin-left: 10px;
+  width: 50px;
+  height: 30px;
+  border-radius: 50%;
+  border-bottom: solid 1px rgba(0, 0, 0, .2);
+  transition: transform 2s ease-out;
+}
+.fish-body::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-left: solid 25px orange;
+  border-top: solid 15px transparent;
+  border-bottom: solid 15px transparent;
+}
+.fish-body::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 8px;
+  left: 34px;
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.fish-1 .fish-body { background-color: #d49919; }
+.fish-1 .fish-body::before { border-left-color: #d49919; }
+.fish-2 .fish-body { background-color: #74a135; }
+.fish-2 .fish-body::before { border-left-color: #74a135; }
+.fish-3 .fish-body { background-color: #806fad; }
+.fish-3 .fish-body::before { border-left-color: #806fad; }
+.fish-4 .fish-body { background-color: #d97eb6; }
+.fish-4 .fish-body::before { border-left-color: #d97eb6; }
+
+.fish-flip .fish-direction { transform: scaleX(-1); }
+
+.fish-spin .fish-body { transform: rotate(720deg); }
+
+.bubble {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border: solid 1px #fff;
+  border-radius: 50%;
+  margin: -15px 0 0 20px;
+  transform-origin: center top;
+  animation: bubble 4s linear forwards;
+}
+@keyframes bubble {
+  100% {
+    transform: translateY(-200px) rotate(-1080deg);
+    opacity: 0;
+  }
+}
+
+.bubble-flip {
+  margin-left: -28px;
+  animation-name: bubble-flip;
+}
+@keyframes bubble-flip {
+  100% {
+    transform: translateY(-200px) rotate(1080deg);
+    opacity: 0;
+  }
+}

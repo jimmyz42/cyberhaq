@@ -2,17 +2,18 @@
 <html>
   <head>
     <!-- Libraries -->
+    <meta charset="utf-8"/>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="js/fail.js"></script>
+    <link href="css/phishing-animation.css" rel="stylesheet"/>
+    <script src="js/phishing-animation.js"></script>
   </head>
   <body>
-      <div class="alert alert-danger" style="margin-top:20px; margin-left:20px; margin-right:20px; display:inline-block; font-size: 20px; width: 600px;">
-          <img src="images/fishing-fail.jpg" style=" display: block; margin: auto; width: 100%;" />
-          <br  />
-          <strong>Fail!</strong><br /> Jack (drug-lord) realized that your email was a phishing attack attempt. <a href="compose.html"><u>Try again</u></a>
-      </div>
+      <h3 style="color:white">Create 20 fish to continue.</h3>
+      <h5 style="color:white">(Click to create fish)</h5>
+      <h1><span class="count">0</span> FISH</h1>
+      <div class="pond"></div>
   </body>
 </html>

@@ -9,13 +9,17 @@ $(document ).ready(function() {
     $(".send-phishing-email").click(function(event) {
         /* Act on the event */
         event.preventDefault();
-        var correctPhish = window.sessionStorage.getItem('puzzleData');
-        console.log($(".subject-options option:checked").val());
-        if ($(".subject-options option:checked").val() == correctPhish)
+        var puzzleData = JSON.parse(window.sessionStorage.getItem('puzzleData'));
+        console.log("chosen phish: " + $(".subject-options option:checked").val());
+        console.log("correct phish: " + puzzleData["phishing"]);
+        if ($(".subject-options option:checked").val() == puzzleData["phishing"])
         {
-            window.location.href = "success.html?phishingValue=" + $(".subject-options option:checked").val();
+            window.sessionStorage.setItem('phishingSuccess', true);
+            //window.location.href = "success.html?phishingValue=" + $(".subject-options option:checked").val();
         } else {
-            window.location.href = "fail.html?phishingValue=" + $(".subject-options option:checked").val();
+            window.sessionStorage.setItem('phishingSuccess', false);
+            //window.location.href = "fail.html?phishingValue=" + $(".subject-options option:checked").val();
         }
+        window.location.href = "phishing-animation.html";
     });
 });
