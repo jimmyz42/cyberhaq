@@ -16,7 +16,12 @@
     <div class="ciphertext"></div>
     <div class="message">
     </div>
-    <button type="button" class="btn btn-info test-message">Break!</button>
+    <script>
+    var audio = new Audio("../sound/sounds/button1.ogg ");
+    audio.oncanplaythrough = function ( ) { }
+    audio.onended = function ( ) { }
+    </script>
+    <button type="button" class="btn btn-info test-message" onclick="audio.play ( )">Break!</button>
     <h1 id="win-text"></h1>
   </body>
 </html>
