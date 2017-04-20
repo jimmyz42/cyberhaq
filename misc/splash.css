@@ -1,6 +1,10 @@
 html, body {
   height: 100%;
-  /*background-color: #098bdc;*/
+  background-color: #098bdc;
+}
+
+body {
+  padding: 10px;
 }
 
 .main {
@@ -16,19 +20,25 @@ html, body {
 
 div {
   text-align: center;
-  /*color: white;*/
-  /*background-color: #098bdc;*/
+}
+
+.icon {
+  border-radius: 10px;
+  background-color: white;
 }
 
 #zr-logo {
-  width: 150px;
-  height: 150px;
+  width: 30px;
+  height: 30px;
 }
 
 #title {
+  position: relative;
+  top: 100px;
+  color: white;
   text-shadow: 2px 2px black;
   margin-top: 15%;
-  font: 60pt arial;
+  font: 22pt arial;
 }
 
 #subtitle {

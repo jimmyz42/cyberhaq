@@ -21,7 +21,7 @@ webpage_data = [
   },
   {
     "title": "Terminal",
-    "url": "terminal",
+    "url": "https://www.terminal.com",
     "src": "wifihack/aircrack.html",
     "instructions": "<ul>" +
    "<li>  Your next hack takes place at the meeting place at the scheduled time </li>" +
