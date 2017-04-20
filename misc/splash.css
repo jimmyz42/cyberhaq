@@ -1,12 +1,23 @@
-html {
+html, body {
   height: 100%;
-  background-color: #098bdc;
+  /*background-color: #098bdc;*/
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+.wrapper {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
 }
 
 div {
   text-align: center;
-  color: white;
-  background-color: #098bdc;
+  /*color: white;*/
+  /*background-color: #098bdc;*/
 }
 
 #zr-logo {
@@ -23,4 +34,8 @@ div {
 #subtitle {
   padding: 20px;
   font: italic 16pt georgia;
+}
+
+img {
+    /*cursor: pointer;*/
 }
