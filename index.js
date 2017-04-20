@@ -13,7 +13,11 @@ $( document ).ready(function() {
         messages: {
             noResults: '',
             results: function() {}
-        }
+        },
+        minLength: 0,
+        focus: function() {
+            $(this).autocomplete('search', '');
+        },
     };
 
 	$(document).on('enterKey', '.urlbar', function(e) {
