@@ -6,6 +6,10 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Our scripts/stylesheets -->
+    <link rel="stylesheet" href="bank.css">
+    <script src="accounts.js"></script>
   </head>
   <body>
     <script>
@@ -14,7 +18,21 @@
   audio.onended = function ( ) { }
   audio.play();
   </script>
-    <h1>Galactic Bank</h1>
-    Welcome, person name!
+
+    <!-- Navbar -->
+    <div class="bnavbar">
+      <img class="logo" src="images/logo.png">
+      <a href="accounts.html"><div class="bnav-item">Account</div></a>
+      <a href="transactions.html"><div class="bnav-item">Transactions</div></a>
+      <a href="transfer.html"><div class="bnav-item">Transfer</div></a>
+    </div>
+
+    <div class="bank-item container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Accounts Overview</h1>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,0 +1,70 @@
+body {
+  background-color: #e6ccff;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.bnavbar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 50px;
+  width: 100%;
+  background-color: #350066;
+}
+
+.logo {
+  height: 50px;
+}
+
+.bnav-item {
+  padding: 8px;
+  display: inline-block;
+  color: white;
+  font: 16pt cursive;
+  text-align: center;
+  width: 150px;
+  height: 100%;
+}
+
+.bnav-item:hover {
+  background-color: #4f0099;
+}
+
+.bank-item {
+  margin: 20px;
+  padding: 0px 20px 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px black;
+}
+
+.acc-item {
+  padding: 20px 0px;
+  font: 16pt times;
+}
+
+.panel {
+  margin: 20px 0px;
+}
+
+table.transactions tr:nth-child(odd) {
+  background-color: #cccccc;
+}
+
+table.transactions tr:first-child {
+  color: white;
+  background-color: #222222;
+}
+
+.t-label {
+  font: 16pt times;
+}
+
+.form-control {
+  margin: 10px 0px;
+}
+
+#submit {
+  margin: 10px 0px;
+}

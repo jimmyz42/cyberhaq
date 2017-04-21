@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Libraries -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Our scripts/stylesheets -->
+    <link rel="stylesheet" href="bank.css">
+    <script src="transactions.js"></script>
+  </head>
+  <body>
+    <script>
+  var audio = new Audio("../sound/galacticTheme.ogg ");
+  audio.oncanplaythrough = function ( ) { }
+  audio.onended = function ( ) { }
+  audio.play();
+  </script>
+
+    <!-- Navbar -->
+    <div class="bnavbar">
+      <img class="logo" src="images/logo.png">
+      <a href="accounts.html"><div class="bnav-item">Account</div></a>
+      <a href="transactions.html"><div class="bnav-item">Transactions</div></a>
+      <a href="transfer.html"><div class="bnav-item">Transfer</div></a>
+    </div>
+
+    <div class="bank-item container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Transaction History</h1>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <table class="transactions table">
+          <tr>
+            <th style="width: 15%">Date</th>
+            <th style="width: 15%">Type</th>
+            <th style="width: 15%">Amount</th>
+            <th>Description</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Libraries -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Our scripts/stylesheets -->
+    <link rel="stylesheet" href="bank.css">
+    <script src="transfer.js"></script>
+  </head>
+  <body>
+    <script>
+  var audio = new Audio("../sound/galacticTheme.ogg ");
+  audio.oncanplaythrough = function ( ) { }
+  audio.onended = function ( ) { }
+  audio.play();
+  </script>
+
+    <!-- Navbar -->
+    <div class="bnavbar">
+      <img class="logo" src="images/logo.png">
+      <a href="accounts.html"><div class="bnav-item">Account</div></a>
+      <a href="transactions.html"><div class="bnav-item">Transactions</div></a>
+      <a href="transfer.html"><div class="bnav-item">Transfer</div></a>
+    </div>
+
+    <div class="bank-item container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Transfer Money</h1>
+          <br>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="t-label col-xs-4 col-xs-offset-1">
+          From
+        </div>
+        <div class="col-xs-6">
+          <select class="form-control" id="from-account">
+            <option>Checking Account (42024907)</option>
+            <option>Savings Account (69214903)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="t-label col-xs-4 col-xs-offset-1">
+          To
+        </div>
+        <div class="col-xs-6">
+          <input class="form-control" id="bank" type="text" placeholder="Bank"></input>
+          <input class="form-control" id="to-account-name" type="text" placeholder="Account Name"></input>
+          <input class="form-control" id="to-account-num" type="text" placeholder="Account Number"></input>
+        </div>
+      </div>
+      <div class="row">
+        <div class="t-label col-xs-4 col-xs-offset-1">
+          Amount
+        </div>
+        <div class="col-xs-6">
+          <input class="form-control" id="amount" type="text" placeholder="0.00"></input>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="t-label col-xs-4 col-xs-offset-1">
+          Description
+        </div>
+        <div class="col-xs-6">
+          <textarea class="form-control" rows="5" id="description" placeholder="Write a description of the reason for the transfer."></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+          <button type="submit" id="submit" class="btn btn-primary btn-block">Transfer</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

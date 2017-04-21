@@ -14,7 +14,7 @@
             if(cnt <= NUM_QUESTIONS) {
               loadQuestion();
             } else {
-              window.location.href = "index.html";
+              window.location.href = "accounts.html";
             }
           } else {
             $('.error').css({ display: 'block' });
