@@ -10,7 +10,6 @@
     <script> 
 
     var realname = JSON.parse(window.sessionStorage.getItem("puzzleData"))["wifi"];
-    alert(realname);
     $(document).keyup(function (e) {
 
       if ($("#makewifi:focus") && (e.keyCode === 13)) {
