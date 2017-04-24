@@ -1,5 +1,8 @@
 
 var text = JSON.parse(window.sessionStorage.getItem("puzzleData"))["ciphertext"];
+var completeAudio = new Audio("../sound/complete.ogg ");
+completeAudio.oncanplaythrough = function ( ) { }
+completeAudio.onended = function ( ) { }
 
 $( document ).ready(function() {
 
@@ -56,7 +59,9 @@ $( document ).ready(function() {
     		}
     	})
     	if (correct) {
-    		document.getElementById("win-text").innerHTML = "Yayyyyy u win";
+    		completeAudio.play();
+    		alert("Excellent! You decrypted the message. Check this off on your list. Next, go back to the home screen to do the next task.")
+    		document.getElementById("win-text").innerHTML = "Excellent! You decrypted the message. Check this off on your list. Next, go back to the home screen to do the next task.";
     	}
     })
 });
