@@ -213,7 +213,7 @@
 
                     <div class="well">
                         <p style="color:#808080;">
-                            @ 2017 Cybermail
+                            @ 2017 zmail
                         </p>
                     </div>
 
@@ -225,6 +225,7 @@
     <!-- SCRIPT -->
     <script>
         $(document).ready(function() {
+            window.sessionStorage.setItem("emailCracked", "true");
             $("a.list-group-item").click(function(event) {
                 event.preventDefault();
                 var name = $(this).find(".name").get(0).innerHTML;
