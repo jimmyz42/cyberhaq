@@ -61,11 +61,11 @@
 
 
    $(document).on('click', '#submit', function( event ) {
-      //Raul's addition
+      //Raul's addition //////////////////////////////////////////
       var completeAudio = new Audio("../sound/complete.ogg ");
       completeAudio.oncanplaythrough = function ( ) { }
       completeAudio.onended = function ( ) { }
-      //////
+      //////////////////////////////////////////////////////////////////
     if ($("#user").val().toLowerCase() == "jack@pot.com") {
       alert("You have successfully identified the big shark!")
       completeAudio.play();
