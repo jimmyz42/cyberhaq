@@ -39,7 +39,7 @@
     });
 
 
-    $(document).on('click', '#rogue', function( event ) {
+    $(document).on('click', '#dropdown', function( event ) {
         $('#two').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 500);
         setTimeout(function() {
             $('#three').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 600);
@@ -62,7 +62,7 @@
 
     <div class="dropdown" style="text-align: right;">
 
-      <button style="background-color: #00FFFF; " class="btn btn-default btn-md dropdown-toggle" type="button" data-toggle="dropdown">
+      <button id="dropdown" style="background-color: #00FFFF; " class="btn btn-default btn-md dropdown-toggle" type="button" data-toggle="dropdown">
         <i class="fa fa-wifi"></i>
         <span class="caret"></span>
       </button>
@@ -81,7 +81,7 @@
       </ul>
     </div>
     <div style="margin-top:20px; margin-left:20px; margin-right:20px;">
-        <div id="one"> Now let's check if your rogue hotspot is visible among the available networks. <br> Connect to it and make sure it is online. </div>
+        <div id="one"> Now let's check if your rogue hotspot is visible among the available networks. </div>
 
       <div id="two" class="alert alert-success" style="visibility: hidden;"> <strong> Your wifi net is up! </strong>  Whoever accesses to this wifi will have their internet connection compromised. </div>
         <div> <a id ="three" href="#" style="visibility: hidden;"><b> <u> You wait. . . </u> </b></a>
