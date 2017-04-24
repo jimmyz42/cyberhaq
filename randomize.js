@@ -1,8 +1,9 @@
 $(function() {
   if (typeof(window.sessionStorage) !== 'undefined' && window.sessionStorage.length === 0) {
-    //Cipher data
+    //Puzzle data
     var selectedPuzzleData = puzzleData[Math.floor(Math.random() * (puzzleData.length))];
     window.sessionStorage.setItem('puzzleData', JSON.stringify(selectedPuzzleData));
+    window.sessionStorage.setItem('solvedCipher', JSON.stringify(false));
 
     //Fakebook data (TODO)
 
