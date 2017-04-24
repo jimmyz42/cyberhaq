@@ -7,16 +7,31 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+
+
+     <script src="https://use.fontawesome.com/9f03d0cffe.js"></script>
+      
+      
+      
+      
+      
     <script> 
 
     var realname = JSON.parse(window.sessionStorage.getItem("puzzleData"))["wifi"];
+    setTimeout(function() {
+        alert("Check for existing wifi networks, and create a fake hotspot that can trick people to access to. ")
+    }, 500);
+    $(document ).ready(function() {
+        $("#real").html(realname);
+    });
+        
     $(document).keyup(function (e) {
 
       if ($("#makewifi:focus") && (e.keyCode === 13)) {
          var startWith = new RegExp("~# airbase- c 11 -v mon0");
          var userinput = $("#makewifi").val();
          if (!startWith.test(userinput)) {
-            alert("Dont remove the necessary commands. Try to add the name of your wifi hotspot.");
+            alert("You would need those starting commands.");
              $("#makewifi").val("~# airbase- c 11 -v mon0 ")
          } else {
 
@@ -37,10 +52,10 @@
       }
  });
     function validateWifi(realname, input, needinclude) {
-      if ((input.toLowerCase().includes(needinclude) && input.toLowerCase().includes("wi") && input.toLowerCase().includes("fi") && (input.includes("\"") || input.includes("\'"))) || input == "~# airbase- c 11 -v mon0 sb") {
+      if ((input.toLowerCase().includes(needinclude) && input.toLowerCase().includes("wi") && input.toLowerCase().includes("fi") /*&& (input.includes("\"") || input.includes("\'"))*/) || input == "~# airbase- c 11 -v mon0 sb") {
         creatingWifi(input);
       } else {
-        alert("Your hotspot's name should include at least '"+ needinclude+ "', and 'wifi'. Also remember to enquote the name.")
+        alert("Your hotspot's name should include at least '"+ needinclude+ "', and 'wifi'.")
         $("#makewifi").val("~# airbase- c 11 -v mon0 ");
       }
     }
@@ -73,6 +88,33 @@ input:focus {
 
   </head>
   <body>
+      
+      
+        <div class="dropdown" style="text-align: right;">
+
+      <button style="background-color: #00FFFF; " class="btn btn-default btn-md dropdown-toggle" type="button" data-toggle="dropdown">
+        <i class="fa fa-wifi"></i>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right">
+        <li><a href="#" id="rogue"></a></li>
+        <li><a href="#" id="real"></a></li>
+        <li><a href="#" id="extra1"> KIC SMARTDoc </a></li>
+        <li><a href="#" id="extra2"> CVS Secure</a></li>
+        <li><a href="#" id="extra3"> Xfinity</a></li>
+        <li><a href="#" id="extra3"> --------------------</a></li>
+        <li><a href="#" id="extra4"> Join Other Network...</a></li>
+        <li><a href="#" id="extra5"> Create Network...</a></li>
+        <li><a href="#" id="extra6"> Open Network Preferences...</a></li>
+
+
+      </ul>
+    </div>
+      
+      
+      
+      
+      
     <div id="mainbody" style="position:relative"> 
       <img src="assets/aircrack.png" style="width:1000px ;height:400px; position: relative;">
       <input id="makewifi" type="text" autofocus="autofocus"  
