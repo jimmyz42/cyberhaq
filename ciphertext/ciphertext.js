@@ -1,8 +1,13 @@
 
 var text = JSON.parse(window.sessionStorage.getItem("puzzleData"))["ciphertext"];
+var buttonAudio = new Audio("../sound/button1.ogg ");
+buttonAudio.oncanplaythrough = function ( ) { }
+buttonAudio.onended = function ( ) { }
+
 var completeAudio = new Audio("../sound/complete.ogg ");
 completeAudio.oncanplaythrough = function ( ) { }
 completeAudio.onended = function ( ) { }
+
 var solvedCipher = JSON.parse(window.sessionStorage.getItem("solvedCipher"));
 
 $( document ).ready(function() {
@@ -45,11 +50,13 @@ $( document ).ready(function() {
 
     $('.message-letter').on("keypress", function (e) {            
 	    if (e.keyCode == 13) {
+	        buttonAudio.play()
 	        updateMessage();
 	    }
 	});
 
     $('.test-message').click(function () {
+    	buttonAudio.play()
     	updateMessage();
     })
 });
