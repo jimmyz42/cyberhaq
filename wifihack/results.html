@@ -36,6 +36,7 @@
       var w2 = ["(accounts.google.com):", "(www.paypal.com):", "(drive.google.com):", "(www.youtube.com):"];
       var w4 = "(www.espn.com):"
 
+
       function ran(length)
         {
             var text = "";
@@ -60,8 +61,14 @@
 
 
    $(document).on('click', '#submit', function( event ) {
+      //Raul's addition
+      var completeAudio = new Audio("../sound/complete.ogg ");
+      completeAudio.oncanplaythrough = function ( ) { }
+      completeAudio.onended = function ( ) { }
+      //////
     if ($("#user").val().toLowerCase() == "jack@pot.com") {
       alert("You have successfully identified the big shark!")
+      completeAudio.play();
       $(document.body).empty();
       var $next = $("<div>");
       $next.css({'margin-top':'20px','margin-left':'20px', 'margin-right':'20px'});
