@@ -3,7 +3,7 @@ var todoListItems = [
 	"Decrypt message",
 	"Go to terminal",
 	"Hack the hotel's wi-fi",
-	"Send a phishing email to target",
+	"Send correct phishing email to target",
 	"Log into the target's fakebook using username and password",
 	"Log into the target's bank account",
 	"Transfer money to buy drugs"
