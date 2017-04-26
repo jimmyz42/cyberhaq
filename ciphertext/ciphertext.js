@@ -9,6 +9,8 @@ completeAudio.oncanplaythrough = function ( ) { }
 completeAudio.onended = function ( ) { }
 
 var solvedCipher = JSON.parse(window.sessionStorage.getItem("solvedCipher"));
+var startingLetters = []
+var ciph_mapping = {}
 
 $( document ).ready(function() {
 
@@ -17,29 +19,54 @@ $( document ).ready(function() {
 		document.getElementById("plaintext-message-modal").innerHTML = text;
 	}
 
-	// generateBottomAlphabet();
+	generateBottomAlphabet();
 
 	generateCipher(function(mapping) {
+		ciph_mapping = mapping;
 		encryptText(mapping, text, function(ciphertext) {
 			// $( ".ciphertext" ).html(ciphertext);
 			textlist = text.split("");
 			wordlist = text.split(" ");
 			ciphertextList = ciphertext.split("");
-			ciphertextList.forEach(function(element, index) {
-				if (element == " " || element == "." || element == "," || element == "'") {
-					$(".message").append("<div class='message-char'>"
-						+ "<h3 class='cipher-char'>" + ciphertextList[index] + "</h3>"
-						+ "<input type='text' disabled class='message-letter space-box' maxlength='1' value='" 
-						+ element + "'>"
-						+ "</div>");
-				} 
-				else {
-					$(".message").append("<div class='message-char'>"
-						+ "<h3 class='cipher-char'>" + ciphertextList[index] + "</h3>"
-						+ "<input type='text' class='message-letter' maxlength='1'>"
-						+ "</div>");
-				}
+			cipherwordList = ciphertext.split(" ");
+			cipherwordList.forEach(function(cipherword, wordIndex) {
+				var cipherwordletters = cipherword.split("");
+				var div = "<div class='cipherword-div'>";
+				cipherwordletters.forEach(function(element, index) {
+					if (element == "." || element == "," || element == "'") {
+						div += "<div class='message-char'>"
+							+ "<h3 class='cipher-char'>" + cipherwordletters[index] + "</h3>"
+							+ "<input type='text' disabled class='message-letter space-box' maxlength='1' value='" 
+							+ element + "'>"
+							+ "</div>";
+					} 
+					else {
+						div += "<div class='message-char'>"
+							+ "<h3 class='cipher-char'>" + cipherwordletters[index] + "</h3>"
+							+ "<input type='text' class='message-letter' maxlength='1'>"
+							+ "</div>";
+					}
+				})
+				$(".message").append(div + "</div>");
+				$(".message").append("<div class='message-char'>"
+							+ "<h3 class='cipher-char'> </h3>"
+							+ "<input type='text' disabled class='message-letter space-box' maxlength='1' value=' '>"
+							+ "</div>");
 			})
+		})
+
+		generateStartingLetters(function(lettersList) {
+			startingLetters = lettersList;
+			console.log(startingLetters);
+			startingLetters.forEach(function(obj, index) {
+	    		var startidname = "#alph-letter-" + ciph_mapping[obj];
+	    		console.log(startidname);
+				if (!$(startidname).hasClass("correct")) {
+					$(startidname).val(obj);
+					$(startidname).addClass("correct");
+				}
+	    	})
+			updateMessage();
 		})
 	});
 
@@ -74,22 +101,37 @@ var generateCipher = function(callback) {
 	});
 }
 
-// var generateBottomAlphabet = function() {
-// 	alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-// 	letters = alphabet.split("");
-// 	letters.forEach(function(element, index) {
-// 		$(".alphabet").append("<div class='alphabet-char'>"
-// 			+ "<h3 class='alpha-letter'>" + element + "</h3>"
-// 			+ "<input type='text' disabled id=alph-letter-" + element + "class='message-letter correct space-box' maxlength='1' value='" 
-// 			+ "?" + "'>"
-// 			+ "</div>");
-// 	})
-// }
+var generateStartingLetters = function(callback) {
+	var textlist = text.split("");
+	lets = [];
+	while (true) {
+		var letter = Math.floor(Math.random() * (textlist.length - 1)) + 1;
+		if ($.inArray(textlist[letter], lets) < 0 && (textlist[letter] != " ")) {
+			lets.push(textlist[letter]);
+		}
+		if (lets.length == 2) {
+			callback(lets);
+			return;
+		}
+	}
+}
+
+var generateBottomAlphabet = function() {
+	alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	letters = alphabet.split("");
+	letters.forEach(function(element, index) {
+		$(".alphabet").append("<div class='alphabet-char'>"
+			+ "<h4 class='alpha-letter'>" + element + "</h4>"
+			+ "<input type='text' disabled id='alph-letter-" + element + "' class='alph-message-letter space-box' maxlength='1' value='" 
+			+ "-" + "'>"
+			+ "</div>");
+	})
+}
 
 var updateMessage = function() {
     	var correct = true;
     	var textlist = text.split('');
-    	var correctletters = []
+    	var correctletters = startingLetters;
     	$(".message-letter").each(function(index, obj) {
     		if ($(this).val() == textlist[index]) {
     			correctletters.push($(this).val());
@@ -101,7 +143,15 @@ var updateMessage = function() {
     		}
     	})
     	$(".message-letter").each(function(index, obj) {
-    		if ($.inArray(textlist[index], correctletters) >= 0 || $(this).val() == textlist[index]) {
+    		if ($(this).hasClass("space-box")) {
+    			$(this).css("border", "none");
+    			$(this).prop('disabled', true);
+    		} else if ($.inArray(textlist[index], correctletters) >= 0 || $(this).val() == textlist[index]) {
+    			var idname = "#alph-letter-" + ciph_mapping[$(this).val()];
+    			if (!$(idname).hasClass("correct")) {
+    				$(idname).val(textlist[index]);
+    				$(idname).addClass("correct");
+    			}
     			$(this).val(textlist[index]);
     			$(this).addClass("correct");
     			$(this).css("border", "none");
@@ -113,12 +163,11 @@ var updateMessage = function() {
     	})
     	if (correct) {
     		completeAudio.play();
-    		alert("Excellent! You decrypted the message. Check this off on your list. Next, go back to the home screen to do the next task.")
-    		document.getElementById("win-text").innerHTML = "Excellent! You decrypted the message. Check this off on your list. Next, go back to the home screen to do the next task.";
-    		// document.getElementById("win-text").innerHTML = "Yayyyyy u win";
     		$('#plaintext-modal').modal('show');
     		document.getElementById("plaintext-message-modal").innerHTML = text;
     		window.sessionStorage.setItem('solvedCipher', JSON.stringify(true));
+    		alert("Excellent! You decrypted the message. Check this off on your list. Next, go back to the home screen to do the next task.")
+    		
     	}
     }
 

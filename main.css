@@ -62,7 +62,28 @@ div.message-char {
   display: inline-block;
 }
 
+div.alphabet-char {
+  text-align: center;
+  color: #074fc1;
+  display: inline-block;
+  margin: 1px;
+  /*width: 20px;*/
+}
+
+div.cipherword-div {
+  display: inline-block;
+}
+
 input.message-letter
+{
+    width: 20px;
+    text-align: center;
+    border: 1px solid black;
+    margin: 1px;
+    font-family: 'Anonymous Pro', monospace;
+}
+
+input.alph-message-letter
 {
     width: 20px;
     text-align: center;
