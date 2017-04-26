@@ -54,3 +54,29 @@ div.modal-dialog.inner {
   float: left;
   padding-top: 5px;
 }
+
+.reset-contain {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.reset-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px black;
+}
+
+#pass1, #pass2 {
+  margin: 15px 0px;
+}
+
+.help-text {
+  font: 16pt arial;
+}
+
+.alert {
+  display: none;
+}

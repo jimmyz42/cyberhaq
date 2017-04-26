@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Libraries -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Our libraries -->
+    <link rel="stylesheet" href="main.css">
+    <script src="reset.js"></script>
+  </head>
+  <body>
+    <img class="logo" src="images/logo.png">
+    <a href="fakebook.html"><button type="button" class="btn btn-default login-btn" id="return">Return to Fakebook</button></a>
+
+    <div class="reset-contain container-fluid">
+      <div class="row">
+        <div class="reset-box col-xs-8 col-xs-offset-2">
+          <p class="help-text">Please type your new password here.</p>
+          <div class="alert alert-success">Password successfully reset!</div>
+          <div class="alert alert-danger">Passwords do not match.</div>
+          <input class="form-control" id="pass1" type="password" placeholder="Password"></input>
+          <input class="form-control" id="pass2" type="password" placeholder="Retype Password"></input>
+          <button type="submit" id="reset-submit" class="btn btn-success">Reset Password</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

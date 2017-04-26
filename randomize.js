@@ -9,6 +9,7 @@ $(function() {
     var selectedFakebookData = _.sample(fakebookData);
     selectedFakebookData['friends'] = _.shuffle(selectedFakebookData['friends']);
     window.sessionStorage.setItem('fakebookData', JSON.stringify(selectedFakebookData));
+    window.sessionStorage.setItem('jackEmail', selectedFakebookData['email']);
 
     //Bank data
     window.sessionStorage.setItem('bankData', JSON.stringify(bankData));
