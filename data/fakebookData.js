@@ -176,6 +176,10 @@ fakebookData = [
       "text": "I want to study these pyramids for the rest of  my life. What significant structures.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/All_Gizah_Pyramids.jpg",
     },
+    {
+      "text": "Man, look at all those wild geese out there! I love chasing them around :P",
+      "image": "https://static.pexels.com/photos/67600/goose-animal-bird-nature-67600.jpeg",
+    },
   ],
   "favorite animal": "dog",
   "favorite color": "blue",
@@ -233,6 +237,10 @@ fakebookData = [
     {
       "text": "The bread is delicious. Why can't London be more like this?",
       "image": "http://www.realfoodtraveler.com/wp-content/uploads/2015/01/BREAD_3_sm.jpg",
+    },
+    {
+      "text": "I love fishing! Caught quite a few herrings today... should be delicious!",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/41/Red_herring.jpg",
     },
   ],
   "favorite animal": "cat",
