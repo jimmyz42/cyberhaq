@@ -16,6 +16,7 @@ for(difficulty in securityQuestions) {
 } 
 
       $(function() {
+        $('#answer').focus();
         loadQuestion();
         $('#answer').keyup(function(e) {
           $('.error').css({ display: 'none' });

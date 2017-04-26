@@ -1,4 +1,11 @@
 $(function() {
+  $('#login').on('shown.bs.modal', function(e) {
+    $('#username').focus();
+  });
+  $('#reset').on('shown.bs.modal', function(e) {
+    $('#email').focus();
+  });
+
   $('#password').keyup(function(e) {
     if(e.keyCode === 13) $('#login-submit').click();
   });
@@ -9,6 +16,7 @@ $(function() {
       window.location.href='timeline.html';
     } else {
       $('.error').css({ display: 'block' });
+      $('#password').val('');
     }
   });
 
