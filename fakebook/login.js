@@ -22,6 +22,7 @@ $(function() {
 
   $('#forgot-pass').click(function() {
     $('.alert-success').css({ display: 'none' });
+    $('.alert-danger').css({ display: 'none' });
     $('#login').modal('hide');
     $('#reset').modal('show');
   });
@@ -30,7 +31,14 @@ $(function() {
     if(e.keyCode === 13) $('#reset-submit').click();
   });
   $('#reset-submit').click(function() {
-    $('.alert-success').css({ display: 'block' });
     //TODO: set flags to note that reset email should appear in zmail
+    if ($('#email').val() == "jackpot@zmail.com") {
+        $('.alert-success').css({ display: 'block' });
+        $('.alert-danger').css({ display: 'none' });
+        window.sessionStorage.setItem("resetEmailSent", "true");
+    } else {
+        $('.alert-success').css({ display: 'none' });
+        $('.alert-danger').css({ display: 'block' });
+    }
   });
 });

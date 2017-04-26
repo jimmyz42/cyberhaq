@@ -14,7 +14,7 @@ $(document).ready(function() {
             var puzzleData = JSON.parse(window.sessionStorage.getItem('puzzleData'));
             // console.log("chosen phish: " + $(".subject-options option:checked").val());
             // console.log("correct phish: " + puzzleData["phishing"]);
-            if ($("#inputTo").val() != "jack@pot.com") {
+            if ($("#inputTo").val() != "jackpot@zmail.com") {
                 window.location.href = "wrongEmail.html";
             } else {
                 if ($(".subject-options option:checked").val() == puzzleData["phishing"]) {
