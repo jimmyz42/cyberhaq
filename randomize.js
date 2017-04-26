@@ -7,6 +7,7 @@ $(function() {
 
     //Fakebook data (TODO)
     var selectedFakebookData = _.sample(fakebookData);
+    selectedFakebookData['friends'] = _.shuffle(selectedFakebookData['friends']);
     window.sessionStorage.setItem('fakebookData', JSON.stringify(selectedFakebookData));
 
     //Bank data
