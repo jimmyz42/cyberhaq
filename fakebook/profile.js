@@ -3,8 +3,6 @@ var field_names = ["Name", "Email", "Phone Number", "Birthday", "Relationship St
  "Favorite Musicians", "Favorite Artists"];
 
 var field_vals = field_names.map(function(field_name) {
-  console.log(field_name.toLowerCase());
-  console.log(fakebookData[field_name.toLowerCase()]);
   return fakebookData[field_name.toLowerCase()].toString();
 });
 

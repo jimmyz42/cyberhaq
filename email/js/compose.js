@@ -2,7 +2,7 @@ $(document).ready(function() {
     if (window.sessionStorage.getItem("emailCracked") == "true") {
         window.location.href = "inbox.html";
     } else {
-        $(".subject-options").change(function() {
+        $("select.subject-options").change(function() {
             $(".email-content").empty();
             // console.log($( this ).val() + ".png");
             $(".email-content").append('<img id="email-content-image" src="images/' + $(this).val() + '.png" style="width: 100%;"/>')
