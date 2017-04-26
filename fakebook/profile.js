@@ -1,12 +1,14 @@
-$(function() {
-// TODO: replace with randomized fields
-  var field_names = ["Name", "Email", "Phone Number", "Birthday", "Relationship Status",
- "Elementary School", "Middle School", "High School", "College", "Favorite Actor",
- "Favorite Musician", "Favorite Artist"];
-  var field_vals = ["Jack Pot", "jack@pot.com", "(555) 555-5555", "4/20/69",
-"In a relationship with Shannon Chang", "Cambridge Elementary", "Cambridge Middle", "Cambridge High",
- "MIT", "Leonardo DiCaprio", "Taylor Swift", "Vincent Van Gogh"];
+var field_names = ["Name", "Email", "Phone Number", "Birthday", "Relationship Status",
+ "Elementary School", "Middle School", "High School", "College", "Favorite Actors",
+ "Favorite Musicians", "Favorite Artists"];
 
+var field_vals = field_names.map(function(field_name) {
+  console.log(field_name.toLowerCase());
+  console.log(fakebookData[field_name.toLowerCase()]);
+  return fakebookData[field_name.toLowerCase()].toString();
+});
+
+$(function() {
   for(var i=0; i<field_names.length; i++) {
     var row = $('<div class="row"></div>').appendTo('.fb-item');
     row.append('<div class="field-name col-xs-4">' + field_names[i] + ':</div>');
