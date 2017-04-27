@@ -51,7 +51,8 @@
       $("#1").text(date +" , "+ t1 + " - " + trip1 + " SECURE POST Data " + w1[0]);
       $("#2").text(ran(20)+ " %^email=awesomeman@exchange.mit.edu&pass=wonderwoman%$" + ran(35));
       $("#3").text(date +" , "+ t2 + " - " + trip2 + " SECURE POST Data " + "www.espn.com/login");
-      $("#4").text(ran(40)+ " %^email=jack@pot.com&pass=undyingweed%$" + ran(12));
+      var jackEmail = window.sessionStorage.getItem('jackEmail');
+      $("#4").text(ran(40)+ " %^email=" + jackEmail + "&pass=undyingweed%$" + ran(12));
       $("#5").text(date +" , "+ t3 + " - " + trip3 + " SECURE POST Data " + w2[0]);
       $("#6").text(ran(31)+ " %^login=purplecow@hotmail.com&pass=yellowhorse%$" + ran(19));
       $("#7").text(date +" , "+ t4 + " - " + trip4 + " SECURE POST Data " + w2[1]);
@@ -66,7 +67,7 @@
       completeAudio.oncanplaythrough = function ( ) { }
       completeAudio.onended = function ( ) { }
       //////////////////////////////////////////////////////////////////
-    if ($("#user").val().toLowerCase() == "jack@pot.com") {
+    if ($("#user").val().toLowerCase() === window.sessionStorage.getItem('jackEmail')) {
       alert("You have successfully identified the big shark!")
       completeAudio.play();
       $(document.body).empty();
@@ -74,7 +75,9 @@
       $next.css({'margin-top':'20px','margin-left':'20px', 'margin-right':'20px'});
       $next.css('font-family', '"Ubuntu Mono", monospace');
       $next.addClass("alert alert-success");
-      $next.text("jack@pot.com it is! Your next step is to phish for Jack cybermail email account's password.")
+      var jackEmail = window.sessionStorage.getItem('jackEmail');
+      var jackName = window.sessionStorage.getItem('jackName');
+      $next.text(jackEmail + " it is! Your next step is to phish for " + jackName + "'s zmail account's password.")
       $(document.body).append($next);
     } else {
       alert("That email leads you nowhere.")

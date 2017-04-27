@@ -7,6 +7,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="js/fail.js"></script>
+    <script src="../inject.js"></script>
   </head>
   <body>
       <div class="alert alert-success" style="margin: 0 auto; font-size: 20px; width: 600px;">
@@ -18,8 +19,8 @@
               audio.onended = function ( ) { }
               audio.play();
               </script>
-          <strong>Success!</strong> Jack (drug-lord) did not realize that your email was a phishing attack and we managed to get access to their zmail. <br />
-          <a href="inbox.html"><u>Access Jack's email</u></a>
+          <strong>Success!</strong> <span class="jack-name"></span> (drug-lord) did not realize that your email was a phishing attack and we managed to get access to their zmail. <br />
+          <a href="inbox.html"><u>Access <span class="jack-name"></span>'s email</u></a>
       </div>
   </body>
 </html>

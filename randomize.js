@@ -10,6 +10,8 @@ $(function() {
     selectedFakebookData['friends'] = _.shuffle(selectedFakebookData['friends']);
     window.sessionStorage.setItem('fakebookData', JSON.stringify(selectedFakebookData));
     window.sessionStorage.setItem('jackEmail', selectedFakebookData['email']);
+    window.sessionStorage.setItem('jackName', selectedFakebookData['name']);
+    window.sessionStorage.setItem('lucyName', selectedFakebookData['relationships'][0]);
 
     //Bank data
     window.sessionStorage.setItem('bankData', JSON.stringify(bankData));
