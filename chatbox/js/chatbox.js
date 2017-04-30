@@ -35,7 +35,7 @@ $(document).ready(function() {
         $('.message-input').val(null);
         updateScrollbar();
         if (msg == "help") {
-            var helpMessage = window.sessionStorage.getItem("helpMesage");
+            var helpMessage = window.sessionStorage.getItem("helpMessage");
             sendMessage(helpMesage);
         } else {
             setTimeout(function() {
