@@ -12,7 +12,7 @@ $(function() {
   $('#login-submit').click(function() {
     $('.error').css({ display: 'none' });
 
-    if($('#username').val() === 'jack@pot.com' && $('#password').val()=='hitTheRoadJack') {
+    if($('#username').val() === window.sessionStorage.getItem('jackEmail') && $('#password').val() === window.sessionStorage.getItem('fakebookPassword')) {
       window.location.href='timeline.html';
     } else {
       $('.error').css({ display: 'block' });
@@ -31,8 +31,7 @@ $(function() {
     if(e.keyCode === 13) $('#reset-submit').click();
   });
   $('#reset-submit').click(function() {
-    //TODO: set flags to note that reset email should appear in zmail
-    if ($('#email').val() == "jackpot@zmail.com") {
+    if ($('#email').val() === window.sessionStorage.getItem('jackEmail')) {
         $('.alert-success').css({ display: 'block' });
         $('.alert-danger').css({ display: 'none' });
         window.sessionStorage.setItem("resetEmailSent", "true");

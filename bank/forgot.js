@@ -1,7 +1,7 @@
 var cnt = 0;
-var NUM_QUESTIONS = 3;
-var questions = [];
-var answers = [];
+var NUM_QUESTIONS = 4;
+var questions = ['What is your email address?'];
+var answers = [window.sessionStorage.getItem('jackEmail')];
 
 var fakebookData = JSON.parse(window.sessionStorage.getItem('fakebookData'));
 
@@ -26,6 +26,9 @@ for(difficulty in securityQuestions) {
           $('.error').css({ display: 'none' });
 
           if(checkAnswer()) {
+            $('.help-text').html('To unlock your account, please answer the following security questions correctly.');
+            $('.error').html('Incorrect response. Please try again.');
+
             cnt++;
             if(cnt < NUM_QUESTIONS) {
               loadQuestion();
