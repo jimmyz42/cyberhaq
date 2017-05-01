@@ -7,3 +7,10 @@ $(window).on('message', function(e) {
     $('.chat').trigger('chatMessage', [msg['message']]);
   }
 });
+
+
+// MESSAGING PROTOCOL TO POST "message contents" onto chatbox
+// parent.postMessage({
+//    type: 'chat-box-message',
+//    message: 'message contents.',
+// }, '*');
