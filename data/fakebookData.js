@@ -107,7 +107,7 @@ fakebookData = [
   "birthplace": "Kansas City, Kansas",
   "child vacation": "Seoul",
   "adult vacation": "Kansas",
-  "favorite movie": "The Network, Social",
+  "favorite movie": "The Social Network",
   "favorite pet": "Koala",
   "posts": [
     {
@@ -177,7 +177,7 @@ fakebookData = [
   "birthplace": "Cape Town, South Africa",
   "child vacation": "Times Square",
   "adult vacation": "Egypt",
-  "favorite movie": "A Mind that is Beautiful",
+  "favorite movie": "A Beautiful Mind",
   "favorite pet": "Pixel",
   "posts": [
     {
@@ -255,7 +255,7 @@ fakebookData = [
   "birthplace": "Miami, Florida",
   "child vacation": "London",
   "adult vacation": "Iceland",
-  "favorite movie": "Generic Movie for Lawyers",
+  "favorite movie": "The Lincoln Lawyer",
   "favorite pet": "Purry",
   "posts": [
     {
@@ -264,7 +264,7 @@ fakebookData = [
     },
     {
       "text": "It may be generic, but the main character is totally me! #relatable",
-      "image": "http://www.filmequals.com/wp-content/uploads/2010/12/the-lincoln-lawyer-movie-photo-01.jpg",
+      "image": "https://i.ytimg.com/vi/_dft2G1a_b0/maxresdefault.jpg",
     },
     {
       "text": "Just got my first cat. I named her Purry!",
