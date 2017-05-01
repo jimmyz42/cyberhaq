@@ -11,6 +11,37 @@ $( document ).ready(function() {
             if($(this).val() === '') $(this).autocomplete('search', '');
         },
     };
+    var jackName = window.sessionStorage.getItem('jackName');
+    var lucyName = window.sessionStorage.getItem('lucyName');
+    console.log(jackName);
+    console.log(lucyName);
+
+/////// Index.html messages
+
+    parent.postMessage({
+   type: 'chat-box-message',
+   message: "It's your boss, ***. and I will help you hack a bank account. Follow my instructions and do everything as I say to avoid detection. Also, if you're stuck and need help, message 'help' and I'll help you out."
+,
+}, '*');
+
+
+        setTimeout(function() {
+            // welcomeMessage();
+                parent.postMessage({
+   type: 'chat-box-message',
+   message: window.sessionStorage.getItem("lucyName") + " wants a hacking service. _______. Looks like they want the head of Bexley Co: " + window.sessionStorage.getItem("jackName")
+,
+}, '*');
+
+    parent.postMessage({
+   type: 'chat-box-message',
+   message: "Got a message between " + window.sessionStorage.getItem("jackName") + " and a client, some druggie. Let me know when you have decoded it. http://www.breakmycipher.io"
+,
+}, '*');
+        }, 100);
+
+
+
 
 	$(document).on('enterKey', '.urlbar', function(e) {
       var data = _.find(webpage_data, { url: $(this).val() });
@@ -126,3 +157,11 @@ function createTodo(text){
 function removeItem(element){
     $(element).parent().remove();
 }
+
+
+
+
+
+
+
+

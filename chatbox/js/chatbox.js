@@ -6,7 +6,8 @@ $(document).ready(function() {
     $(window).on('load', function() {
         $messages.mCustomScrollbar();
         setTimeout(function() {
-            welcomeMessage();
+            //welcome message is now on index.js
+            // welcomeMessage();
         }, 100);
     });
 
@@ -64,9 +65,9 @@ $(document).ready(function() {
         "Your goal is to attract people to access to the internet through your wifi"
     ];
 
-    function welcomeMessage() {
-        sendMessage("Hi! I'm Anonymous and I will help you hack " + window.sessionStorage.getItem("jackName") + " guy's bank account. Follow my instructions and do everything as I say to avoid detection.")
-    }
+    // function welcomeMessage() {
+    //     sendMessage("Hi! I'm Anonymous and I will help you hack " + window.sessionStorage.getItem("jackName") + " guy's bank account. Follow my instructions and do everything as I say to avoid detection.")
+    // }
 
     $('.chat').on('chatMessage', function(e, msg) {
       sendMessage(msg);
