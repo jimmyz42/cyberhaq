@@ -4,7 +4,7 @@ $(document).ready(function() {
     if (window.sessionStorage.getItem("emailCracked") == "true") {
         parent.postMessage({
             type: 'chat-box-message',
-            message: 'You already have access to your taget\'s email.',
+            message: 'You already have access to your target\'s email.',
         }, '*');
 
         window.location.href = "inbox.html";
