@@ -19,7 +19,7 @@
 
     var realname = JSON.parse(window.sessionStorage.getItem("puzzleData"))["wifi"];
     setTimeout(function() {
-        alert("Check for existing wifi networks, and create a fake hotspot that can trick people to access to. ")
+        alert("Create a fake hotspot that can trick people to access to. Use the location that you got from the cipher text message. On the terminal, write 'location wifi'. Then, press Enter. ")
     }, 500);
     $(document ).ready(function() {
         $("#real").html(realname);
@@ -55,7 +55,7 @@
       if ((input.toLowerCase().includes(needinclude) && input.toLowerCase().includes("wi") && input.toLowerCase().includes("fi") /*&& (input.includes("\"") || input.includes("\'"))*/) || input == "~# airbase- c 11 -v mon0 sb") {
         creatingWifi(input);
       } else {
-        alert("Your hotspot's name should include at least '"+ needinclude+ "', and 'wifi'.")
+        alert("Create a fake hotspot that can trick people to access to. Use the location that you got from the cipher text message. On the terminal, write 'location wifi'. Then, press Enter. ")
         $("#makewifi").val("~# airbase- c 11 -v mon0 ");
       }
     }
