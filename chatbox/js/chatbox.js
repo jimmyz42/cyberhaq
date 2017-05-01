@@ -36,7 +36,7 @@ $(document).ready(function() {
         updateScrollbar();
         if (msg == "help") {
             var helpMessage = window.sessionStorage.getItem("helpMessage");
-            sendMessage(helpMesage);
+            sendMessage("There is no help.<br /><img src='https://static01.nyt.com/images/2015/10/23/upshot/00up_Shruggie_image/00up_Shruggie_image-superJumbo-v5.gif' style='width:200px;'/>");
         } else {
             sendMessage("Do not use this chat unless you need help. We don't want to attract too much attention, in case someone is eavesdropping on our conversation.");
         }
@@ -65,7 +65,7 @@ $(document).ready(function() {
     ];
 
     function welcomeMessage() {
-        sendMessage("Hi! I'm Anonymous and I will help you hack this guy's bank account. Follow my instructions and do everything as I say to avoid detection. Also, if you're stuck and need help, message 'help' and I'll help you out.")
+        sendMessage("Hi! I'm Anonymous and I will help you hack " + window.sessionStorage.getItem("jackName") + " guy's bank account. Follow my instructions and do everything as I say to avoid detection.")
     }
 
     function sendMessage(messageText) {
