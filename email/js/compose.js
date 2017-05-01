@@ -1,5 +1,6 @@
 $(document).ready(function() {
     var targetName = window.sessionStorage.getItem('jackName');
+    console.log(window.sessionStorage.getItem("jackEmail"));
     if (window.sessionStorage.getItem("emailCracked") == "true") {
         parent.postMessage({
             type: 'chat-box-message',
