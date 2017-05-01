@@ -38,9 +38,7 @@ $(document).ready(function() {
             var helpMessage = window.sessionStorage.getItem("helpMessage");
             sendMessage(helpMesage);
         } else {
-            setTimeout(function() {
-                sendMessage("Do not use this chat unless you need help. We don't want to attract too much attention, in case someone is eavesdropping on our conversation.");
-            }, 1000 + (Math.random() * 20) * 100);
+            sendMessage("Do not use this chat unless you need help. We don't want to attract too much attention, in case someone is eavesdropping on our conversation.");
         }
     }
 
@@ -85,6 +83,6 @@ $(document).ready(function() {
             setDate();
             updateScrollbar();
             i++;
-        }, 1000 + (Math.random() * 20) * 100);
+        }, 300 + (Math.random() * 20) * 100);
     }
 });
