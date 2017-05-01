@@ -68,6 +68,10 @@ $(document).ready(function() {
         sendMessage("Hi! I'm Anonymous and I will help you hack this guy's bank account. Follow my instructions and do everything as I say to avoid detection. Also, if you're stuck and need help, message 'help' and I'll help you out.")
     }
 
+    $('.chat').on('chatMessage', function(e, msg) {
+      sendMessage(msg);
+    });
+
     function sendMessage(messageText) {
         /*
         if ($('.message-input').val() != '') {
