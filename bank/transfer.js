@@ -2,7 +2,7 @@ var bankData = JSON.parse(window.sessionStorage.getItem('bankData'));
 
 $(function() {
   $('#submit').click(function() {
-    var amt = +parseFloat($('#amount').val()).toFixed(2);
+    var amt = +parseFloat($('#amount').val().replace(/[, $]/g, '')).toFixed(2);
     var acc = $('#from-account').val();
     acc = acc.substr(0, acc.length-11);
 
