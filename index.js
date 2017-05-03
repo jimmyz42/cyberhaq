@@ -11,9 +11,18 @@ $( document ).ready(function() {
             if($(this).val() === '') $(this).autocomplete('search', '');
         },
     };
-
+    var jackName = window.sessionStorage.getItem('jackName');
+    var lucyName = window.sessionStorage.getItem('lucyName');
+    console.log(jackName);
+    console.log(lucyName);
 
 /////// Index.html messages
+
+    parent.postMessage({
+   type: 'chat-box-message',
+   message: "It's your boss, ***. and I will help you hack a bank account. Follow my instructions and do everything as I say to avoid detection. Someone named " + window.sessionStorage.getItem("lucyName") + " wants a hacking service. _______. Looks like they want the head of Bexley Co: " + window.sessionStorage.getItem("jackName") + ". Got a message between " + window.sessionStorage.getItem("jackName") + " and a client, some druggie. Let me know when you have decoded it. http://www.breakmycipher.io"
+,
+}, '*');
 
 
 
