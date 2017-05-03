@@ -1,0 +1,43 @@
+body {
+  background-color: black;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  font: 60pt monospace;
+  color: white;
+}
+
+#carousel {
+  position: inherit; 
+  width: 80%;
+  height: 500px;
+  margin: auto;
+  margin-top: 20px;
+  background-color: #222222;
+  font: 18pt courier new;
+  color: white;
+  padding: 20px;
+}
+
+.preview {
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+  font: 30pt monospace;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  text-align: center;
+  font: 12pt monospace;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+#begin {
+  margin: auto;
+}

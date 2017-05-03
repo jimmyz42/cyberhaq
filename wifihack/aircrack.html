@@ -8,7 +8,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
-
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
      <script src="https://use.fontawesome.com/9f03d0cffe.js"></script>
       
       
@@ -17,14 +17,52 @@
       
     <script> 
 
-    var realname = JSON.parse(window.sessionStorage.getItem("puzzleData"))["wifi"];
-    setTimeout(function() {
-        alert("Check for existing wifi networks, and create a fake hotspot that can trick people to access to. ")
-    }, 500);
+    var jso = JSON.parse(window.sessionStorage.getItem("puzzleData"));
+    console.log(jso);
+    var realname = jso["wifi"];
+    var hotel = jso["location"];
     $(document ).ready(function() {
         $("#real").html(realname);
+
+       // MESSAGING PROTOCOL TO POST "message contents" onto chatbox
+       setTimeout(function() {
+          parent.postMessage({
+             type: 'chat-box-message',
+             message: 'Are you there at the ' + hotel + '?',
+          }, '*');
+       }, 200);
+
+
+      setTimeout(function() {
+        var newmessage= 'Great! Now you need to find out the name of the official wifi network there (by clicking the Wifi-network button)';
+        parent.postMessage({
+           type: 'chat-box-message',
+           message: newmessage,
+        }, '*');
+      }, 2000);
+
     });
+
+    var clickeddropdown = false;
+    $(document).on('click', '#dropdown', function( event ) {
+        var newmessage= realname + ' it is. <br> You have launched the Aircrack app which would help to create a fake wifi hotspot - that\'s good. <br> To actually create a network called ,e.g. "mywifi", you can type <br> <strong> ~# airbase- c 11 -v mon0 "mywifi"  </strong> <br> in the terminal. <br> Your goal is to trick people to access to your hotspot thinking that they were logging into the official ' + realname;
+      if (!clickeddropdown) {
+              setTimeout(function () {
+        parent.postMessage({
+           type: 'chat-box-message',
+           message: newmessage,
+        }, '*');
+      }, 1000);
+             clickeddropdown = true; 
+      }
+
         
+    });
+    
+    function clickedImage() {
+      $("#makewifi").focus();
+    }
+
     $(document).keyup(function (e) {
 
       if ($("#makewifi:focus") && (e.keyCode === 13)) {
@@ -55,14 +93,14 @@
       if ((input.toLowerCase().includes(needinclude) && input.toLowerCase().includes("wi") && input.toLowerCase().includes("fi") /*&& (input.includes("\"") || input.includes("\'"))*/) || input == "~# airbase- c 11 -v mon0 sb") {
         creatingWifi(input);
       } else {
-        alert("Your hotspot's name should include at least '"+ needinclude+ "', and 'wifi'.")
+        //UNSTATISFY  TODO:
+
         $("#makewifi").val("~# airbase- c 11 -v mon0 ");
       }
     }
 
     function creatingWifi(input) {
-      var message = "Successfully created a hotspot called: " + "\n" + input.substring(24);
-
+      var message = "11:18:59  Successfully created a hotspot called: " + input.substring(24);
 
       var roguename = input.substring(24);
 
@@ -71,8 +109,11 @@
       $("#makewifi").blur();
 
       setTimeout(function() {
-        alert(message);
-        window.location.href = "wifilist.html?realname="+realname + "&roguename="+roguename;
+        $("#success").text(message);
+        $("#success").css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 800);
+        setTimeout(function() {
+          window.location.href = "wifilist.html?realname="+realname + "&roguename="+roguename;
+        },3000);
       },1500);
 
     }
@@ -92,7 +133,7 @@ input:focus {
       
         <div class="dropdown" style="text-align: right;">
 
-      <button style="background-color: #00FFFF; " class="btn btn-default btn-md dropdown-toggle" type="button" data-toggle="dropdown">
+      <button id="dropdown" style="background-color: #00FFFF; " class="btn btn-default btn-md dropdown-toggle" type="button" data-toggle="dropdown">
         <i class="fa fa-wifi"></i>
         <span class="caret"></span>
       </button>
@@ -116,11 +157,13 @@ input:focus {
       
       
     <div id="mainbody" style="position:relative"> 
-      <img src="assets/aircrack.png" style="width:1000px ;height:400px; position: relative;">
+      <img id='mainimg' onclick="clickedImage()" src="assets/aircrack.png" style="width:1000px ;height:400px; position: relative;">
       <input id="makewifi" type="text" autofocus="autofocus"  
-      onfocus="this.value = this.value;"/ style="width: 700px; background-color: black; position: absolute; top:225px; left: 70px; border: 0px solid black; color:white;" value="~# airbase- c 11 -v mon0 "></input>
+      onfocus="this.value = this.value;"/ style="width: 700px; background-color: black; position: absolute; top:225px; left: 70px; border: 0px solid black; color: #BBABB4; font-family: 'Inconsolata', monospace; font-size: 14px;" value=""></input>
 
       <img  id="creatinghotspot" src="assets/creatinghotspot.png" style= " width: 60%; position: absolute; top: 245px; visibility: hidden; ">
+
+      <div id='success' style="visibility:hidden; width:700px; background-color:black; position: absolute; top:305px; left: 5px; border: 0px solid black; color: #BBABB4; font-family: 'Inconsolata', monospace;font-size: 14px; "> </div> 
     </div>
 
   </body>

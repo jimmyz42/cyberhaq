@@ -11,16 +11,18 @@
   </head>
   <body>
       <div class="alert alert-success" style="margin: 0 auto; font-size: 20px; width: 600px;">
-          <img src="images/fishing-success.gif" style=" display: block; margin: auto; width: 100%;" />
-          <br  />
+          <!--<img src="images/fishing-success.gif" style=" display: block; margin: auto; width: 100%;" />-->
               <script>
               var audio = new Audio("../sound/complete.ogg ");
               audio.oncanplaythrough = function ( ) { }
               audio.onended = function ( ) { }
               audio.play();
               </script>
-          <strong>Success!</strong> <span class="jack-name"></span> (drug-lord) did not realize that your email was a phishing attack and we managed to get access to their zmail. <br />
+          <strong>Success!</strong> <span class="jack-name"></span> did not realize that your email was a phishing attack and you managed to get access to their zmail. <br />
           <a href="inbox.html"><u>Access <span class="jack-name"></span>'s email</u></a>
+          <script type="text/javascript">
+              $(".jack-name").text(window.sessionStorage.getItem('jackName'));
+          </script>
       </div>
   </body>
 </html>

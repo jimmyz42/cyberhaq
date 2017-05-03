@@ -13,7 +13,17 @@
   </head>
   <body>
     <script>
+  var completeAudio = new Audio("../sound/complete.ogg ");
+  var visitedOnce = true;
   var audio = new Audio("../sound/galacticTheme.ogg ");
+
+  if (visitedOnce) {
+    completeAudio.oncanplaythrough = function ( ) { }
+    completeAudio.onended = function ( ) { }
+    completeAudio.play();
+    visitedOnce = false;
+  }
+
   audio.oncanplaythrough = function ( ) { }
   audio.onended = function ( ) { }
   audio.play();

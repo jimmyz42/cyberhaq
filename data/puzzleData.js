@@ -9,6 +9,7 @@ var puzzleData = [
 				"choices": ["AND 666", "OR 666", "Left Shift 64", "Rotate Left 64", "Divide 777", "XOR 666", "Right Shift 64", "Add 69", "Subtract 420", 
 				"Multiply by 1", "Modulo 9999"]
 			},
+		"location": "Mariot Hotel",
 		"phishing": "inder"
 	},
 	{
@@ -21,6 +22,7 @@ var puzzleData = [
 				"Multiply by 1", "Modulo 9999"]
 			},
 		"wifi": "Hyat Hotel Guest Wi-fi",
+		"location": "Hyat Hotel",
 		"phishing": "boxdrop"
 	},
 	{
@@ -33,6 +35,7 @@ var puzzleData = [
 				"Multiply by 1", "Modulo 9999"]
 			},
 		"wifi": "Endall Hotel Free Wi-fi",
+		"location": "Endall Hotel",
 		"phishing": "darkmail"
 	}
 ]

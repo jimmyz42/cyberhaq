@@ -11,9 +11,11 @@
   </head>
   <body>
       <div class="alert alert-danger" style="margin: 0 auto; font-size: 20px; width: 600px;">
-          <img src="images/fishing-fail.jpg" style=" display: block; margin: auto; width: 100%;" />
-          <br  />
-          <strong>Fail!</strong><br /> <span class="jack-name"></span> (drug-lord) realized that your email was a phishing attack attempt. <a href="compose.html"><u>Try again</u></a>
+          <!--<img src="images/fishing-fail.jpg" style=" display: block; margin: auto; width: 100%;" />-->
+          <strong>Fail!</strong><span class="jack-name"></span> realized that your email was a phishing attack attempt. <a href="compose.html"><u>Try again</u></a>
+          <script type="text/javascript">
+              $(".jack-name").text(window.sessionStorage.getItem('jackName'));
+          </script>
       </div>
   </body>
 </html>

@@ -1,3 +1,5 @@
+var jackName = window.sessionStorage.getItem('jackName');
+
 var cnt = 0;
 var NUM_QUESTIONS = 4;
 var questions = ['What is your email address?'];
@@ -34,6 +36,10 @@ for(difficulty in securityQuestions) {
               loadQuestion();
             } else {
               window.location.href = "accounts.html";
+              parent.postMessage({
+                type: 'chat-box-message',
+                message: 'Your final task: Transfer ' + jackName + '\'s money to Asterisk. Our offshore account at Galactic Bank is 12345678. Transfer the money there, and your job will be complete.',
+              }, '*');
             }
           } else {
             $('.error').css({ display: 'block' });

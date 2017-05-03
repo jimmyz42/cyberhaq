@@ -1,3 +1,10 @@
+var jackName = window.sessionStorage.getItem('jackName');
+
+parent.postMessage({
+   type: 'chat-box-message',
+   message: 'Try to log in to ' + jackName + '\'s Fakebook account. You know their email address already, try to see if that provides any help.',
+}, '*');
+
 $(function() {
   $('#login').on('shown.bs.modal', function(e) {
     $('#username').focus();
@@ -14,9 +21,17 @@ $(function() {
 
     if($('#username').val() === window.sessionStorage.getItem('jackEmail') && $('#password').val() === window.sessionStorage.getItem('fakebookPassword')) {
       window.location.href='timeline.html';
+      parent.postMessage({
+        type: 'chat-box-message',
+        message: 'Now try to access ' + jackName + '\'s bank account! People put their whole lives on Fakebook, maybe the information on their Fakebook will be of some help.',
+      }, '*');
     } else {
       $('.error').css({ display: 'block' });
       $('#password').val('');
+      parent.postMessage({
+        type: 'chat-box-message',
+        message: 'Hmm, seems like you\'re having trouble logging in. Maybe try resetting their password?',
+      }, '*');
     }
   });
 
@@ -35,6 +50,10 @@ $(function() {
         $('.alert-success').css({ display: 'block' });
         $('.alert-danger').css({ display: 'none' });
         window.sessionStorage.setItem("resetEmailSent", "true");
+        parent.postMessage({
+          type: 'chat-box-message',
+          message: 'Nice! Now go to ' + jackName + '\'s email to find the password reset email.',
+        }, '*'); 
     } else {
         $('.alert-success').css({ display: 'none' });
         $('.alert-danger').css({ display: 'block' });

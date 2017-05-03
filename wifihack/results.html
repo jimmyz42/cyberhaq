@@ -58,6 +58,17 @@
       $("#7").text(date +" , "+ t4 + " - " + trip4 + " SECURE POST Data " + w2[1]);
       $("#8").text(ran(37)+ " %^email=pumpskin@gmail.com&pass=superfast123%$ " + ran(15));
 
+
+
+
+      var newmessage="You are looking at the internet connections that have been made via your hotspot. <br> You need to find a potential email to be a starting point for your hack to the inner works of Bexley Co. Type it in the box and I would see if it leads us anywhere.";
+          parent.postMessage({
+             type: 'chat-box-message',
+             message: newmessage,
+          }, '*');
+
+
+
     });
 
 
@@ -121,7 +132,6 @@
 
 
     <form id="answer" class="form-inline">
-      <label for="user">Which email has the potential to be a starting point for your hack to the inner works of Bexley Co.? <!--(hint: read the story)--> </label>
         <div class="input-group">
           <div class="input-group-addon">@</div>
           <input autofocus="autofocus"  type="text" class="form-control" id="user" placeholder="potential email">

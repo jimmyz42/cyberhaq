@@ -21,6 +21,26 @@ var bankData = {
         "amount": "10000000.00",
         "description": "Direct Deposit from Bexley Corporation",
       },
+      {
+      "date": "3/17/16",
+      "amount": "-200000.00",
+      "description": "Donation to #prayforperu Earthquake Relief fund",
+      },
+      {
+      "date": "3/10/16",
+      "amount": "-500.00",
+      "description": "Party City",
+      },
+      {
+      "date": "3/1/16",
+      "amount": "-30000",
+      "description": "St. Jude Children’s Hospital",
+      },
+      {
+      "date": "2/14/16",
+      "amount": "-500.00",
+      "description": "Le Fancy Restaurant",
+      },
     ],
   },
 };

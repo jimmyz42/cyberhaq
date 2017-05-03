@@ -36,20 +36,33 @@
     $(document ).ready(function() {
         $("#rogue").html(roguename);
         $("#real").html(realname);
+        var newmessage = "Now let's check if your fake hotspot is visible among the available networks."
+          parent.postMessage({
+           type: 'chat-box-message',
+           message: newmessage,
+        }, '*');
+
+
     });
 
+      var clicked = false;
+        $(document).on('click', '#dropdown', function( event ) {
+        var newmessage= 'Your wifi net is up! </strong>  Whoever accesses to this wifi will have their internet connection compromised.';
+        if (!clicked) {
+          setTimeout(function () {
+            parent.postMessage({
+               type: 'chat-box-message',
+               message: newmessage,
+            }, '*');
 
-    $(document).on('click', '#dropdown', function( event ) {
-        $('#two').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 500);
-        setTimeout(function() {
-            $('#three').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 600);
-        },1000);
-        
+              $('#gif').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 1000);
+
+          }, 1000);
+          clicked = true;
+        }
+
     });
 
-     $(document).on('click', '#three', function( event ) {
-      $('#four').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 500);
-     });
 
 
     </script>
@@ -81,14 +94,11 @@
       </ul>
     </div>
     <div style="margin-top:20px; margin-left:20px; margin-right:20px;">
-        <div id="one"> Now let's check if your rogue hotspot is visible among the available networks. </div>
 
-      <div id="two" class="alert alert-success" style="visibility: hidden;"> <strong> Your wifi net is up! </strong>  Whoever accesses to this wifi will have their internet connection compromised. </div>
-        <div> <a id ="three" href="#" style="visibility: hidden;"><b> <u> You wait. . . </u> </b></a>
-        </div>
-        <br>
-        <div>
-        <a id="four" href="results.html" style="visibility: hidden;"><b> <u>Two hours has passed. Let's see your catches. </u> </b></a>
+      
+        <a id="gif" href="results.html" style="visibility: hidden;">
+        <img src="wait.gif" alt="waiting Icon" style="width:50%;height:50%; ">
+        </a>
         </div>
     </div>
   </body>
