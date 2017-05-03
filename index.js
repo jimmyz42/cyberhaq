@@ -1,3 +1,10 @@
+var audio = new Audio("sound/newTab.wav");
+audio.oncanplaythrough = function ( ) { }
+audio.onended = function ( ) { }
+
+
+audio.play()
+
 $( document ).ready(function() {
 
     var autocompleteParams = {
@@ -11,10 +18,6 @@ $( document ).ready(function() {
             if($(this).val() === '') $(this).autocomplete('search', '');
         },
     };
-    var jackName = window.sessionStorage.getItem('jackName');
-    var lucyName = window.sessionStorage.getItem('lucyName');
-    console.log(jackName);
-    console.log(lucyName);
 
 /////// Index.html messages
 
@@ -24,21 +27,35 @@ $( document ).ready(function() {
 ,
 }, '*');
 
+//  document.getElementById('endereco').onkeydown = function(event){
+//     var e = event || window.event;
+//     if(e.keyCode == 13){
+//         alert('5');
+//     }
+// }
 
-        setTimeout(function() {
+// if(characterCode == 13)
+// {
+//     console.log('hi'); // returning false will prevent the event from bubbling up.
+// }
+
+    setTimeout(function() {
             // welcomeMessage();
                 parent.postMessage({
    type: 'chat-box-message',
-   message: window.sessionStorage.getItem("lucyName") + " wants a hacking service. _______. Looks like they want the head of Bexley Co: " + window.sessionStorage.getItem("jackName")
+   message: "Someone named " + window.sessionStorage.getItem("lucyName") + " wants a hacking service, _______. Looks like they want the head of Bexley Co: " + window.sessionStorage.getItem("jackName")
 ,
 }, '*');
+          }, 2000);
 
-    parent.postMessage({
-   type: 'chat-box-message',
-   message: "Got a message between " + window.sessionStorage.getItem("jackName") + " and a client, some druggie. Let me know when you have decoded it. http://www.breakmycipher.io"
-,
-}, '*');
-        }, 100);
+    setTimeout(function() {
+      parent.postMessage({
+         type: 'chat-box-message',
+         message: "Got a message between " + window.sessionStorage.getItem("jackName") + " and a client, some druggie. Let me know when you have decoded it. http://www.breakmycipher.io"
+      ,
+      }, '*');
+
+          }, 6000);
 
 
 
