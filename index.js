@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function() {
 
     var autocompleteParams = {
         source: _.map(webpage_data, 'url'),
@@ -8,7 +8,7 @@ $( document ).ready(function() {
         },
         minLength: 0,
         focus: function() {
-            if($(this).val() === '') $(this).autocomplete('search', '');
+            if ($(this).val() === '') $(this).autocomplete('search', '');
         },
     };
     var jackName = window.sessionStorage.getItem('jackName');
@@ -16,152 +16,136 @@ $( document ).ready(function() {
     console.log(jackName);
     console.log(lucyName);
 
-/////// Index.html messages
+    /////// Index.html messages
+    setTimeout(function() {
+        parent.postMessage({
+            type: 'chat-box-message',
+            message: "It's your boss, Bruce. and I will help you hack a bank account. Follow my instructions and do everything as I say to avoid detection. <br /><br />" +
+                window.sessionStorage.getItem("lucyName") + " wants a hacking service. Looks like they want the head of Bexley Co: " + window.sessionStorage.getItem("jackName") + "<br /><br />" +
+                "Got a message between " + window.sessionStorage.getItem("jackName") + " and a client, some druggie. Let me know when you have decoded it. http://www.breakmycipher.io",
+        }, '*');
+    }, 150);
 
-    parent.postMessage({
-   type: 'chat-box-message',
-   message: "It's your boss, ***. and I will help you hack a bank account. Follow my instructions and do everything as I say to avoid detection. Also, if you're stuck and need help, message 'help' and I'll help you out."
-,
-}, '*');
-
-
-        setTimeout(function() {
-            // welcomeMessage();
-                parent.postMessage({
-   type: 'chat-box-message',
-   message: window.sessionStorage.getItem("lucyName") + " wants a hacking service. _______. Looks like they want the head of Bexley Co: " + window.sessionStorage.getItem("jackName")
-,
-}, '*');
-
-    parent.postMessage({
-   type: 'chat-box-message',
-   message: "Got a message between " + window.sessionStorage.getItem("jackName") + " and a client, some druggie. Let me know when you have decoded it. http://www.breakmycipher.io"
-,
-}, '*');
-        }, 100);
-
-
-
-
-	$(document).on('enterKey', '.urlbar', function(e) {
-      var data = _.find(webpage_data, { url: $(this).val() });
-      if(data) {
-        $(this).siblings('.webpage-iframe').attr('src', data.src);
-        $('#instruction-text').html(data.instructions);
-        var tabID = $(this).parent().attr('id');
-        $('a[href="#' + tabID + '"]').html(data.title + '&nbsp;&nbsp;');
-      }
-	});
+    $(document).on('enterKey', '.urlbar', function(e) {
+        var data = _.find(webpage_data, {
+            url: $(this).val()
+        });
+        if (data) {
+            $(this).siblings('.webpage-iframe').attr('src', data.src);
+            $('#instruction-text').html(data.instructions);
+            var tabID = $(this).parent().attr('id');
+            $('a[href="#' + tabID + '"]').html(data.title + '&nbsp;&nbsp;');
+        }
+    });
 
     $(document).on('keyup', '.urlbar', function(e) {
-	  if(e.keyCode == 13)
-	  {
-	    $(this).trigger("enterKey");
-	  }
-	});
+        if (e.keyCode == 13) {
+            $(this).trigger("enterKey");
+        }
+    });
 
-// TAB STUFF
+    // TAB STUFF
 
     var tabNum = 1; // Each tab created gets UNIQUE tab ID
     $('.x-btn').click(function() {
-      var tab = $('a[href="#tab1"]').parent();
-      var index = $('li.nav-item').index(tab);
-      var active = tab.hasClass('active');
-      $('a[href="#tab1"]').parent().remove();
-      $('#tab1').remove();
-      fixTabs(active, index);
-    }).css({ display: 'none' });
+        var tab = $('a[href="#tab1"]').parent();
+        var index = $('li.nav-item').index(tab);
+        var active = tab.hasClass('active');
+        $('a[href="#tab1"]').parent().remove();
+        $('#tab1').remove();
+        fixTabs(active, index);
+    }).css({
+        display: 'none'
+    });
     $('.autocomplete').autocomplete(autocompleteParams);
     $('.urlbar').focus();
 
     $('#add-tab').click(function() {
-      tabNum++;
-      $('.x-btn').css({ display: '' });
-      var item = $('<li class="nav-item"></li>').appendTo('ul.nav-tabs');
-      var tab = $('<a data-toggle="tab" href="#tab' + tabNum + '">New Tab&nbsp;&nbsp;</a>').appendTo(item);
-      var xbtn = $('<button type="button" class="close x-btn">&times;</button>').appendTo(item);
-      xbtn.click(function() {
-        var tab = $('a[href="#tab' + this.tabNum + '"]').parent();
-        var index = $('li.nav-item').index(tab);
-        var active = tab.hasClass('active');
-        $('a[href="#tab' + this.tabNum + '"]').parent().remove();
-        $('#tab' + this.tabNum).remove();
-        fixTabs(active, index);
-      }.bind( { tabNum : tabNum } ));
+        tabNum++;
+        $('.x-btn').css({
+            display: ''
+        });
+        var item = $('<li class="nav-item"></li>').appendTo('ul.nav-tabs');
+        var tab = $('<a data-toggle="tab" href="#tab' + tabNum + '">New Tab&nbsp;&nbsp;</a>').appendTo(item);
+        var xbtn = $('<button type="button" class="close x-btn">&times;</button>').appendTo(item);
+        xbtn.click(function() {
+            var tab = $('a[href="#tab' + this.tabNum + '"]').parent();
+            var index = $('li.nav-item').index(tab);
+            var active = tab.hasClass('active');
+            $('a[href="#tab' + this.tabNum + '"]').parent().remove();
+            $('#tab' + this.tabNum).remove();
+            fixTabs(active, index);
+        }.bind({
+            tabNum: tabNum
+        }));
 
-      var pane = $('<div id="tab' + tabNum + '" class="tab-pane fill"></div>').appendTo('.tab-content');
-      var urlBar = $('<input type="text" class="urlbar autocomplete" placeholder="Type here to browse sites!"></input>').appendTo(pane);
-      urlBar.autocomplete(autocompleteParams);
-      $('<iframe class="webpage-iframe" src="misc/splash.html"></iframe>').appendTo(pane);
-      tab.tab('show');
-      urlBar.focus();
+        var pane = $('<div id="tab' + tabNum + '" class="tab-pane fill"></div>').appendTo('.tab-content');
+        var urlBar = $('<input type="text" class="urlbar autocomplete" placeholder="Type here to browse sites!"></input>').appendTo(pane);
+        urlBar.autocomplete(autocompleteParams);
+        $('<iframe class="webpage-iframe" src="misc/splash.html"></iframe>').appendTo(pane);
+        tab.tab('show');
+        urlBar.focus();
     });
 
     var fixTabs = function(active, index) {
-      console.log(index);
-      console.log(active);
-      if($('.x-btn').length === 1) $('.x-btn').css({ display: 'none' });
-      if(active) {
-        if(index >= $('li.nav-item').length) {
-          index = $('li.nav-item').length-1;
+        console.log(index);
+        console.log(active);
+        if ($('.x-btn').length === 1) $('.x-btn').css({
+            display: 'none'
+        });
+        if (active) {
+            if (index >= $('li.nav-item').length) {
+                index = $('li.nav-item').length - 1;
+            }
+            $('li:eq(' + index + ') a').tab('show');
         }
-        $('li:eq(' + index + ') a').tab('show');
-      }
     };
 
-	$("#sortable").sortable();
-	// $("#sortable").disableSelection();
+    $("#sortable").sortable();
+    // $("#sortable").disableSelection();
 
-	$.each(todoListItems, function(index, task) {
-		createTodo(task);
-	});
+    $.each(todoListItems, function(index, task) {
+        createTodo(task);
+    });
 
-	// $( document.body ).click(function() {
-	// 	console.log("sdf")
-	//   	// $( "div:hidden:first" ).show();
-	//   	$( "div:hidden:first" ).removeClass("hidden").addClass("item-fade-in");
-	//   	// $( "div:hidden:first" ).fadeIn( "slow" );
-	// });
-	addNextTask();
+    // $( document.body ).click(function() {
+    // 	console.log("sdf")
+    //   	// $( "div:hidden:first" ).show();
+    //   	$( "div:hidden:first" ).removeClass("hidden").addClass("item-fade-in");
+    //   	// $( "div:hidden:first" ).fadeIn( "slow" );
+    // });
+    addNextTask();
 
-	// mark task as done
-	$('.todolist').on('change','#sortable li input[type="checkbox"]',function(){
-		console.log($( "div.hidden" ).length);
-	    if($(this).prop('checked')){
-	    	if ($( "div.hidden" ).length == 0) {
-		    	$('.win-text').append('<h3 class="correct">Conglaturation!!! You have completed a great game. And prooved the justice of our culture. Now go and rest our heroes!</h3>');
-		    }
-	    	$(this).attr("disabled", "disabled");
-	        var doneItem = $(this).parent().parent().find('label').text();
-	        var label = $(this).parent().parent().find('label');
-	        $(label).css('textDecoration','line-through');
-	        addNextTask();
-	    }
-	});
+    // mark task as done
+    $('.todolist').on('change', '#sortable li input[type="checkbox"]', function() {
+        console.log($("div.hidden").length);
+        if ($(this).prop('checked')) {
+            if ($("div.hidden").length == 0) {
+                $('.win-text').append('<h3 class="correct">Conglaturation!!! You have completed a great game. And prooved the justice of our culture. Now go and rest our heroes!</h3>');
+            }
+            $(this).attr("disabled", "disabled");
+            var doneItem = $(this).parent().parent().find('label').text();
+            var label = $(this).parent().parent().find('label');
+            $(label).css('textDecoration', 'line-through');
+            addNextTask();
+        }
+    });
 
 });
 
 function addNextTask() {
-	$( "div:hidden:first" ).removeClass("hidden").addClass("item-fade-in");
+    $("div:hidden:first").removeClass("hidden").addClass("item-fade-in");
 }
 
 //create task
-function createTodo(text){
-    var markup = '<div class="hidden"><li class="todo-item ui-state-default"><div class="checkbox"><label><input type="checkbox" value="" />'+ text +'</label></div></li></div>';
+function createTodo(text) {
+    var markup = '<div class="hidden"><li class="todo-item ui-state-default"><div class="checkbox"><label><input type="checkbox" value="" />' + text + '</label></div></li></div>';
     // var markup = '<li class="todo-item ui-state-default"><div class="checkbox"><label><input type="checkbox" value="" />'+ text +'</label></div></li>';
     $('#sortable').append(markup);
     $('.add-todo').val('');
 }
 
 //remove done task from list
-function removeItem(element){
+function removeItem(element) {
     $(element).parent().remove();
 }
-
-
-
-
-
-
-
-
