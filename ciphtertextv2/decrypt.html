@@ -16,23 +16,34 @@
     <link rel="stylesheet" href="decrypt.css"></link>
   </head>
 
-  <body>
+  <body style="overflow: scroll;">
+
+    <!-- Modal -->
+    <div id="plaintext-modal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+            <h4 class="modal-title">Intercepted Message:</h4>
+          </div>
+          <div class="modal-body">
+            <p class="correct" id="plaintext-message-modal"></p>
+          </div>
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div> -->
+        </div>
+
+      </div>
+    </div>
+
     <div class="container-fluid fill">
 
-      <!-- <div id="puz" class="board">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-      </div> -->
       <div id="encrypt" class="board">
           <h3>Ecryption:</h3>
-          <div class="message-block"><p>Message</p></div>
+          <div class="fixed-piece message-block"><p>Message</p></div>
           <div class="connector"></div>
           <div class="fixed-piece"><p>Letter to Number</p></div>
           <div class="connector"></div>
@@ -48,11 +59,13 @@
           <div class="connector"></div>
           <div class="fixed-piece"><p>Number to Letter</p></div>
           <div class="connector"></div>
-          <div class="ciphertext-block"><p>Ciphertext</p></div>
+          <div class="fixed-piece ciphertext-block"><p>Ciphertext</p></div>
       </div>
       
       <div id="puz" class="board">
         <h3>Decryption:</h3>
+          <div class="fixed-piece ciphertext-block"><p>Ciphertext</p></div>
+          <div class="connector"></div>
           <div class="fixed-piece"><p>Letter to Number</p></div>
           <div class="connector"></div>
           <div class="dec-block"></div>
@@ -66,6 +79,8 @@
           <div class="dec-block"></div>
           <div class="connector"></div>
           <div class="fixed-piece"><p>Number to Letter</p></div>
+          <div class="connector"></div>
+          <div class="fixed-piece message-block"><p>Message</p></div>
       </div>
 
       <div id="pieces" class="board">

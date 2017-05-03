@@ -70,7 +70,7 @@ $(document).ready(function() {
     // }
 
     $('.chat').on('chatMessage', function(e, msg) {
-      sendMessage(msg);
+        sendMessage(msg);
     });
 
     function sendMessage(messageText) {

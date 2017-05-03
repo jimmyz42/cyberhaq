@@ -188,22 +188,26 @@ var updateMessage = function() {
     		$('#plaintext-modal').modal('show');
     		document.getElementById("plaintext-message-modal").innerHTML = text;
     		window.sessionStorage.setItem('solvedCipher', JSON.stringify(true));
+    		
     		parent.postMessage({
 	            type: 'chat-box-message',
 	            message: "Looks like you decrypted the message. The message says:",
 	        }, '*');
+
 	    	setTimeout(function() {
 		        parent.postMessage({
 		            type: 'chat-box-message',
 		            message: text,
 		        }, '*');
 	        }, 2000);
+
 	        setTimeout(function() {
 		        parent.postMessage({
 		            type: 'chat-box-message',
 		            message: "You now know the meeting spot. Use this info to hack the target's wifi. Go to the terminal to continue.",
 		        }, '*');
 	        }, 6000);
+
     		// alert("Excellent! You decrypted the message. Check this off on your list. Next, go back to the home screen to do the next task.")
     		
     	}

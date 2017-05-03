@@ -1,10 +1,3 @@
-var audio = new Audio("sound/newTab.wav");
-audio.oncanplaythrough = function ( ) { }
-audio.onended = function ( ) { }
-
-
-audio.play()
-
 $( document ).ready(function() {
 
     var autocompleteParams = {
@@ -19,43 +12,8 @@ $( document ).ready(function() {
         },
     };
 
+
 /////// Index.html messages
-
-    parent.postMessage({
-   type: 'chat-box-message',
-   message: "It's your boss, ***. and I will help you hack a bank account. Follow my instructions and do everything as I say to avoid detection. Also, if you're stuck and need help, message 'help' and I'll help you out."
-,
-}, '*');
-
-//  document.getElementById('endereco').onkeydown = function(event){
-//     var e = event || window.event;
-//     if(e.keyCode == 13){
-//         alert('5');
-//     }
-// }
-
-// if(characterCode == 13)
-// {
-//     console.log('hi'); // returning false will prevent the event from bubbling up.
-// }
-
-    setTimeout(function() {
-            // welcomeMessage();
-                parent.postMessage({
-   type: 'chat-box-message',
-   message: "Someone named " + window.sessionStorage.getItem("lucyName") + " wants a hacking service, _______. Looks like they want the head of Bexley Co: " + window.sessionStorage.getItem("jackName")
-,
-}, '*');
-          }, 2000);
-
-    setTimeout(function() {
-      parent.postMessage({
-         type: 'chat-box-message',
-         message: "Got a message between " + window.sessionStorage.getItem("jackName") + " and a client, some druggie. Let me know when you have decoded it. http://www.breakmycipher.io"
-      ,
-      }, '*');
-
-          }, 6000);
 
 
 
