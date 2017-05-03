@@ -96,11 +96,11 @@ fakebookData = [
       "image": "https://randomuser.me/api/portraits/women/48.jpg", 
     },
     {
-      "name": "Janet Herrera",
+      "name": "Janet January Herrera",
       "image": "https://randomuser.me/api/portraits/women/81.jpg",
     },
     {
-      "name": "Valerie Rivera",
+      "name": "Valerie Sayo Rivera",
       "image": "https://randomuser.me/api/portraits/women/57.jpg",
     },
   ],
@@ -162,15 +162,15 @@ fakebookData = [
   "image": "https://randomuser.me/api/portraits/women/3.jpg", 
 },
     {
-      "name": "Arron Hunt",
+      "name": "Arron Cool Hunt",
       "image": "https://randomuser.me/api/portraits/men/9.jpg",
     },
     {
-      "name": "Jackie Gibson",
+      "name": "Jackie Rockie Gibson",
       "image": "https://randomuser.me/api/portraits/women/20.jpg",
     },
     {
-      "name": "Beverly Watts",
+      "name": "Beverly Hills Watts",
       "image": "https://randomuser.me/api/portraits/women/45.jpg",
     },
   ],
@@ -236,19 +236,19 @@ fakebookData = [
   "image": "https://randomuser.me/api/portraits/women/60.jpg", 
 },
     {
-      "name": "Alan Evans",
+      "name": "Alan Silvester Evans",
       "image": "https://randomuser.me/api/portraits/men/28.jpg",
     },
     {
-      "name": "Jessica Flores",
+      "name": "Jessica Jones Flores",
       "image": "https://randomuser.me/api/portraits/women/25.jpg",
     },
     {
-      "name": "Clayton Gordon",
+      "name": "Clayton Armada Gordon",
       "image": "https://randomuser.me/api/portraits/men/15.jpg",
     },
     {
-      "name": "Brooklyn Cox",
+      "name": "Brooklyn Newark Cox",
       "image": "https://randomuser.me/api/portraits/women/56.jpg",
     },
   ],
@@ -314,11 +314,16 @@ fakebookData = [
   "image": "https://randomuser.me/api/portraits/women/25.jpg", 
 },
     {
-      "name": "Duane Nelson",
+      "name": "Duane Rock Nelson",
       "image": "https://randomuser.me/api/portraits/men/16.jpg",
     },
     {
-      "name": "Lynn Ross",
+      "name": "Brooklyn Newark Cox",
+      "image": "https://randomuser.me/api/portraits/women/56.jpg",
+    },
+
+    {
+      "name": "Lynn Birthright Ross",
       "image": "https://randomuser.me/api/portraits/women/96.jpg",
     },
   ],
