@@ -21,6 +21,9 @@ $(function() {
 
     if($('#username').val() === window.sessionStorage.getItem('jackEmail') && $('#password').val() === window.sessionStorage.getItem('fakebookPassword')) {
       window.location.href='timeline.html';
+
+      window.sessionStorage.setItem('solvedFakebook', true);
+
       parent.postMessage({
         type: 'chat-box-message',
         message: 'Now try to access ' + jackName + '\'s bank account! People put their whole lives on Fakebook, maybe the information on their Fakebook will be of some help.',

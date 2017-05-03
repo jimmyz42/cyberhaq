@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var targetName = window.sessionStorage.getItem('jackName');
     console.log(window.sessionStorage.getItem("jackEmail"));
-    if (window.sessionStorage.getItem("emailCracked") == "true") {
+    if (window.sessionStorage.getItem("solvedMail") == "true") {
         parent.postMessage({
             type: 'chat-box-message',
             message: 'You already have access to your target\'s email.',

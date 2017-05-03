@@ -27,6 +27,23 @@ div {
   background-color: white;
 }
 
+.bookmark-contain {
+  width: 200px;
+  margin: auto;
+  position: relative;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.lock {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
 #zr-logo {
   width: 30px;
   height: 30px;

@@ -13,8 +13,6 @@ $( document ).ready(function() {
     };
     var jackName = window.sessionStorage.getItem('jackName');
     var lucyName = window.sessionStorage.getItem('lucyName');
-    console.log(jackName);
-    console.log(lucyName);
 
 /////// Index.html messages
 
@@ -43,6 +41,10 @@ $( document ).ready(function() {
 	    $(this).trigger("enterKey");
 	  }
 	});
+
+    $(document).on('click', '.refresh-btn', function() {
+      $(this).siblings('.urlbar').trigger('enterKey');
+    });
 
 // TAB STUFF
 
@@ -74,6 +76,7 @@ $( document ).ready(function() {
       }.bind( { tabNum : tabNum } ));
 
       var pane = $('<div id="tab' + tabNum + '" class="tab-pane fill"></div>').appendTo('.tab-content');
+      var refresh = $('<button type="button" class="btn btn-default btn-xs refresh-btn"><span class="glyphicon glyphicon-refresh"></span></button>').appendTo(pane);
       var urlBar = $('<input type="text" class="urlbar autocomplete" placeholder="Type here to browse sites!"></input>').appendTo(pane);
       urlBar.autocomplete(autocompleteParams);
       $('<iframe class="webpage-iframe" src="misc/splash.html"></iframe>').appendTo(pane);
@@ -82,8 +85,6 @@ $( document ).ready(function() {
     });
 
     var fixTabs = function(active, index) {
-      console.log(index);
-      console.log(active);
       if($('.x-btn').length === 1) $('.x-btn').css({ display: 'none' });
       if(active) {
         if(index >= $('li.nav-item').length) {

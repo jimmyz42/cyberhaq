@@ -18,9 +18,11 @@ iframe {
 }
 
 .urlbar {
-  width: 100%;
+  float: right;
+  width: calc(100% - 28px);
   margin-bottom: 10px;
 }
+
 
 #add-tab {
   float: right;

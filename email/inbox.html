@@ -48,7 +48,7 @@
                         <li><a href="#">Unstarred</a></li>
                     </ul>
                 </div>
-                <button type="button" class="btn btn-default" data-toggle="tooltip" title="Refresh">
+                <button type="button" class="btn btn-default" data-toggle="tooltip" title="Refresh" id="zmail-refresh">
                       &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-refresh"></span>&nbsp;&nbsp;&nbsp;</button>
                 <!-- Single button -->
                 <div class="btn-group">
@@ -218,7 +218,7 @@
     <script>
         $(document).ready(function() {
             // email has already been cracked , save it
-            window.sessionStorage.setItem("emailCracked", "true");
+            window.sessionStorage.setItem("solvedMail", "true");
 
             // fakebook password reset sent or not
             if (window.sessionStorage.getItem("resetEmailSent") == "true") {
@@ -246,6 +246,10 @@
                 console.log(zmailContent);
                 window.sessionStorage.setItem("zmailContent", zmailContent);
                 window.location.href = "email-detail.html";
+            });
+
+            $('#zmail-refresh').click(function() {
+                location.reload();
             });
         });
     </script>
