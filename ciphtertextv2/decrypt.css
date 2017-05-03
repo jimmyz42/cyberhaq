@@ -6,6 +6,17 @@
     margin: 20px;
 }
 
+#pieces {
+    margin: 20px;
+    text-align: center;
+}
+
+#pieces>div {
+    vertical-align:top;
+    text-align: center;
+    display: inline-block;
+}
+
 #puz>div {
     vertical-align:top;
     text-align: center;
@@ -24,41 +35,23 @@
     padding: 5px;
 }
 
-#encrypt>div {
+div.fixed-piece {
+    vertical-align: middle;
+    text-align: center;
     background-color: #cbcfd6;
+    width:75px;
+    height:75px;
+    border:1px solid black;
+}
+
+#encrypt>div {
+    /*background-color: #cbcfd6;*/
     vertical-align:top;
     text-align: center;
     display: inline-block;
 }
 
-div.fixed-piece {
-    vertical-align: middle;
-    text-align: center;
-    background-color: #cbcfd6;
-    width:100px;
-    height:100px;
-    border:1px solid black;
-}
-
-/*.fixed-piece>p {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}*/
-
-#puz>div>p {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-#encrypt>div>p {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-#pieces>div>p {
+p {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -70,15 +63,16 @@ div.fixed-piece {
 
 div.dec-block {
     /*background-color:white;*/
-    width:100px;
-    height:100px;
+    width:75px;
+    height:75px;
     border:1px solid black;
 }
 
 div.enc-block {
     /*background-color:white;*/
-    width:100px;
-    height:100px;
+    background-color: #e0e0e0;
+    width:75px;
+    height:75px;
     border:1px solid black;
 }
 
@@ -86,17 +80,25 @@ div.connector {
     width:50px;
     height:0px;
     border:1px solid black;
-    margin-top: 50px;
+    margin-top: 37px;
     margin-bottom: 50px;
 }
 
 #pieces>div {
     display: inline-block;
     background-color: #5bc0de;
-    width:100px;
-    height:100px;
+    width:75px;
+    height:75px;
     border:1px solid black;
 }
 .dropped{
     background-color: red !important;
+}
+
+.fixed-piece.message-block {
+    background-color: #47e56e;
+}
+
+div>.fixed-piece.ciphertext-block {
+    background-color: #ed6363;
 }
