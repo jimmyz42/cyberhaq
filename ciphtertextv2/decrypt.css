@@ -1,0 +1,102 @@
+#puz {
+    margin: 20px;
+}
+
+#encrypt {
+    margin: 20px;
+}
+
+#puz>div {
+    vertical-align:top;
+    text-align: center;
+    display: inline-block;
+}
+
+.enc-block>p {
+    padding: 5px;
+}
+
+.dec-block>p {
+    padding: 5px;
+}
+
+.puz-piece>p {
+    padding: 5px;
+}
+
+#encrypt>div {
+    background-color: #cbcfd6;
+    vertical-align:top;
+    text-align: center;
+    display: inline-block;
+}
+
+div.fixed-piece {
+    vertical-align: middle;
+    text-align: center;
+    background-color: #cbcfd6;
+    width:100px;
+    height:100px;
+    border:1px solid black;
+}
+
+/*.fixed-piece>p {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}*/
+
+#puz>div>p {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#encrypt>div>p {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#pieces>div>p {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.reset-btn {
+    margin: 20px;
+}
+
+div.dec-block {
+    /*background-color:white;*/
+    width:100px;
+    height:100px;
+    border:1px solid black;
+}
+
+div.enc-block {
+    /*background-color:white;*/
+    width:100px;
+    height:100px;
+    border:1px solid black;
+}
+
+div.connector {
+    width:50px;
+    height:0px;
+    border:1px solid black;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#pieces>div {
+    display: inline-block;
+    background-color: #5bc0de;
+    width:100px;
+    height:100px;
+    border:1px solid black;
+}
+.dropped{
+    background-color: red !important;
+}
