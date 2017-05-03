@@ -20,7 +20,7 @@ Chat
     position: relative;
     width: 300px;
     height: 100vh;
-    max-height: 300px;
+    max-height: 400px;
     z-index: 2;
     overflow: hidden;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
