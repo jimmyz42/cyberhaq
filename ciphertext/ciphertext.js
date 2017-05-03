@@ -31,11 +31,15 @@ $( document ).ready(function() {
             	"and press 'Update Message' or press enter to check your answer.",
         }, '*');
 
-        parent.postMessage({
-            type: 'chat-box-message',
-            message: "Hint: you can check each letter. If you guess a letter correct that letter is filled out in the rest " +
-            	"of the text.",
-        }, '*');
+        setTimeout(function() {
+	        parent.postMessage({
+	            type: 'chat-box-message',
+	            message: "Hint: you can check each letter. If you guess a letter correct that letter is filled out in the rest " +
+	            	"of the text.",
+	        }, '*');
+	      }, 2000);
+
+       
 
 		generateCipher(function(mapping) {
 			ciph_mapping = mapping;
@@ -188,14 +192,18 @@ var updateMessage = function() {
 	            type: 'chat-box-message',
 	            message: "Looks like you decrypted the message. The message says:",
 	        }, '*');
-	        parent.postMessage({
-	            type: 'chat-box-message',
-	            message: text,
-	        }, '*');
-	        parent.postMessage({
-	            type: 'chat-box-message',
-	            message: "You now know the meeting spot. Use this info to hack the target's wifi. Go to the terminal to continue.",
-	        }, '*');
+	    	setTimeout(function() {
+		        parent.postMessage({
+		            type: 'chat-box-message',
+		            message: text,
+		        }, '*');
+	        }, 200);
+	        setTimeout(function() {
+		        parent.postMessage({
+		            type: 'chat-box-message',
+		            message: "You now know the meeting spot. Use this info to hack the target's wifi. Go to the terminal to continue.",
+		        }, '*');
+	        }, 400);
     		// alert("Excellent! You decrypted the message. Check this off on your list. Next, go back to the home screen to do the next task.")
     		
     	}
