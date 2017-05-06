@@ -16,10 +16,14 @@ hr { margin-top: 5px;margin-bottom: 10px; }
 .ad a.title {color: #15C;text-decoration: none;font-weight: bold;font-size: 110%;}
 .ad a.url {color: #093;text-decoration: none;}
 
-.subject {
+.inbox.subject {
   white-space: nowrap;
   display: inline-block;
   width: calc(100% - 270px);
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+img.full {
+  width: 100%;
 }

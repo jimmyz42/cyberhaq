@@ -145,7 +145,6 @@
             });
 
             var emailContent = JSON.parse(window.sessionStorage.getItem("zmailContent"));
-            console.log(emailContent);
             $(".name").text(emailContent["name"] + " <email@mail.com>");
             $(".subject").text(emailContent["subject"]);
             if (emailContent["reset"] == "true") {

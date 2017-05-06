@@ -34,8 +34,14 @@ $(document).ready(function() {
                 }, '*');
                 window.location.href = "wrongEmail.html";
             } else {
-                if ($(".subject-options option:checked").val() == puzzleData["phishing"]) {
+                var optionName = $(".subject-options option:checked").val();
+                if (optionName == puzzleData["phishing"]) {
                     window.sessionStorage.setItem('phishingSuccess', "true");
+                    window.sessionStorage.setItem('phishingEmailData', JSON.stringify({
+                      name: optionName.charAt(0).toUpperCase() + optionName.substr(1),
+                      subject: $(".subject-options option:checked").html(),
+                      image: 'images/' + optionName + '.png',
+                    }));
                     parent.postMessage({
                         type: 'chat-box-message',
                         message: 'Good job! Now you have access to your target\'s zmail.',
