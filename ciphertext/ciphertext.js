@@ -210,7 +210,7 @@ var updateMessage = function() {
 	        setTimeout(function() {
 		        parent.postMessage({
 		            type: 'chat-box-message',
-		            message: "You now know the meeting spot. Use this info to hack the target's wifi. Go to the terminal to continue.",
+		            message: "You now know the meeting spot. Use this info to create fake hotspot wifi and lure your target. Go to the terminal to continue.",
 		        }, '*');
 	        }, 6000);
 
