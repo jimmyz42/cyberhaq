@@ -92,13 +92,19 @@ $( document ).ready(function() {
 
 		$('.message-letter').on('input', function (e) {
 	    	e.target.value = e.target.value.toUpperCase();
-	        $(this).next().focus();
+            if('A' <= e.target.value && e.target.value <= 'Z') {
+              var unfilled = $('.message-letter:not(.space-box, .correct)');
+              unfilled.eq(unfilled.index($(this))+1).focus();
+            } else {
+              e.target.value = '';
+            }
 	    });
 
 	    $('.message-letter').on("keypress", function (e) {            
 		    if (e.keyCode == 13) {
 		        buttonAudio.play()
 		        updateMessage();
+                $('.message-letter:not(.space-box, .correct):first').focus();
 		    }
 		});
 

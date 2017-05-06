@@ -23,11 +23,16 @@ $( document ).ready(function() {
 }, '*');
 
 
-
+    $(document).on('click', '.urlbar', function() {
+      $(this).select();
+    });
 
 	$(document).on('enterKey', '.urlbar', function(e) {
-      var data = _.find(webpage_data, { url: $(this).val() });
+      var data = _.find(webpage_data, { url: $(this).val() })
+        || _.find(webpage_data, { url: 'https://' + $(this).val() }) 
+        || _.find(webpage_data, { url: 'https://www.' + $(this).val() }); 
       if(data) {
+        $(this).val(data.url);
         $(this).siblings('.webpage-iframe').attr('src', data.src);
         $('#instruction-text').html(data.instructions);
         var tabID = $(this).parent().attr('id');

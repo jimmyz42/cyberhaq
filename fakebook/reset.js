@@ -1,4 +1,9 @@
 $(function() {
+  $('#pass1').focus();
+  $('#pass1').keyup(function(e) {
+    if(e.keyCode === 13) $('#pass2').focus();
+  });
+
   $('#pass2').keyup(function(e) {
     if(e.keyCode === 13) $('#reset-submit').click();
   });
@@ -15,6 +20,9 @@ $(function() {
       window.sessionStorage.setItem('fakebookPassword', $('#pass1').val());
       $('.alert-success').css({ display: 'block' });
       $('.alert-danger').css({ display: 'none' });
+      setTimeout(function() {
+        window.location.href='fakebook.html';
+      }, 1000);
     }
   });
 });

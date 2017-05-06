@@ -13,6 +13,9 @@ $(function() {
     $('#email').focus();
   });
 
+  $('#username').keyup(function(e) {
+    if(e.keyCode === 13) $('#password').focus();
+  });
   $('#password').keyup(function(e) {
     if(e.keyCode === 13) $('#login-submit').click();
   });
@@ -57,6 +60,10 @@ $(function() {
           type: 'chat-box-message',
           message: 'Nice! Now go to ' + jackName + '\'s email to find the password reset email.',
         }, '*'); 
+        setTimeout(function() {
+          $('#reset').modal('hide');
+          $('#email').val('');
+        }, 1000);
     } else {
         $('.alert-success').css({ display: 'none' });
         $('.alert-danger').css({ display: 'block' });

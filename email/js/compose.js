@@ -15,6 +15,8 @@ $(document).ready(function() {
             message: 'Using information you obtained from previous parts, compose a good phishing email to get zmail credentials of your target.',
         }, '*');
 
+        $('#inputTo').focus();
+
         $("select.subject-options").change(function() {
             $(".email-content").empty();
             // console.log($( this ).val() + ".png");
