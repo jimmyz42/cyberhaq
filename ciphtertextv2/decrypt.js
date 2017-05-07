@@ -31,7 +31,7 @@ $(document).ready(function () {
     setTimeout(function() {
         parent.postMessage({
             type: 'chat-box-message',
-            message: "Drag the blocks into the decryption scheme to write your decryption method.",
+            message: "Drag the blue blocks into the decryption scheme to write your decryption method.",
         }, '*');
       }, 2000);
 
