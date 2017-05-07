@@ -21,98 +21,97 @@ $( document ).ready(function() {
             type: 'chat-box-message',
             message: 'You solved this already.',
         }, '*');
-	} else {
+	} 
 
-		generateBottomAlphabet();
+	generateBottomAlphabet();
 
-		parent.postMessage({
+	parent.postMessage({
+        type: 'chat-box-message',
+        message: "Looks like you intercepted a message. Type the letters you think correspond with the ciphertext, " +
+        	"and press 'Update Message' or press enter to check your answer.",
+    }, '*');
+
+    setTimeout(function() {
+        parent.postMessage({
             type: 'chat-box-message',
-            message: "Looks like you intercepted a message. Type the letters you think correspond with the ciphertext, " +
-            	"and press 'Update Message' or press enter to check your answer.",
+            message: "Hint: you can check each letter. If you guess a letter correct that letter is filled out in the rest " +
+            	"of the text.",
         }, '*');
+      }, 6000);
 
-        setTimeout(function() {
-	        parent.postMessage({
-	            type: 'chat-box-message',
-	            message: "Hint: you can check each letter. If you guess a letter correct that letter is filled out in the rest " +
-	            	"of the text.",
-	        }, '*');
-	      }, 6000);
+   
 
-       
-
-		generateCipher(function(mapping) {
-			ciph_mapping = mapping;
-			encryptText(mapping, text, function(ciphertext) {
-				// $( ".ciphertext" ).html(ciphertext);
-				textlist = text.split("");
-				wordlist = text.split(" ");
-				ciphertextList = ciphertext.split("");
-				cipherwordList = ciphertext.split(" ");
-				cipherwordList.forEach(function(cipherword, wordIndex) {
-					var cipherwordletters = cipherword.split("");
-					var div = "<div class='cipherword-div'>";
-					cipherwordletters.forEach(function(element, index) {
-						if (element == "." || element == "," || element == "'") {
-							div += "<div class='message-char'>"
-								+ "<h3 class='cipher-char'>" + cipherwordletters[index] + "</h3>"
-								+ "<input type='text' disabled class='message-letter space-box' maxlength='1' value='" 
-								+ element + "'>"
-								+ "</div>";
-						} 
-						else {
-							div += "<div class='message-char'>"
-								+ "<h3 class='cipher-char'>" + cipherwordletters[index] + "</h3>"
-								+ "<input type='text' class='message-letter' maxlength='1'>"
-								+ "</div>";
-						}
-					})
-					$(".message").append(div + "</div>");
-					$(".message").append("<div class='message-char'>"
-								+ "<h3 class='cipher-char'> </h3>"
-								+ "<input type='text' disabled class='message-letter space-box' maxlength='1' value=' '>"
-								+ "</div>");
-				})
-			})
-
-			generateStartingLetters(function(lettersList) {
-				startingLetters = lettersList;
-				console.log(startingLetters);
-				startingLetters.forEach(function(obj, index) {
-		    		var startidname = "#alph-letter-" + ciph_mapping[obj];
-		    		console.log(startidname);
-					if (!$(startidname).hasClass("correct")) {
-						$(startidname).val(obj);
-						$(startidname).addClass("correct");
+	generateCipher(function(mapping) {
+		ciph_mapping = mapping;
+		encryptText(mapping, text, function(ciphertext) {
+			// $( ".ciphertext" ).html(ciphertext);
+			textlist = text.split("");
+			wordlist = text.split(" ");
+			ciphertextList = ciphertext.split("");
+			cipherwordList = ciphertext.split(" ");
+			cipherwordList.forEach(function(cipherword, wordIndex) {
+				var cipherwordletters = cipherword.split("");
+				var div = "<div class='cipherword-div'>";
+				cipherwordletters.forEach(function(element, index) {
+					if (element == "." || element == "," || element == "'") {
+						div += "<div class='message-char'>"
+							+ "<h3 class='cipher-char'>" + cipherwordletters[index] + "</h3>"
+							+ "<input type='text' disabled class='message-letter space-box' maxlength='1' value='" 
+							+ element + "'>"
+							+ "</div>";
+					} 
+					else {
+						div += "<div class='message-char'>"
+							+ "<h3 class='cipher-char'>" + cipherwordletters[index] + "</h3>"
+							+ "<input type='text' class='message-letter' maxlength='1'>"
+							+ "</div>";
 					}
-		    	})
-				updateMessage();
+				})
+				$(".message").append(div + "</div>");
+				$(".message").append("<div class='message-char'>"
+							+ "<h3 class='cipher-char'> </h3>"
+							+ "<input type='text' disabled class='message-letter space-box' maxlength='1' value=' '>"
+							+ "</div>");
 			})
-		});
+		})
 
-		$('.message-letter').on('input', function (e) {
-	    	e.target.value = e.target.value.toUpperCase();
-            if('A' <= e.target.value && e.target.value <= 'Z') {
-              var unfilled = $('.message-letter:not(.space-box, .correct)');
-              unfilled.eq(unfilled.index($(this))+1).focus();
-            } else {
-              e.target.value = '';
-            }
-	    });
+		generateStartingLetters(function(lettersList) {
+			startingLetters = lettersList;
+			console.log(startingLetters);
+			startingLetters.forEach(function(obj, index) {
+	    		var startidname = "#alph-letter-" + ciph_mapping[obj];
+	    		console.log(startidname);
+				if (!$(startidname).hasClass("correct")) {
+					$(startidname).val(obj);
+					$(startidname).addClass("correct");
+				}
+	    	})
+			updateMessage();
+		})
+	});
 
-	    $('.message-letter').on("keypress", function (e) {            
-		    if (e.keyCode == 13) {
-		        buttonAudio.play()
-		        updateMessage();
-                $('.message-letter:not(.space-box, .correct):first').focus();
-		    }
-		});
+	$('.message-letter').on('input', function (e) {
+    	e.target.value = e.target.value.toUpperCase();
+        if('A' <= e.target.value && e.target.value <= 'Z') {
+          var unfilled = $('.message-letter:not(.space-box, .correct)');
+          unfilled.eq(unfilled.index($(this))+1).focus();
+        } else {
+          e.target.value = '';
+        }
+    });
 
-	    $('.test-message').click(function () {
-	    	buttonAudio.play()
-	    	updateMessage();
-	    })
-	}
+    $('.message-letter').on("keypress", function (e) {            
+	    if (e.keyCode == 13) {
+	        buttonAudio.play()
+	        updateMessage();
+            $('.message-letter:not(.space-box, .correct):first').focus();
+	    }
+	});
+
+    $('.test-message').click(function () {
+    	buttonAudio.play()
+    	updateMessage();
+    })
 	
 });
 

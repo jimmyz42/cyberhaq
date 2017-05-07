@@ -57,6 +57,10 @@ p {
     transform: translateY(-50%);
 }
 
+.alert>p {
+    top: 0;
+}
+
 .reset-btn {
     margin: 20px;
 }

@@ -13,6 +13,7 @@
     <script src="../inject.js"></script>
     <script src="decrypt.js"></script>
     <!-- <link rel="stylesheet" href="../main.css"></link> -->
+    <link rel="stylesheet" href="../main.css"></link>
     <link rel="stylesheet" href="decrypt.css"></link>
   </head>
 
@@ -39,8 +40,17 @@
       </div>
     </div>
 
-    <div class="container-fluid fill">
+    <div class="alert alert-success" style="margin-bottom: 5px; padding: 5px; text-align: center;">
+        <p class="anonymous-font intercept-message" style="font-size: 24px; top: 0; transform: translateY(0%);">Message Intercepted</p>
+        <p class="anonymous-font intercept-message" style="top: 0; transform: translateY(0%);">Sent from <span class="jack-name"></span> to [untraceable]</p>
+    </div>
+    <div class="alert alert-warning" style="margin: 0; padding: 2px; text-align: center;">
+        <!-- <h3 class="intercept-message">Message Intercepted</h3> -->
+        <p class="anonymous-font intercept-message" style="top: 0; transform: translateY(0%);">Warning: Encryption Detected. Please Decrypt.</p>
+        <p class="anonymous-font intercept-message" style="top: 0; transform: translateY(0%);">Click "Update Message" or Press Enter to Check Current Guess.</p>
+    </div>
 
+    <div class="container-fluid fill">
       <div id="encrypt" class="board">
           <h3>Ecryption:</h3>
           <div class="fixed-piece message-block"><p>Message</p></div>
