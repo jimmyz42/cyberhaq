@@ -270,17 +270,21 @@
                 window.sessionStorage.setItem('readEmails', JSON.stringify(readEmails));
 
                 event.preventDefault();
-                var name = $(this).find(".name").get(0).innerHTML;
-                var subject = $(this).find(".subject").get(0).innerHTML;
-                var emailContent = $(this).find(".email-content").get(0).innerHTML;
-                emailContent = emailContent.replace(/"/g, "\\\"").replace(/'/g, "\\\'");
-                var zmailContent = '{"name" : "' + name + '", "subject" : "' + subject + '", "content" : "' + emailContent + '"';
+                var name = $(this).find(".name").html();
+                var subject = $(this).find(".subject").html();
+                var emailContent = $(this).find(".email-content").html();
+                var emailTime = $(this).find(".badge").html();               
+                var zmailContent = {
+                  name: name,
+                  subject: subject,
+                  content: emailContent,
+                  time: emailTime,
+                };
+
                 if ($(this).attr('class').includes("reset-email")) {
-                     zmailContent = zmailContent + ', "reset" : "true" }';
-                } else {
-                    zmailContent = zmailContent + '}';
+                    zmailContent.reset = true;
                 }
-                window.sessionStorage.setItem("zmailContent", zmailContent);
+                window.sessionStorage.setItem("zmailContent", JSON.stringify(zmailContent));
                 window.location.href = "email-detail.html";
             });
 

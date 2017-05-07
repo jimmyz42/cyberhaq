@@ -99,9 +99,9 @@
                     <div class="tab-pane fade in active" id="home">
                         <div class="list-group">
                             <a href="#" class="list-group-item">
-                                <span class="subject" style="font-weight: bold; font-size:20px;">Project 4 question</span><br />
-                                <span class="name" style="min-width: 120px; display: inline-block;">Jason Markus</span>
-                                <span class="badge">12:09 AM</span> <span class="pull-right"><span class="glyphicon glyphicon-paperclip"></span></span>
+                                <span class="subject" style="font-weight: bold; font-size:20px;"></span><br />
+                                <span class="name" style="min-width: 120px; display: inline-block;"></span>
+                                <span class="badge"></span> <span class="pull-right"><span class="glyphicon glyphicon-paperclip"></span></span>
                                 <hr>
                                 <p style="font-size: 18px;" class="email-content">
                                 </p>
@@ -147,6 +147,7 @@
             var emailContent = JSON.parse(window.sessionStorage.getItem("zmailContent"));
             $(".name").text(emailContent["name"] + " <email@mail.com>");
             $(".subject").text(emailContent["subject"]);
+            $('.list-group-item .badge').text(emailContent['time']);
             if (emailContent["reset"] == "true") {
                 $(".email-content").html("<img src='images/fakebook-logo.png' style='background-color:#55ACEE;'/><br /><br /><a name='Fakebook' href='../fakebook/reset.html'>Reset password</a><br /><br /><p>&#9400; Fakebook Inc</p>");
                 $('a[name="Fakebook"]').click(function() {
