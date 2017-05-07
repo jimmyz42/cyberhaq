@@ -1,0 +1,77 @@
+body {
+  margin: 40px;
+  height: 100%;
+  overflow: scroll;
+}
+
+div.ciphertext {
+  margin: 5px;
+  font-size: 15px;
+  font-family: 'Anonymous Pro', monospace;
+}
+
+div.message {
+  margin: 5px;
+}
+
+div.message-char {
+  text-align: center;
+  display: inline-block;
+}
+
+div.unused-letter {
+  text-align: center;
+  display: inline-block;
+  margin: 5px;
+  color: green;
+}
+
+div.alphabet-char {
+  text-align: center;
+  color: #074fc1;
+  display: inline-block;
+  margin: 1px;
+  /*width: 20px;*/
+}
+
+div.cipherword-div {
+  display: inline-block;
+}
+
+input.message-letter
+{
+    width: 20px;
+    text-align: center;
+    border: 1px solid black;
+    margin: 1px;
+    font-family: 'Anonymous Pro', monospace;
+}
+
+input.alph-message-letter
+{
+    width: 20px;
+    text-align: center;
+    border: 1px solid black;
+    margin: 1px;
+    font-family: 'Anonymous Pro', monospace;
+}
+
+.anonymous-font {
+  font-family: 'Anonymous Pro', monospace;
+}
+
+.correct {
+  color: green;
+  font-family: 'Anonymous Pro', monospace;
+  border: none;
+}
+
+input.space-box
+{
+    width: 20px;
+    border: none;
+}
+
+.test-message {
+  margin: 20px;
+}
