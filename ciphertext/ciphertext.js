@@ -23,6 +23,8 @@ $( document ).ready(function() {
         }, '*');
 	} 
 
+	generateUnusedLetters();
+
 	generateBottomAlphabet();
 
 	parent.postMessage({
@@ -85,6 +87,8 @@ $( document ).ready(function() {
 					$(startidname).val(obj);
 					$(startidname).addClass("correct");
 				}
+				var unusedid = "#unused-letter-" + obj;
+				$(unusedid).remove();
 	    	})
 			updateMessage();
 		})
@@ -155,6 +159,18 @@ var generateBottomAlphabet = function() {
 	})
 }
 
+var generateUnusedLetters = function() {
+	var ualphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	var uletters = ualphabet.split("");
+	console.log(uletters);
+	uletters.forEach(function(element, index) {
+		console.log(element);
+		$(".unused-letters").append("<div class='unused-letter'>"
+			+ "<h4 id='unused-letter-" + element + "'>" + element + "</h4>"
+			+ "</div>");
+	});
+}
+
 var updateMessage = function() {
     	var correct = true;
     	var textlist = text.split('');
@@ -164,6 +180,10 @@ var updateMessage = function() {
     			correctletters.push($(this).val());
     			$(this).addClass("correct");
     			$(this).prop('disabled', true);
+    			var ltr = $(this).val();
+    			if (document.getElementById("unused-letter-" + ltr)) {
+					$("#unused-letter-" + ltr).remove();
+    			}
     		} else {
     			$(this).val("");
     			// correct = false;

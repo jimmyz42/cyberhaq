@@ -66,6 +66,13 @@ div.message-char {
   display: inline-block;
 }
 
+div.unused-letter {
+  text-align: center;
+  display: inline-block;
+  margin: 5px;
+  color: green;
+}
+
 div.alphabet-char {
   text-align: center;
   color: #074fc1;
