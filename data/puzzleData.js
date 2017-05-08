@@ -4,10 +4,10 @@ var puzzleData = [
 		"wifi": "Mariot Hotel Wi-fi",
 		"ciphertext2":
 			{
-				"puzzle": ["Add 420", "Subtract 69", "XOR 666", "Multiply 777", "Rotate Right 64"],
-				"answer": ["Rotate Left 64", "Divide 777", "XOR 666", "Add 69", "Subtract 420"],
+				"puzzle": ["Add 420", "Subtract 69", "Divide 6073", "Multiply 777", "Rotate Right 64"],
+				"answer": ["Rotate Left 64", "Divide 777", "Multiply 6073", "Add 69", "Subtract 420"],
 				"choices": ["AND 666", "OR 666", "Left Shift 64", "Rotate Left 64", "Divide 777", "XOR 666", "Right Shift 64", "Add 69", "Subtract 420", 
-				"Multiply by 1", "Modulo 9999"]
+				"Multiply by 1", "Multiply 6073"]
 			},
 		"location": "Mariot Hotel",
 		"phishing": "inder"
@@ -16,10 +16,10 @@ var puzzleData = [
 		"ciphertext": "IT IS I, YOUR FAVORITE CUSTOMER. THE DEAL WILL GO DOWN IN THE HYAT HOTEL ON NENORIAL DRIVE. SENT THE INVOICE VIA BOXDROP",
 		"ciphertext2":
 			{
-				"puzzle": ["Add 420", "Subtract 69", "XOR 666", "Multiply 777", "Rotate Right 64"],
-				"answer": ["Rotate Left 64", "Divide 777", "XOR 666", "Add 69", "Subtract 420"],
+				"puzzle": ["Add 420", "Subtract 69", "Divide 6073", "Multiply 777", "Rotate Right 64"],
+				"answer": ["Rotate Left 64", "Divide 777", "Multiply 6073", "Add 69", "Subtract 420"],
 				"choices": ["AND 666", "OR 666", "Left Shift 64", "Rotate Left 64", "Divide 777", "XOR 666", "Right Shift 64", "Add 69", "Subtract 420", 
-				"Multiply by 1", "Modulo 9999"]
+				"Multiply by 1", "Multiply 6073"]
 			},
 		"wifi": "Hyat Hotel Guest Wi-fi",
 		"location": "Hyat Hotel",
@@ -29,10 +29,10 @@ var puzzleData = [
 		"ciphertext": "HEY THANKS FOR THE WEED THE OTHER DAY. MEETING PLACE THIS TIME IS ENDALL SQ HOTEL LOBBY. EMAILED THE INFO TO YOUR DARKMAIL ACCOUNT",
 		"ciphertext2":
 			{
-				"puzzle": ["Add 420", "Subtract 69", "XOR 666", "Multiply 777", "Rotate Right 64"],
-				"answer": ["Rotate Left 64", "Divide 777", "XOR 666", "Add 69", "Subtract 420"],
+				"puzzle": ["Add 420", "Subtract 69", "Divide 6073", "Multiply 777", "Rotate Right 64"],
+				"answer": ["Rotate Left 64", "Divide 777", "Multiply 6073", "Add 69", "Subtract 420"],
 				"choices": ["AND 666", "OR 666", "Left Shift 64", "Rotate Left 64", "Divide 777", "XOR 666", "Right Shift 64", "Add 69", "Subtract 420", 
-				"Multiply by 1", "Modulo 9999"]
+				"Multiply by 1", "Multiply 6073"]
 			},
 		"wifi": "Endall Hotel Free Wi-fi",
 		"location": "Endall Hotel",
