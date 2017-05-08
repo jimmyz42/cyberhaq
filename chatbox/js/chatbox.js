@@ -35,12 +35,15 @@ $(document).ready(function() {
         setDate();
         $('.message-input').val(null);
         updateScrollbar();
+        $('.chat').trigger('userMessage', [msg]);
+/*
         if (msg == "help") {
             var helpMessage = window.sessionStorage.getItem("helpMessage");
             sendMessage("There is no help.<br /><img src='https://static01.nyt.com/images/2015/10/23/upshot/00up_Shruggie_image/00up_Shruggie_image-superJumbo-v5.gif' style='width:200px;'/>");
         } else {
             sendMessage("Do not use this chat. We don't want to attract too much attention, in case someone is eavesdropping on our conversation.");
         }
+*/
     }
 
     $('.message-submit').click(function() {

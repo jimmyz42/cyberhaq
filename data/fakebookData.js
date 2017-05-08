@@ -42,7 +42,7 @@ fakebookData = [
   "child vacation": "Machu Picchu",
   "adult vacation": "Disneyland",
   "favorite movie": "Mulan",
-  "favorite pet": "Winston",
+  "favorite pet": "Watson",
   "posts": [
     {
       "text": "This photo brings back so many childhood memories. Too bad my family and I don't have time to travel to places like this anymore. Maybe someday when I have children I'll take them here.",
