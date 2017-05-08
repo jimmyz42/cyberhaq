@@ -5,6 +5,8 @@ $(window).on('message', function(e) {
     $('.tab-pane.active .urlbar').val(_.find(webpage_data, { title: msg['site'] }).url);
   } else if(msg['type'] === 'chat-box-message') {
     $('.chat').trigger('chatMessage', [msg['message']]);
+  } else if(msg['type'] === 'chat-box-prompt') {
+    console.log(msg);
   }
 });
 

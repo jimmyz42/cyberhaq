@@ -80,7 +80,7 @@
                 <a href="#" class="btn btn-danger btn-sm btn-block" role="button"><i class="glyphicon glyphicon-edit"></i> Compose</a>
                 <hr>
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a href="#"><span class="badge pull-right">32</span> Inbox </a>
+                    <li class="inbox-btn active"><a href="#"><span class="badge pull-right">32</span> Inbox </a>
                     </li>
                     <li><a href="#">Starred</a></li>
                     <li><a href="#">Important</a></li>
@@ -380,7 +380,7 @@
                 window.location.href = "email-detail.html";
             });
 
-            $('#zmail-refresh').click(function() {
+            $('#zmail-refresh, .inbox-btn').click(function() {
                 location.reload();
             });
         });
