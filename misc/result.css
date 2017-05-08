@@ -1,0 +1,21 @@
+body {
+  background-color: black;
+  padding: 50px 100px;
+}
+
+.result-item {
+  background-color: #222222;
+  border-radius: 25px;
+  padding: 30px;
+  text-align: center;
+  color: white;
+}
+
+.result-img {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.result-text {
+  font: 18pt courier new;
+}
