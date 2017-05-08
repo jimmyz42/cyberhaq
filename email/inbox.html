@@ -146,6 +146,49 @@
                                     <label><input type="checkbox"></label>
                                 </div>
                                 <span class="glyphicon glyphicon-star-empty"></span>
+                                <span class="name" style="min-width: 120px; display: inline-block;"><span class="lucy-name"></span></span> <span class="inbox subject">F You</span>
+                                <span class="badge">02:13 AM</span>
+                                <span class="pull-right">
+                                    <span class="glyphicon glyphicon-paperclip">
+                                    </span>
+                                </span>
+                                <span style="display:none" class="email-content">
+                                Hey <span class="jack-first-name"></span>,
+                                <br><br>
+                                You may be a successful multi-millionaire now, but have you forgotten who made you this way in the first place? I supported you and all your life goals. I was the one who found investors to raise money for your pharmaceutical company, Bexley Co. I helped you do all your marketing and found you customers. I even followed you when you were led astray by greed and started using Bexley Co. as a front for manufacturing and selling illegal drugs. I stayed with you through thick and thin, and believe me, I went through some really hard times with you. But what did I get in return? Nothing! You give so much money to charities, but I don't see a cent? What is wrong with you?
+                                <br><br>I still have the receipts and records from your illegal drug sales, as well as a list of people who died from overdoses. With this evidence, I could lock you up in jail for life.
+                                <br><br>See you in court,
+                                <br><span class="lucy-first-name"></span>
+                                </span>
+
+                                <span style="display:none" class="email-reply">
+                                <span class="reply-from"><span class="jack-name"></span></span>
+                                <span class="reply-time">02:17 AM</span>
+                                <span class="reply-content">
+                                My dearest <span class="lucy-first-name"></span>,
+                                <br><br>
+                                I'm sorry it had to end this way. Soon after I founded Bexley Co., my mother fell terribly ill. I needed money to pay her medical bills, but Bexley Co. was far from profitable at that point. I had to turn to less legal means of acquiring money. From that point on, I was deeply obsessed with curing diseases and saving lives, so I tried to donate as much as possible to charities that were reasearching cures. I wanted to go legit again, but selling illegal drugs pays a lot more, and I felt that the more money I had, the more good I could do. I was so obsessed with my single-minded mission of eradicating diseases that I forgot about the people I cared about the most. The day you left me was the saddest day of my life. I didn't realize what I had until I lost it. If I could do things over again, I would have treated you a lot better. 
+                                <br><br>With sincere apologies,
+                                <br><span class="jack-first-name"></span>
+                                </span>
+                                </span>
+
+                                <span style="display:none" class="email-reply">
+                                <span class="reply-from"><span class="lucy-name"></span></span>
+                                <span class="reply-time">02:18 AM</span>
+                                <span class="reply-content">
+                                A tearful apology ain't gonna cut it, <span class="jack-first-name"></span>. I want money not words.
+                                <br><br>
+                                Although you do make one good point. Bringing you to court might not be the best strategy for me. But I swear, I will get what's rightfully mine if it's the last thing I do.
+                                </span>
+                                </span>
+                            </a>
+
+                            <a href="#" class="list-group-item">
+                                <div class="checkbox">
+                                    <label><input type="checkbox"></label>
+                                </div>
+                                <span class="glyphicon glyphicon-star-empty"></span>
                                 <span class="name" style="min-width: 120px; display: inline-block;">Alex Dyson</span>
                                 <span class="inbox subject">Thank you for your donation</span>
                                 <span class="badge">07:19 AM</span>
@@ -314,11 +357,19 @@
                 var name = $(this).find(".name").html();
                 var subject = $(this).find(".subject").html();
                 var emailContent = $(this).find(".email-content").html();
-                var emailTime = $(this).find(".badge").html();               
+                var emailTime = $(this).find(".badge").html();
+                var emailReplies = $(this).find('.email-reply').map(function() {
+                  return {
+                    content: $(this).find('.reply-content').html(),
+                    from: $(this).find('.reply-from').html(),
+                    time: $(this).find('.reply-time').html(),
+                  };
+                }).get();       
                 var zmailContent = {
                   name: name,
                   subject: subject,
                   content: emailContent,
+                  replies: emailReplies,
                   time: emailTime,
                 };
 

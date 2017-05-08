@@ -1,8 +1,8 @@
 var bankData = {
   'jack': {
     'accounts': {
-      'Checking Account': 420321432.24,
-      'Savings Account': 690214252.32,
+      'Checking Account': 42032143.24,
+      'Savings Account': 69021425.32,
       'Credit Card': 1000000.00,
     },
     'transactions': [

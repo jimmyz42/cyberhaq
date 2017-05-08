@@ -108,6 +108,7 @@
                             </a>
                         </div>
                     </div>
+<!--
                     <div class="tab-pane fade in" id="profile">
                         <div class="list-group">
                             <div class="list-group-item">
@@ -122,6 +123,7 @@
                             </div>
                         </div>
                     </div>
+-->
                 </div>
 
                 <div class="row-md-12">
@@ -158,6 +160,16 @@
                 });
             } else {
                 $(".email-content").html(emailContent["content"]);
+            }
+            var replies = emailContent['replies'] || [];
+            var template = $('a.list-group-item');
+            for(var i=0;i<replies.length;i++) {
+              var temp = template.clone();
+              temp.find('.name').text(replies[i].from + " <email@mail.com>");
+              temp.find('.subject').text('Re: ' + emailContent["subject"]);
+              temp.find('.badge').text(replies[i].time);
+              temp.find('.email-content').html(replies[i].content);
+              $('.list-group').append(temp);
             }
 
             $('#zmail-refresh').click(function() {
