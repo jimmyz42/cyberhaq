@@ -1,7 +1,7 @@
 var puzzleData = [
 	{
-		"ciphertext": "HEY I GOT THE MONEY. I WILL MEET YOU IN THE KENDAL MARIOT HOTEL FOR OUR DEAL. ALSO SWIPE RIGHT ON MY INDER PROFILE.",
-		"wifi": "Mariot Hotel Wi-fi",
+		"ciphertext": "HEY I GOT THE MONEY. I WILL MEET YOU IN THE KENDALL BLAZEIT HOTEL FOR OUR DEAL. ALSO STOP SENDING ME INDER INVITES.",
+		"wifi": "Blazeit Hotel Wi-fi",
 		"ciphertext2":
 			{
 				"puzzle": ["Add 420", "Subtract 69", "Divide 6073", "Multiply 777", "Rotate Right 64"],
@@ -9,11 +9,11 @@ var puzzleData = [
 				"choices": ["AND 666", "OR 666", "Left Shift 64", "Rotate Left 64", "Divide 777", "XOR 666", "Right Shift 64", "Add 69", "Subtract 420", 
 				"Multiply by 1", "Multiply 6073"]
 			},
-		"location": "Mariot Hotel",
+		"location": "Blazeit Hotel",
 		"phishing": "inder"
 	},
 	{
-		"ciphertext": "IT IS I, YOUR FAVORITE CUSTOMER. THE DEAL WILL GO DOWN IN THE HYAT HOTEL ON NENORIAL DRIVE. SENT THE INVOICE VIA BOXDROP",
+		"ciphertext": "IT IS I, YOUR FAVORITE CUSTOMER. THE DEAL WILL GO DOWN IN THE DANK HOTEL ON MEMORIAL DRIVE. SENT THE INVOICE VIA BOXDROP",
 		"ciphertext2":
 			{
 				"puzzle": ["Add 420", "Subtract 69", "Divide 6073", "Multiply 777", "Rotate Right 64"],
@@ -21,12 +21,12 @@ var puzzleData = [
 				"choices": ["AND 666", "OR 666", "Left Shift 64", "Rotate Left 64", "Divide 777", "XOR 666", "Right Shift 64", "Add 69", "Subtract 420", 
 				"Multiply by 1", "Multiply 6073"]
 			},
-		"wifi": "Hyat Hotel Guest Wi-fi",
-		"location": "Hyat Hotel",
+		"wifi": "Dank Hotel Guest Wi-fi",
+		"location": "Dank Hotel",
 		"phishing": "boxdrop"
 	},
 	{
-		"ciphertext": "HEY THANKS FOR THE WEED THE OTHER DAY. MEETING PLACE THIS TIME IS ENDALL SQ HOTEL LOBBY. EMAILED THE INFO TO YOUR DARKMAIL ACCOUNT",
+		"ciphertext": "HEY THANKS FOR THE WEED THE OTHER DAY. MEETING PLACE THIS TIME IS HI-AF SQUARE HOTEL LOBBY. EMAILED THE INFO TO YOUR DARKMAIL ACCOUNT",
 		"ciphertext2":
 			{
 				"puzzle": ["Add 420", "Subtract 69", "Divide 6073", "Multiply 777", "Rotate Right 64"],
@@ -34,8 +34,8 @@ var puzzleData = [
 				"choices": ["AND 666", "OR 666", "Left Shift 64", "Rotate Left 64", "Divide 777", "XOR 666", "Right Shift 64", "Add 69", "Subtract 420", 
 				"Multiply by 1", "Multiply 6073"]
 			},
-		"wifi": "Endall Hotel Free Wi-fi",
-		"location": "Endall Hotel",
+		"wifi": "Hi-Af Hotel Free Wi-fi",
+		"location": "Hi-Af Hotel",
 		"phishing": "darkmail"
 	}
 ]
