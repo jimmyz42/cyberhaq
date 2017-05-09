@@ -10,6 +10,14 @@ $(window).on('message', function(e) {
   } else if(msg['type'] === 'chat-box-prompt') {
     if(msg['initial prompt']) $('.chat').trigger('chatMessage', [msg['initial prompt']]);
     promptOpts = msg;
+  } else if(msg['type'] === 'endgame') {
+    setTimeout(function() {
+      $('#browser, #instructions').animate({
+        opacity: 0
+      }, 2000, function() {
+        location.href = "misc/result.html";
+      });
+    }, 500);
   }
 });
 

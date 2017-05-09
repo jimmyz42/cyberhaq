@@ -1,5 +1,5 @@
 $(function() {
-  var transactions = JSON.parse(window.sessionStorage.getItem('bankData')).jack.transactions;  
+  var transactions = JSON.parse(window.sessionStorage.getItem('bankTransactions'));  
   for(var i=0;i<transactions.length;i++) {
     var row = $('<tr></tr>').appendTo('table.transactions');
     row.append('<td>' + transactions[i].date + '</td>');

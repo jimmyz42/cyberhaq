@@ -1,4 +1,5 @@
-var jackName = window.sessionStorage.getItem('jackName');
+var jackName = window.sessionStorage.getItem('jackName').split(' ')[0];
+var bankAccounts = JSON.parse(window.sessionStorage.getItem('bankAccounts'));
 
 var cnt = 0;
 var NUM_QUESTIONS = 4;
@@ -38,7 +39,15 @@ for(difficulty in securityQuestions) {
               window.location.href = "accounts.html";
               parent.postMessage({
                 type: 'chat-box-message',
-                message: 'Your final task: Transfer ' + jackName + '\'s money to Asterisk. Our offshore account at Galactic Bank is 12345678. Transfer the money there, and your job will be complete.',
+                message: 'Hurry, transfer ' + jackName + '\'s money to Asterisk. Our offshore Galactic Bank account is ' + bankAccounts.asterisk.account,
+              }, '*');
+
+              parent.postMessage({
+                type: 'chat-box-prompt',
+                'initial prompt': 'Also, please type ' + jackName + '\'s 8-digit checking account number here. If they change the password and security questions, but still use the same account in the future, we can use this number to forge checks in their name.',
+                'correct input': bankAccounts.checking.account + '',
+                'correct message': 'Great, don\'t forget to transfer their money to us. We heard rumors that they have at least $40M in their bank account. After this is done, we will pay you at your Galactic bank account, ' + bankAccounts.user.account + '. WARNING: DO NOT TRANSFER ' + jackName.toUpperCase() + '\'S MONEY TO YOUR OWN ACCOUNT OR WE WILL COME AFTER YOU.',
+                'incorrect message': 'Hmm, that doesn\'t seem to be the right number.'
               }, '*');
             }
           } else {

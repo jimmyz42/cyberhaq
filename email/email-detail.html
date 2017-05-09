@@ -147,7 +147,7 @@
             });
 
             var emailContent = JSON.parse(window.sessionStorage.getItem("zmailContent"));
-            $(".name").text(emailContent["name"] + " <email@mail.com>");
+            $(".name").text(emailContent["name"] + " <" + emailContent["address"] + ">");
             $(".subject").text(emailContent["subject"]);
             $('.list-group-item .badge').text(emailContent['time']);
             if (emailContent["reset"]) {
@@ -165,7 +165,7 @@
             var template = $('a.list-group-item');
             for(var i=0;i<replies.length;i++) {
               var temp = template.clone();
-              temp.find('.name').text(replies[i].from + " <email@mail.com>");
+              temp.find('.name').text(replies[i].from + ' <' + replies[i].address + '>');
               temp.find('.subject').text('Re: ' + emailContent["subject"]);
               temp.find('.badge').text(replies[i].time);
               temp.find('.email-content').html(replies[i].content);

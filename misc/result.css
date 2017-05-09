@@ -9,6 +9,7 @@ body {
   padding: 30px;
   text-align: center;
   color: white;
+  opacity: 0;
 }
 
 .result-img {

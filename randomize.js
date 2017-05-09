@@ -14,7 +14,10 @@ $(function() {
     window.sessionStorage.setItem('lucyName', selectedFakebookData['relationships'][0]);
 
     //Bank data
-    window.sessionStorage.setItem('bankData', JSON.stringify(bankData));
+    window.sessionStorage.setItem('bankTransactions', JSON.stringify(bankData.jack.transactions));
+    var bankAccounts = _.fromPairs(_.map(['checking', 'savings', 'user', 'asterisk', 'charity'],
+      s => [s, { account: _.random(10000000, 99999999), amount: bankData.jack.accounts[s] || 0 }]));
+    window.sessionStorage.setItem('bankAccounts', JSON.stringify(bankAccounts));
   } else {
     console.log('either storage does not exist or is already populated');
   }
