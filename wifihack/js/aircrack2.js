@@ -1,5 +1,26 @@
 $(document).ready(function() {
 
+    // http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+    var customShuffle = function(array) {
+        var currentIndex = array.length,
+            temporaryValue, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+
+            // And swap it with the current element.
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+
+        return array;
+    }
+
     setTimeout(function() {
         parent.postMessage({
             type: 'chat-box-message',
@@ -18,17 +39,35 @@ $(document).ready(function() {
     var jso = JSON.parse(window.sessionStorage.getItem("puzzleData"));
     var wifiName = jso["wifi"];
     var hotel = jso["location"];
+    var fakeHotels = ["Hyat", "Mariot", "Endal", "Crudential", "Valker Memorial"];
+    var fakeWifis = ["AT&T Wifi", "Xfinity", "eduroam", "CVS Secure"];
+    for (var i = 0; i < fakeHotels.length; i++) {
+        if (Math.random() < 0.5) {
+            fakeWifis.push(fakeHotels[i] + " Free Wifi");
+        } else {
+            fakeWifis.push(fakeHotels[i] + " Wifi");
+        }
+    }
+    fakeHotels.push(hotel);
+    fakeWifis.push(wifiName);
+
+    allHotels = customShuffle(fakeHotels);
+    allWifis = customShuffle(fakeWifis);
+
+    for (var h = 0; h < allHotels.length; h++) {
+        $(".location-select").append($('<option>', {
+            value: allHotels[h],
+            text: allHotels[h]
+        }));
+    }
 
 
-    $(".location-select").append($('<option>', {
-        value: hotel,
-        text: hotel
-    }));
-
-    $(".wifi-select").append($('<option>', {
-        value: wifiName,
-        text: wifiName
-    }));
+    for (var w = 0; w < allWifis.length; w++) {
+        $(".wifi-select").append($('<option>', {
+            value: allWifis[w],
+            text: allWifis[w]
+        }));
+    }
 
 
     var connectingToLocation = {
