@@ -20,11 +20,11 @@ webpage_data = [
     "instructions": "Your job is to hack into this person's bank account. Use the URL bar to navigate to different webpages.",
   },
   {
-    "title": "Terminal",
-    "url": "https://www.terminal.com",
+    "title": "WifiCrack",
+    "url": "https://www.wificrack.com",
     "src": "wifihack/aircrack2.html",
     "instructions": "<ul>" +
-   "<li>  Your next hack takes place at the meeting place at the scheduled time </li>" +
+   "<li>  Your next hack takes place at the scheduled meeting time </li>" +
    "<li> You need to create a rogue wifi hotspot that is named similarly to the official free wifi at the meeting place </li>" +
    "<li> Your goal is to attract people to access to the internet through your wifi </li>" +
    "</ul>",
