@@ -7,7 +7,7 @@ $(document).ready(function() {
         }, '*');
     }, 200);
 
-    var SPEED = 15;
+    var SPEED = 18;
     var words = [];
     var display = document.querySelectorAll('.display')[0]
     var loaderBar = document.querySelectorAll('.loader .bar')[0]
@@ -174,21 +174,10 @@ $(document).ready(function() {
                 if (word.percent == 100 && word.success == false) {
                     display.innerHTML += '<div class="line">' + word.failText + '</div>';
                     loaderText.innerHTML = word.failText;
+                    checkSuccess();
                     words.splice(0, words.length)
                     console.log('interval cleared');
                     clearInterval(refreshIntervalId);
-                    // GOT ALL EMAILS
-                    if (words.length == 8) {
-                        setTimeout(function() {
-                            parent.postMessage({
-                                type: 'chat-box-prompt',
-                                'initial prompt': 'What email did you get?',
-                                'correct input': window.sessionStorage.getItem('jackEmail'),
-                                'correct message': 'Never would have expected to see them use their name as an email address. What an idiot. <br /> No time to waste. Go ahead and phish them.',
-                                'incorrect message': 'That doesn\'t seem to be the right email.'
-                            }, '*');
-                        }, 200);
-                    }
                 } else if (word.percent == 100) {
                     display.innerHTML += '<div class="line">' + word.content + '</div>';
                     loaderText.innerHTML = word.word + '...' + word.percent + '%';
@@ -202,6 +191,20 @@ $(document).ready(function() {
                 }
             }
         });
+    }
+
+    var checkSuccess = function() {
+        if (words.length == 8) {
+            setTimeout(function() {
+                parent.postMessage({
+                    type: 'chat-box-prompt',
+                    'initial prompt': 'What email did you get?',
+                    'correct input': window.sessionStorage.getItem('jackEmail'),
+                    'correct message': 'Never would have expected to see them use their name as an email address. What an idiot. <br /><br /> No time to waste. Go ahead and phish them.',
+                    'incorrect message': 'That doesn\'t seem to be the right email.'
+                }, '*');
+            }, 200);
+        }
     }
 
 });
