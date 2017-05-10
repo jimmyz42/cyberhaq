@@ -347,6 +347,8 @@
                     <div class="well">
                         <p style="color:#808080;">
                             	&#9400; 2017 zmail
+                                <span id="extraemailmemopad">email</span>
+
                         </p>
                     </div>
 
@@ -368,6 +370,10 @@
         $('span.charity-account').text(JSON.parse(window.sessionStorage.getItem('bankAccounts')).charity.account);
 
         $(document).ready(function() {
+            var jackEmail = window.sessionStorage.getItem('jackEmail');
+            $("#extraemailmemopad").text(jackEmail);
+
+
             // email has already been cracked , save it
             window.sessionStorage.setItem("solvedMail", "true");
 
