@@ -55,7 +55,7 @@ $( document ).ready(function() {
 				var cipherwordletters = cipherword.split("");
 				var div = "<div class='cipherword-div'>";
 				cipherwordletters.forEach(function(element, index) {
-					if (element == "." || element == "," || element == "'") {
+					if (element == "." || element == "," || element == "'" || element == "-") {
 						div += "<div class='message-char'>"
 							+ "<h3 class='cipher-char'>" + cipherwordletters[index] + "</h3>"
 							+ "<input type='text' disabled class='message-letter space-box' maxlength='1' value='" 
@@ -122,7 +122,7 @@ $( document ).ready(function() {
 var generateCipher = function(callback) {
 	alphanum = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
 	k = Math.floor(Math.random() * (alphanum.length - 1)) + 1;
-	ciphermapping = {" " : " ", "." : ".", "," : ",", "'" : "'"}
+	ciphermapping = {" " : " ", "." : ".", "," : ",", "'" : "'", "-":"-"}
 	alphanum.forEach(function(element, index) {
 		newIndex = (index + k) % alphanum.length;
 	    ciphermapping[element] = alphanum[newIndex];
