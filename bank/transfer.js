@@ -6,6 +6,15 @@ $(function() {
   $('option.savings').attr('value', 'savings');
   $('option.checking').html('Checking Account (' + bankAccounts.checking.account + ')');
   $('option.savings').html('Savings Account (' + bankAccounts.savings.account + ')');
+
+  var savedState = window.sessionStorage.getItem('bankTransferState');
+  if(savedState !== undefined) {
+    savedState = JSON.parse(savedState);
+    for(field in savedState) {
+      $(field).val(savedState[field]);
+    }
+  }
+
   $('#submit').click(function() {
     var amt = +parseFloat($('#amount').val().replace(/[, $]/g, '')).toFixed(2);
     var fromAccName = $('#from-account').val();
@@ -24,6 +33,7 @@ $(function() {
     } else if($('#description').val() === '') {
       $('.error').html('Description cannot be empty.'); 
     } else {
+      window.sessionStorage.removeItem('bankTransferState');
       bankAccounts[fromAccName].amount -= amt;
       bankAccounts[toAccName].amount += amt;
       var transact = {
@@ -46,4 +56,10 @@ $(function() {
       location.href = 'accounts.html';
     }
   });
+});
+
+$(window).on('beforeunload', function() {
+  var fields = ['#from-account', '#bank', '#to-account-name', '#to-account-num', '#amount', '#description'];
+  var bankTransferState = _.zipObject(fields, _.map(fields, s => $(s).val()));
+  window.sessionStorage.setItem('bankTransferState', JSON.stringify(bankTransferState));
 });
