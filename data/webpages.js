@@ -22,7 +22,7 @@ webpage_data = [
   {
     "title": "Terminal",
     "url": "https://www.terminal.com",
-    "src": "wifihack/aircrack.html",
+    "src": "wifihack/aircrack2.html",
     "instructions": "<ul>" +
    "<li>  Your next hack takes place at the meeting place at the scheduled time </li>" +
    "<li> You need to create a rogue wifi hotspot that is named similarly to the official free wifi at the meeting place </li>" +
