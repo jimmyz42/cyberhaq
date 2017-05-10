@@ -12,7 +12,8 @@ $(document).ready(function() {
         // chatbox message in the beginning of the game
         parent.postMessage({
             type: 'chat-box-message',
-            message: 'Using information you obtained from previous parts, compose a good phishing email to get zmail credentials of your target.',
+            message: 'This should be self explanatory, right? Let\'s send Jack a good email and get them to give away all their information.'
+,
         }, '*');
 
         $('#inputTo').focus();
@@ -30,7 +31,7 @@ $(document).ready(function() {
             if ($("#inputTo").val() !== window.sessionStorage.getItem('jackEmail')) {
                 parent.postMessage({
                     type: 'chat-box-message',
-                    message: 'You got the recipient zmail address wrong',
+                    message: 'No, no, no, that email is going lead them on. Pick a better one, based on the cipher.',
                 }, '*');
                 window.location.href = "wrongEmail.html";
             } else {
@@ -51,7 +52,7 @@ $(document).ready(function() {
                     window.sessionStorage.setItem('phishingSuccess', "false");
                     parent.postMessage({
                         type: 'chat-box-message',
-                        message: targetName + ' realized that your email was a phishing attack attempt.',
+                        message: 'No, no, no, that email is going lead them on. Pick a better one, based on the cipher.',
                     }, '*');
                     window.location.href = "fail.html";
                 }

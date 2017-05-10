@@ -1,3 +1,7 @@
+var tabAudio = new Audio("sound/newTab.wav");
+tabAudio.oncanplaythrough = function ( ) { }
+tabAudio.onended = function ( ) { }
+
 if(window.sessionStorage.length === 0) location.href = "misc/instructions.html";
 
 $( document ).ready(function() {
