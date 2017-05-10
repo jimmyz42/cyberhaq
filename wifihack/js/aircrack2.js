@@ -15,22 +15,22 @@ $(document).ready(function() {
     var loaderText = document.querySelectorAll('.loader .text')[0]
     var refreshIntervalId = null;
 
-    //var jso = JSON.parse(window.sessionStorage.getItem("puzzleData"));
-    //console.log(jso);
-    //var wifiName = jso["wifi"];
-    //var hotel = jso["location"];
+    var jso = JSON.parse(window.sessionStorage.getItem("puzzleData"));
+    console.log(jso);
+    var wifiName = jso["wifi"];
+    var hotel = jso["location"];
 
-    /*
-        $(".location-select").append($('<option>', {
-            value: hotel,
-            text: hotel
-        }));
 
-        $(".wifi-select").append($('<option>', {
-            value: wifiName,
-            text: wifiName
-        }));
-    */
+    $(".location-select").append($('<option>', {
+        value: hotel,
+        text: hotel
+    }));
+
+    $(".wifi-select").append($('<option>', {
+        value: wifiName,
+        text: wifiName
+    }));
+
 
     var connectingToLocation = {
         word: "Connecting to location servers",
@@ -96,13 +96,13 @@ $(document).ready(function() {
         word: "Connecting wifi user",
         percent: 0,
         success: false,
-        failText: "jack@mit.edu" // jso['jackEmail']
+        failText: jso['jackEmail']
     }
 
     $(".create-hotspot").on("click", function(event) {
         $(".display").html("");
-        if ($(".location-select").val() == "hyat") { // hotel
-            if ($(".wifi-select").val() == "eduroam") { // wifiName
+        if ($(".location-select").val() == hotel) {
+            if ($(".wifi-select").val() == wifiName) { 
                 words.push(jQuery.extend(true, {}, connectingToLocation));
                 words.push(jQuery.extend(true, {}, checkingWifi));
                 words.push(jQuery.extend(true, {}, connectingUsersMessage));
