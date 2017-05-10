@@ -16,7 +16,6 @@ $(document).ready(function() {
     var refreshIntervalId = null;
 
     var jso = JSON.parse(window.sessionStorage.getItem("puzzleData"));
-    console.log(jso);
     var wifiName = jso["wifi"];
     var hotel = jso["location"];
 
@@ -129,7 +128,6 @@ $(document).ready(function() {
             } else {
                 words.push(jQuery.extend(true, {}, connectingToLocation));
                 words.push(jQuery.extend(true, {}, checkingWifiFail));
-                console.log(words);
                 refreshIntervalId = setInterval(function() {
                     for (var i = 0; i < words.length; i++) {
                         if (words[i].percent < 100) {
@@ -169,14 +167,12 @@ $(document).ready(function() {
     function drawConnection(words) {
         display.innerHTML = ''
         words.forEach(function(word) {
-            console.log(word);
             if (word.percent > 0) {
                 if (word.percent == 100 && word.success == false) {
                     display.innerHTML += '<div class="line">' + word.failText + '</div>';
                     loaderText.innerHTML = word.failText;
                     checkSuccess();
                     words.splice(0, words.length)
-                    console.log('interval cleared');
                     clearInterval(refreshIntervalId);
                 } else if (word.percent == 100) {
                     display.innerHTML += '<div class="line">' + word.content + '</div>';
