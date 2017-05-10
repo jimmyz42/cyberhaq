@@ -7,6 +7,8 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+    <script src="../data/fakebookData.js"></script>
+    <script src="../data/imageSources.js"></script>
     <script src="instructions.js"></script>
     <link rel="stylesheet" href="instructions.css">
   </head>
@@ -22,17 +24,47 @@
         <li data-target="#carousel" data-slide-to="5"></li>
         <li data-target="#carousel" data-slide-to="6"></li>
         <li data-target="#carousel" data-slide-to="7"></li>
+        <li data-target="#carousel" data-slide-to="8"></li>
       </ol>
       <div class="carousel-inner">
 
         <div class="item active">
-          Asterisk 3.4 allows members of Asterisk to securely handle requests from clients on the deep web. The network provides an additional level of encryption, track erasure, and privacy that tor or any browser could handle. Please conduct all work affairs on Asterisk 3.4 only.
-          <br> 
-          <br>Version 3.4 Notes
-          <ul>
-            <li>Patched 4 known security bugs</li>
-            <li>Patched 3 known UI bugs</li>
-          </ul>
+          <div class="title">Asterisk Services, Inc.</div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-5">
+                <img class="preview" src="https://24dlmn2bqamt1e72kah59881-wpengine.netdna-ssl.com/wp-content/uploads/2016/04/How-Hackers-Find-Your-Ecommerce-Website.jpg"></img>
+              </div>
+              <div class="col-xs-7">
+                <div class="terminal">
+                  <b>Asterisk Services:</b> You have contacted Asterisk Services. Please be discreet. How may we be of service to you?
+                  <br><b>LW:</b> I’ve got a person, Jack Pot, needs taking down. Smuggles crack, LSD... your regular party supplier.
+                  <br><b>Asterisk Services:</b> Anything else?
+                  <br><b>LW:</b> Runs Bexley Co., a ring for all the stupidest trash you can think of. Can’t say too much for now. We’ll talk later.
+                  <br><center>--LW logs off --</center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="title">Your Mission</div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-5">
+                <img class="preview" src="https://static.pexels.com/photos/97077/pexels-photo-97077.jpeg"></img>
+              </div>
+              <div class="col-xs-7">
+                So you're the new recruit, huh? I'm sending you our "Asterisk Version 3.4" software now so you can hack your first client.
+                <div class="terminal" style="margin: 20px 0px">
+                  <center>&gt;&gt;Downloading&lt;&lt;</center>
+                  Asterisk 3.4 allows members of Asterisk to securely handle requests from clients on the deep web. The network provides an additional level of encryption, track erasure, and privacy.
+                </div>
+              Let's take down this CEO.
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="item">
@@ -132,18 +164,21 @@
         </div>
 
         <div class="item">
-          <b>Note to New Employees:</b>
-          <br>The usual order to access these websites in a job is:
-          <ol>
-            <li>https://www.breakmycipher.io</li>
-            <li>https://www.terminal.com</li>
-            <li>https://www.zmail.com</li>
-            <li>https://www.fakebook.com</li>
-            <li>https://www.galacticbank.com</li>
-          </ol>
-          <a href="../index.html">
-            <button type="button" id="begin" class="btn btn-lg btn-primary">Begin Mission</button>
-          </a>
+          <div class="title">Time to Jump</div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-7">
+                <img class="preview" id="credits-hide" src="https://static.pexels.com/photos/244994/pexels-photo-244994.jpeg"></img>
+                <div class="credits"></div>
+              </div>
+              <div class="col-xs-5">
+                Are you ready, recruit? Once you begin there is no turning back.
+                <button type="button" class="btn btn-info btn-large btn-block menu-btn" id="begin-btn">Begin Mission</button>
+
+                <button type="button" class="btn btn-info btn-large btn-block menu-btn" id="view-btn">Show Credits</button>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
