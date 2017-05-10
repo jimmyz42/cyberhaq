@@ -96,13 +96,13 @@ $(document).ready(function() {
         word: "Connecting wifi user",
         percent: 0,
         success: false,
-        failText: jso['jackEmail']
+        failText: window.sessionStorage.getItem('jackEmail')
     }
 
     $(".create-hotspot").on("click", function(event) {
         $(".display").html("");
         if ($(".location-select").val() == hotel) {
-            if ($(".wifi-select").val() == wifiName) { 
+            if ($(".wifi-select").val() == wifiName) {
                 words.push(jQuery.extend(true, {}, connectingToLocation));
                 words.push(jQuery.extend(true, {}, checkingWifi));
                 words.push(jQuery.extend(true, {}, connectingUsersMessage));
@@ -183,7 +183,7 @@ $(document).ready(function() {
                             parent.postMessage({
                                 type: 'chat-box-prompt',
                                 'initial prompt': 'What email did you get?',
-                                'correct input': jso['jackEmail'],
+                                'correct input': window.sessionStorage.getItem('jackEmail'),
                                 'correct message': 'Never would have expected to see them use their name as an email address. What an idiot. <br /> No time to waste. Go ahead and phish them.',
                                 'incorrect message': 'That doesn\'t seem to be the right email.'
                             }, '*');
