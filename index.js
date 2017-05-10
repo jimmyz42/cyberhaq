@@ -20,7 +20,7 @@ $( document ).ready(function() {
 
     parent.postMessage({
    type: 'chat-box-message',
-   message: "It's your boss, ***. and I will help you hack a bank account. Follow my instructions and do everything as I say to avoid detection. Someone named " + window.sessionStorage.getItem("lucyName") + " wants a hacking service. _______. Looks like they want the head of Bexley Co: " + window.sessionStorage.getItem("jackName") + ". Got a message between " + window.sessionStorage.getItem("jackName") + " and a client, some druggie. Let me know when you have decoded it. http://www.breakmycipher.io"
+   message: "You're finally here! Follow my instructions and do everything I say to avoid detection. The hit I got was an intercepted message from " + window.sessionStorage.getItem("jackName") + " and one of his clients, some druggie. Go to http://breakmycipher.io to decrypt it."
 ,
 }, '*');
 
