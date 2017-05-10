@@ -216,22 +216,54 @@ var updateMessage = function() {
     		
     		parent.postMessage({
 	            type: 'chat-box-message',
-	            message: "Looks like you decrypted the message. The message says:",
+	            message: "Looks like you decrypted the message. " + 
+	            "I need a meeting location or an email or application he uses. Let's go, time is money.",
 	        }, '*');
 
-	    	setTimeout(function() {
+	        setTimeout(function() {
 		        parent.postMessage({
-		            type: 'chat-box-message',
-		            message: text,
-		        }, '*');
+		            type: 'chat-box-prompt',
+				   'initial prompt': "Where's the meeting place?",
+				   'correct input': JSON.parse(window.sessionStorage.getItem("puzzleData"))["location"],
+				   'correct message': "That's right.",
+				   'incorrect message': "Not quite. Read the message again."
+				}, '*');
 	        }, 2000);
 
 	        setTimeout(function() {
 		        parent.postMessage({
+		            type: 'chat-box-prompt',
+				   'initial prompt': "Did the message mention any special app/program? What was the name?",
+				   'correct input': JSON.parse(window.sessionStorage.getItem("puzzleData"))["phishing"],
+				   'correct message': "Right again.",
+				   'incorrect message': "Not quite. Read the message again."
+				}, '*');
+	        }, 4000);
+
+	    	// setTimeout(function() {
+		    //     parent.postMessage({
+		    //         type: 'chat-box-message',
+		    //         message: text,
+		    //     }, '*');
+	     //    }, 2000);
+
+	        setTimeout(function() {
+		        parent.postMessage({
 		            type: 'chat-box-message',
-		            message: "You now know the meeting spot. Use this info to create fake hotspot wifi and lure your target. Go to the terminal to continue.",
+		            message: "As far as we know it's probably a drug deal, " + 
+		            "but it doesn't seem like it's based on Bexley Co.'s usual pattern of operation. I'll do some research on this.",
 		        }, '*');
 	        }, 6000);
+
+	        setTimeout(function() {
+		        parent.postMessage({
+		            type: 'chat-box-message',
+		            message: "For now, try to get their email. " + 
+		            "You could probably get it by setting up a wi-fi network at the client meeting place. " + 
+		            "Did you forget what to do already? Open a new tab, " + 
+		            "and use the aircrack application on Zicronium and create a fake hotspot.",
+		        }, '*');
+	        }, 10000);
 
     		// alert("Excellent! You decrypted the message. Check this off on your list. Next, go back to the home screen to do the next task.")
     		
