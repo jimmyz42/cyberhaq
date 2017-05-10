@@ -14,9 +14,17 @@ body {
 
 .result-img {
   width: 80%;
-  margin-bottom: 20px;
+  margin: 20px 0px;
 }
 
 .result-text {
   font: 18pt courier new;
+}
+
+#go-back {
+  float: left;
+}
+
+#new-game {
+  float: right;
 }

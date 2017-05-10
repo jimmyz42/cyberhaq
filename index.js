@@ -1,3 +1,5 @@
+if(window.sessionStorage.length === 0) location.href = "misc/instructions.html";
+
 $( document ).ready(function() {
 
     var autocompleteParams = {

@@ -9,4 +9,12 @@ $(function() {
       opacity: 1
     }, 2000);
   }, 0); // can adjust wait time
+
+  $('#go-back').click(function() {
+    location.href="../index.html";
+  });
+  $('#new-game').click(function() {
+    window.sessionStorage.clear();
+    location.href="instructions.html";
+  });
 });
