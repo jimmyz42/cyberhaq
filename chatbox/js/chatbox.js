@@ -77,7 +77,10 @@ $(document).ready(function() {
     });
 
     function sendMessage(messageText) {
-        if(messageText === undefined || messageText === '') return;
+        if(messageText === undefined || messageText === '') {
+          $('.chat').trigger('voiceoverDone'); // so that next message can appear
+          return;
+        }
         /*
         if ($('.message-input').val() != '') {
             return false;

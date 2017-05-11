@@ -1,5 +1,5 @@
 $(function() {
-  var games = ['Cipher', 'Terminal', 'Mail', 'Fakebook'];
+  var games = ['Cipher', 'WifiCrack', 'Zmail', 'Fakebook'];
   for(var i=0; i<games.length; i++) {
     if(window.sessionStorage.getItem('solved' + games[i]) === 'true') {
       $('.bookmark-contain[unlock="' + games[i] + '"] .lock').css({ display: 'none' });

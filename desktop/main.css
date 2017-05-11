@@ -1,0 +1,101 @@
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  background: url(https://static.pexels.com/photos/27403/pexels-photo-27403.jpg) no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.bottom-bar {
+  position: fixed;
+  bottom: 0px;
+  left 0px;
+  width: 100%;
+  background: linear-gradient(#146eff, #149dff);
+}
+
+.main-content {
+  height: calc(100% - 34px);
+  margin-bottom: 34px;
+}
+
+#sortable {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.start-btn {
+  border-radius: 0px 10px 10px 0px;
+}
+
+.start-btn, #sortable, .ui-state-default {
+  display: inline-block;
+}
+
+.mini-tab {
+  background: none;
+  border: none;
+}
+
+.mini-btn {
+  min-width: 100px;
+  background: linear-gradient(to top, #146eff, #149dff);
+  margin: 2px 0px 2px 5px;
+  padding: 4px 6px;
+  height: 100%;
+  font: 12pt arial;
+  font-weight: bold;
+  border-radius: 2px;
+  color: white;
+}
+
+.app-icon, .app-icon img {
+  width: 80px;
+  height: 80px;
+}
+
+.window {
+  position: absolute;
+  width: 60%;
+  height: 80%;
+  top: 8%;
+  left: 20%;
+  display: none;
+}
+
+.window-header {
+  margin: 0px;
+  padding-left: 10px;
+}
+
+.window-content {
+  width: 100%;
+  height: calc(100% - 22px);
+}
+
+.max-btn, .min-btn, .close-btn {
+  float: right;
+  border-radius: 0px;
+}
+
+.chat {
+  border-radius: 0px;
+  box-shadow: none;
+  z-index: 0;
+}
+
+.app-window {
+  left: 8%;
+}
+
+.chat-window {
+  width: 25%;
+  left: 70%;
+  z-index: 0;
+  display: block;
+}
