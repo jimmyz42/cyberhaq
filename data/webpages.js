@@ -1,6 +1,7 @@
 webpage_data = [
   {
     "title": "Cipher",
+    "name": "Break My Cipher",
     "url": "https://www.breakmycipher.io",
     "src": "ciphertext/ciphertext.html",
     "image": "misc/images/breakmycipher.png",
@@ -10,6 +11,7 @@ webpage_data = [
   },
   {
     "title": "Fakebook",
+    "name": "Fakebook",
     "url": "https://www.fakebook.com",
     "src": "fakebook/fakebook.html",
     "image": "misc/images/fakebook.png",
@@ -17,6 +19,7 @@ webpage_data = [
   },
   {
     "title": "Bank",
+    "name": "Galactic Bank",
     "url": "https://www.galacticbank.com",
     "src": "bank/login.html",
     "image": "misc/images/galacticbank.png",
@@ -24,6 +27,7 @@ webpage_data = [
   },
   {
     "title": "WifiCrack",
+    "name": "WifiCrack",
     "url": "https://www.wificrack.com",
     "src": "wifihack/aircrack2.html",
     "image": "misc/images/wificrack.png",
@@ -38,6 +42,7 @@ webpage_data = [
   },
   {
     "title": "Zmail",
+    "name": "Zmail",
     "url": "https://www.zmail.com",
     "src": "email/compose.html",
     "image": "misc/images/zmail.png",

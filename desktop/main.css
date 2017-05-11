@@ -86,7 +86,7 @@ body {
 .chat {
   border-radius: 0px;
   box-shadow: none;
-  z-index: 0;
+  z-index: 1;
 }
 
 .app-window {
@@ -96,6 +96,55 @@ body {
 .chat-window {
   width: 25%;
   left: 70%;
-  z-index: 0;
+  z-index: 1;
   display: block;
+}
+
+.start-menu {
+  height: 50%;
+  width: 20%;
+  position: absolute;
+  left: 0px;
+  bottom: 34px;
+  z-index: 999999999;
+  display: none;
+}
+
+.start-title {
+  padding: 5px 10px;
+  background: linear-gradient(#146eff, #149dff);
+  border-radius: 10px 10px 0px 0px;
+}
+
+.start-name {
+  display: inline-block;
+  vertical-align: middle;
+  font: italic 18pt arial;
+  color: white;
+  margin-left: 10px;
+}
+
+.start-content {
+  background: linear-gradient(to right, #ccf2ff, #99e6ff);
+  height: calc(100% - 48px);
+  padding: 5px 10px;
+  overflow: scroll;
+}
+
+.start-icon {
+  height: 38px;
+  width: 38px;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+.start-row {
+  height: 50px;
+  margin-bottom: 5px;
+  font: 12pt times;
+}
+
+.menu-icon {
+  height: 100%;
+  margin-right: 10px;
 }
