@@ -1,15 +1,27 @@
 var promptOpts = {};
+var blocked = false;
+var messageQueue = [];
+
+function processMessage() {
+  if(blocked || messageQueue.length === 0) return;
+  blocked = true;
+  var msg = messageQueue.shift();
+  if(msg['type'] === 'chat-box-message') {
+    $('.chat').trigger('chatMessage', [msg['message']]);
+  } else if(msg['type'] === 'chat-box-prompt') {
+    if(msg['initial prompt']) $('.chat').trigger('chatMessage', [msg['initial prompt']]);
+    promptOpts = msg;
+  }
+}
 
 $(window).on('message', function(e) {
   var msg = e.originalEvent.data;
   if(msg['type'] === 'change-tab-url') {
     $('li.active a').html(msg['site'] + '&nbsp;&nbsp;');
     $('.tab-pane.active .urlbar').val(_.find(webpage_data, { title: msg['site'] }).url);
-  } else if(msg['type'] === 'chat-box-message') {
-    $('.chat').trigger('chatMessage', [msg['message']]);
-  } else if(msg['type'] === 'chat-box-prompt') {
-    if(msg['initial prompt']) $('.chat').trigger('chatMessage', [msg['initial prompt']]);
-    promptOpts = msg;
+  } else if(msg['type'] === 'chat-box-message' || msg['type'] === 'chat-box-prompt') {
+    messageQueue.push(msg);
+    processMessage();
   } else if(msg['type'] === 'endgame') {
     setTimeout(function() {
       $('#browser, #instructions').animate({
@@ -24,13 +36,25 @@ $(window).on('message', function(e) {
 $(function() {
   $('.chat').on('userMessage', function(e, msg) {
     if(msg === promptOpts['correct input']) {
-      $('.chat').trigger('chatMessage', [promptOpts['correct message']]);
       promptOpts = {}; // done handling this prompt
+      $('.chat').trigger('chatMessage', [promptOpts['correct message']]);
+//      messageQueue.push({ type: 'chat-box-message', message: promptOpts['correct message'] });
+//      processMessage();
     } else if(promptOpts['correct input'] !== undefined) {
       $('.chat').trigger('chatMessage', [promptOpts['incorrect message']]);
+//      messageQueue.push({ type: 'chat-box-message', message: promptOpts['incorrect message'] });
+//      processMessage();
     } else {
       $('.chat').trigger('chatMessage', ["Do not use this chat. We don't want to attract too much attention, in case someone is eavesdropping on our conversation."]);
+//      messageQueue.push({ type: 'chat-box-message', message: "Do not use this chat for idle chatter. We don't want to attract too much attention, in case someone is eavesdropping on our conversation." });
+//      processMessage();
     }
+  });
+
+  $('.chat').on('voiceoverDone', function(e) {
+    blocked = false;
+    if(promptOpts['correct input'] !== undefined) blocked = true;
+    processMessage();
   });
 });
 

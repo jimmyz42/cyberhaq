@@ -77,6 +77,7 @@ $(document).ready(function() {
     });
 
     function sendMessage(messageText) {
+        if(messageText === undefined || messageText === '') return;
         /*
         if ($('.message-input').val() != '') {
             return false;
@@ -90,6 +91,8 @@ $(document).ready(function() {
             $('<div class="message new"><figure class="avatar"><img src="https://pbs.twimg.com/profile_images/824716853989744640/8Fcd0bji.jpg" /></figure>' + messageText + '</div>').appendTo($('.mCSB_container')).addClass('new');
             setDate();
             updateScrollbar();
+            // TODO Raul/Emily trigger voiceoverDone when audio is done playing
+            $('.chat').trigger('voiceoverDone');
             i++;
         }, 300 + (Math.random() * 20) * 100);
     }
