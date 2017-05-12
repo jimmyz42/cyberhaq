@@ -19,6 +19,11 @@ $(window).on('message', function(e) {
   if(msg['type'] === 'change-tab-url') {
     $('li.active a').html(msg['site'] + '&nbsp;&nbsp;');
     $('.tab-pane.active .urlbar').val(_.find(webpage_data, { title: msg['site'] }).url);
+  } else if(msg['type'] === 'open-new-tab') {
+    $('#add-tab').click();
+    $('li.active a').html(msg['site'] + '&nbsp;&nbsp;');
+    $('.tab-pane.active .urlbar').val(_.find(webpage_data, { title: msg['site'] }).url);
+    $('.tab-pane.active .webpage-iframe').attr('src', msg['src']);
   } else if(msg['type'] === 'chat-box-message' || msg['type'] === 'chat-box-prompt') {
     messageQueue.push(msg);
     processMessage();

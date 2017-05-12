@@ -151,10 +151,11 @@
             $(".subject").text(emailContent["subject"]);
             $('.list-group-item .badge').text(emailContent['time']);
             if (emailContent["reset"]) {
-                $(".email-content").html("<img src='images/fakebook-logo.png' style='background-color:#55ACEE;'/><br /><br /><a name='Fakebook' href='../fakebook/reset.html'>Reset password</a><br /><br /><p>&#9400; Fakebook Inc</p>");
+                $(".email-content").html("<img src='images/fakebook-logo.png' style='background-color:#55ACEE;'/><br /><br /><a name='Fakebook'>Reset password</a><br /><br /><p>&#9400; Fakebook Inc</p>");
                 $('a[name="Fakebook"]').click(function() {
                   parent.postMessage({
-                    'type': 'change-tab-url',
+                    'type': 'open-new-tab',
+                    'src': 'fakebook/reset.html',
                     'site': $(this).attr('name'),
                   }, '*');
                 });

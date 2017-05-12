@@ -1,6 +1,25 @@
 var windowZindex = 1;
 var windowNum = 0;
 
+function createWindow(title, name, src) {
+      var wbox = $('.app-window:first').clone();
+      wbox.find('.window-title').html(name);
+      wbox.find('.window-content').attr('src', '../' + src);
+      wbox.css({ display: 'block', 'z-index': ++windowZindex });
+      wbox.attr('id', 'window' + (++windowNum));
+      wbox.appendTo('.main-content');
+      wbox.draggable({
+        containment: 'parent',
+      }).resizable({
+//        animate: true,
+//        ghost: true,
+        containment: 'parent',
+      });
+
+      var tab = $('<li class="mini-tab ui-state-default"></li>').appendTo('#sortable');
+      tab.append('<div class="mini-btn" point-to="window' + windowNum + '">' + title + '</div>');
+}
+
 $(function() {
 /*
   $('#sortable').sortable({
@@ -21,7 +40,6 @@ $(function() {
    message: "You're finally here! Follow my instructions and do everything I say to avoid detection. The hit I got was an intercepted message from " + window.sessionStorage.getItem("jackName") + " and one of his clients, some druggie. Go to http://breakmycipher.io to decrypt it."
   }, '*');
 
-  var windowTemplate = $('.app-window');
   webpage_data.forEach(function(page) {
     var icon = $('<div class="app-icon"></div>').appendTo('.main-content');
     icon.append('<img src="../' + page.image + '">');
@@ -29,22 +47,7 @@ $(function() {
       "containment": "parent",
     });
     icon.dblclick(function() {
-      var wbox = windowTemplate.clone();
-      wbox.find('.window-title').html(page.name);
-      wbox.find('.window-content').attr('src', '../' + page.src);
-      wbox.css({ display: 'block', 'z-index': ++windowZindex });
-      wbox.attr('id', 'window' + (++windowNum));
-      wbox.appendTo('.main-content');
-      wbox.draggable({
-        containment: 'parent',
-      }).resizable({
-//        animate: true,
-//        ghost: true,
-        containment: 'parent',
-      });
-
-      var tab = $('<li class="mini-tab ui-state-default"></li>').appendTo('#sortable');
-      tab.append('<div class="mini-btn" point-to="window' + windowNum + '">' + page.title + '</div>');
+      createWindow(page.title, page.name, page.src);
     });
 
     var menuRow = $('<div class="start-row"></div>').appendTo('.start-content');

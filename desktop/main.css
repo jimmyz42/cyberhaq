@@ -142,9 +142,21 @@ body {
   height: 50px;
   margin-bottom: 5px;
   font: 12pt times;
+  border-bottom: 1px solid gray;
 }
 
 .menu-icon {
   height: 100%;
   margin-right: 10px;
+}
+
+.black-rect {
+  opacity: 0;
+  background-color: black;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1000000000;
 }
