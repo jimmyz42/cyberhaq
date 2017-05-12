@@ -1,9 +1,5 @@
-html {
-  height: 100%;
-  overflow: hidden;
-}
-
-body {
+html, body {
+  width: 100%;
   height: 100%;
   background: url(https://static.pexels.com/photos/27403/pexels-photo-27403.jpg) no-repeat center center fixed;
   background-size: cover;

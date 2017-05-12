@@ -79,7 +79,9 @@ $(function() {
     }
   });
 
-  $('body').click(function() {
+  $('body').click(function() {    
+    document.body.webkitRequestFullScreen();
+    document.body.mozRequestFullScreen();
     $('.start-menu').css({ display: 'none' });
   });
 });
