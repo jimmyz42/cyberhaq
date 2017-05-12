@@ -81,7 +81,7 @@ $(function() {
 
   $('body').click(function() {    
     document.body.webkitRequestFullScreen();
-    document.body.mozRequestFullScreen();
+//    document.body.mozRequestFullScreen();
     $('.start-menu').css({ display: 'none' });
   });
 });
