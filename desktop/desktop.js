@@ -10,6 +10,18 @@ function createWindow(title, name, src) {
       wbox.appendTo('.main-content');
       wbox.draggable({
         containment: 'parent',
+        stop: function() {
+          if($(this).css('left') === '0px') {
+//            $(this).attr('prev-size', JSON.stringify($(this).css(['width', 'height'])));
+            $(this).css({ left: '0px', top: '0px', width: '50%', height: 'calc(100% - 34px)' });
+          } else if ($(this).css('right') === '0px') {
+//            $(this).attr('prev-size', JSON.stringify($(this).css(['width', 'height'])));
+            $(this).css({ left: '50%', top: '0px', width: 'calc(50% - 5px)', height: 'calc(100% - 34px)' });
+//          } else if($(this).attr('prev-size')) {
+//            $(this).css(JSON.parse($(this).attr('prev-size')));
+//            $(this).removeAttr('prev-size');
+          }
+        },
       }).resizable({
 //        animate: true,
 //        ghost: true,
