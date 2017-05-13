@@ -1,0 +1,43 @@
+.topbar {
+  background: linear-gradient(#cccccc, #e6e6e6, #cccccc);
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  padding: 2px 5px;
+}
+
+#nav-back {
+  border-radius: 100% 0% 0% 100%;
+  padding-left: 7px;
+}
+
+#nav-forward {
+  border-radius: 0% 100% 100% 0%;
+  padding-right: 7px;
+  margin-right: 10px;
+}
+
+.nav-btn {
+  border-radius: 11px;
+}
+
+.content {
+  margin-top: 26px; 
+  padding: 1px;
+}
+
+.icon {
+  width: 80px;
+  margin: 10px;
+  text-align: center;
+  display: inline-block;
+}
+
+.icon-image {
+  width: 80px;
+  height: 80px;
+}
+
+.breadbar {
+  display: inline-block;
+}

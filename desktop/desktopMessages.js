@@ -1,6 +1,6 @@
 $(window).on('message', function(e) {
   var msg = e.originalEvent.data;
-  if(msg['type'] === 'open-new-tab') {
+  if(msg['type'] === 'open-new-tab' || msg['type'] === 'open-new-window') {
     createWindow(msg.site, msg.site, msg.src);
   } else if(msg['type'] === 'endgame') {
     var rect = $('<div class="black-rect"></div>').appendTo('body');

@@ -39,6 +39,7 @@ $(function() {
     containment: 'parent',
   });
 */
+  $('.start-name').html(window.sessionStorage.getItem('lucyName'));
   $('#sortable').disableSelection();
 
   $('.chat-window').draggable({
@@ -62,13 +63,23 @@ $(function() {
       createWindow(page.title, page.name, page.src);
     });
 
-    var menuRow = $('<div class="start-row"></div>').appendTo('.start-content');
+    var menuRow = $('<div class="start-row"></div>').appendTo('.left-menu-content');
     menuRow.append('<img class="menu-icon" src="../' + page.image + '">');
-    menuRow.append('<span class="menu-text">' + page.name + '</span>');
+    menuRow.append('<span class="menu-text">' + page.title + '</span>');
     menuRow.click(function() {
       icon.dblclick();
     });
   });
+
+  for(prop in fileData) {
+    var menuRow = $('<div class="start-row"></div>').appendTo('.right-menu-content');
+    menuRow.append('<img class="menu-icon" src="../' + fileData[prop].icon + '">');
+    menuRow.append('<span class="menu-text">' + prop + '</span>');
+    menuRow.click(function() {
+      window.sessionStorage.setItem('fileProps', this.prop);
+      createWindow(this.prop, this.prop, fileData[this.prop].src);
+    }.bind({ prop: prop }));
+  }
 
   $('.start-btn').click(function(e) {
     if($('.start-menu').css('display') === 'none') {
