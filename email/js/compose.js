@@ -45,7 +45,7 @@ $(document).ready(function() {
                     }));
                     parent.postMessage({
                         type: 'chat-box-message',
-                        message: 'Good job! Now you have access to your target\'s zmail.',
+                        message: 'Good job! Now you have access to your target\'s zmail. You can now access their fakebook.',
                     }, '*');
                     window.location.href = "success.html";
                 } else {
