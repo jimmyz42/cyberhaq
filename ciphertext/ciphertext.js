@@ -134,10 +134,11 @@ var generateCipher = function(callback) {
 
 var generateStartingLetters = function(callback) {
 	var textlist = text.split("");
+	var specialCharacters = [" ", ".", "-", "'", ","]
 	lets = [];
 	while (true) {
 		var letter = Math.floor(Math.random() * (textlist.length - 1)) + 1;
-		if ($.inArray(textlist[letter], lets) < 0 && (textlist[letter] != " ")) {
+		if ($.inArray(textlist[letter], lets) < 0 && ($.inArray(textlist[letter], specialCharacters) < 0)) {
 			lets.push(textlist[letter]);
 		}
 		if (lets.length == 2) {
