@@ -1,6 +1,12 @@
 var windowZindex = 1;
 var windowNum = 0;
 
+var audio = new Audio("../sound/startMusic.ogg ");
+audio.oncanplaythrough = function ( ) { }
+audio.onended = function ( ) { }
+
+audio.play()
+
 function createWindow(title, name, src) {
       var wbox = $('.app-window:first').clone();
       wbox.find('.window-title').html(name);
