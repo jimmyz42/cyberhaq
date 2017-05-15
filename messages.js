@@ -40,9 +40,13 @@ $(window).on('message', function(e) {
 
 $(function() {
   $('.chat').on('userMessage', function(e, msg) {
+    console.log(msg);
+    console.log( promptOpts['correct input']);
+    console.log(msg === promptOpts['correct input']);
     if(msg === promptOpts['correct input']) {
-      promptOpts = {}; // done handling this prompt
+      console.log(promptOpts['correct message']);
       $('.chat').trigger('chatMessage', [promptOpts['correct message']]);
+      promptOpts = {}; // done handling this prompt
 //      messageQueue.push({ type: 'chat-box-message', message: promptOpts['correct message'] });
 //      processMessage();
     } else if(promptOpts['correct input'] !== undefined) {

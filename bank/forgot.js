@@ -37,18 +37,20 @@ for(difficulty in securityQuestions) {
               loadQuestion();
             } else {
               window.location.href = "accounts.html";
-              parent.postMessage({
-                type: 'chat-box-message',
-                message: 'Hurry, transfer ' + jackName + '\'s money to Asterisk. Our offshore Galactic Bank account is ' + bankAccounts.asterisk.account,
-              }, '*');
 
               parent.postMessage({
                 type: 'chat-box-prompt',
-                'initial prompt': 'Also, please type ' + jackName + '\'s 8-digit checking account number here. If they change the password and security questions, but still use the same account in the future, we can use this number to forge checks in their name.',
+                'initial prompt': 'What\'s ' + jackName + '\'s 8-digit checking account number? If they change their password and security questions, but still use the same account in the future, we can milk out some more money by using this number to forge checks in their name.',
                 'correct input': bankAccounts.checking.account + '',
-                'correct message': 'Great, don\'t forget to transfer their money to us. We heard rumors that they have at least $40M in their bank account. After this is done, we will pay you at your Galactic bank account, ' + bankAccounts.user.account + '. WARNING: DO NOT TRANSFER ' + jackName.toUpperCase() + '\'S MONEY TO YOUR OWN ACCOUNT OR WE WILL COME AFTER YOU.',
-                'incorrect message': 'Hmm, that doesn\'t seem to be the right number.'
+                'correct message': 'You can transfer ' + jackName + '\'s money to your own account now. Your checking account number is that 8-digit number you find on the bottom of your checks.',
+                'incorrect message': 'Hmm, that doesn\'t seem to be the right number.',
               }, '*');
+
+              parent.postMessage({
+                type: 'chat-box-message',
+                message: 'If you don\'t remember your own checking account number, you can transfer it to Asterisk for safekeeping until you find your account number. Our offshore Galactic Bank account is ' + bankAccounts.asterisk.account,
+              }, '*');
+
             }
           } else {
             $('.error').css({ display: 'block' });
