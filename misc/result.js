@@ -11,10 +11,12 @@ $(function() {
   }, 0); // can adjust wait time
 
   $('#go-back').click(function() {
-    location.href="../index.html";
+//    location.href="../index.html";
+    location.href="../desktop/desktop.html";
   });
   $('#new-game').click(function() {
     window.sessionStorage.clear();
-    location.href="instructions.html";
+//    location.href="instructions.html";
+    location.href="../desktop/desktop.html";
   });
 });

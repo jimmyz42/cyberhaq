@@ -1,4 +1,3 @@
-$(function() {
   if (typeof(window.sessionStorage) !== 'undefined' && window.sessionStorage.length === 0) {
     //Puzzle data
     var selectedPuzzleData = _.sample(puzzleData);
@@ -17,8 +16,8 @@ $(function() {
     window.sessionStorage.setItem('bankTransactions', JSON.stringify(bankData.jack.transactions));
     var bankAccounts = _.fromPairs(_.map(['checking', 'savings', 'user', 'asterisk', 'charity'],
       s => [s, { account: _.random(10000000, 99999999), amount: bankData.jack.accounts[s] || 0 }]));
+    bankAccounts.user.account = 69324917;
     window.sessionStorage.setItem('bankAccounts', JSON.stringify(bankAccounts));
   } else {
     console.log('either storage does not exist or is already populated');
   }
-});
