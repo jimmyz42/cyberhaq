@@ -214,8 +214,8 @@ fakebookData = [
   "email": "joecain@zmail.com",
   "phone number": "(617) 010-0000",
   "birthday": "1/11/85",
-  "relationships": ["Arnold Turner", "Arnold Warner", "Arnold Burner"],
-  "relationship status": "In a domestic partnership with Arnold Burner",
+  "relationships": ["Arnold Turner", "Wilmur Warner", "Bernard Burner"],
+  "relationship status": "In a domestic partnership with Bernard Burner",
   "elementary school": "Miami Elementary",
   "middle school": "Miami Middle",
   "high school": "O'Reiley High",
@@ -228,11 +228,11 @@ fakebookData = [
   "mother maiden name": "Eve",
   "friends": [ 
 {
-  "name": "Arnold Jacob Cain", 
+  "name": "Jeff Jacob Cain", 
   "image": "https://randomuser.me/api/portraits/men/90.jpg", 
 },
 { 
-  "name": "Arnalda Eve-Cain", 
+  "name": "Alyssa Eve-Cain", 
   "image": "https://randomuser.me/api/portraits/women/60.jpg", 
 },
     {
