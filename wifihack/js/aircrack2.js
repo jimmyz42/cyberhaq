@@ -24,7 +24,7 @@ $(document).ready(function() {
     setTimeout(function() {
         parent.postMessage({
             type: 'chat-box-message',
-            message: 'Now we need to get target\'s zmail. <br /> To do that use the Web version of AirCrack software to set up fake wifi hotspot at the target\'s location. When target connects to fake wifi hotstop we will be able to get their zmail address.',
+            message: 'Now we need to get target\'s zmail. <br /> To do that use the Web version of WifiCrack software to set up fake wifi hotspot at the target\'s location. When target connects to fake wifi hotstop we will be able to get their zmail address.',
         }, '*');
     }, 200);
 
@@ -229,6 +229,7 @@ $(document).ready(function() {
     }
 
     var checkSuccess = function() {
+        //THE "CORRECT INPUT" check + "Correct message" IS NOT WORKING FOR THE CALL BELOW
         if (words.length == 8) {
             setTimeout(function() {
                 parent.postMessage({
