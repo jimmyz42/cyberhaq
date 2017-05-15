@@ -21,7 +21,7 @@ var fileData = {
           },
           "rent.png": {
             type: "image",
-            data: "filesystem/images/rent.png",
+            data: "filesystem/images/rent-" + window.sessionStorage.getItem('lucyName').split(' ')[0].toLowerCase() + ".png",
           },
           "us.png": {
             type: "image",
