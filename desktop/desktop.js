@@ -90,7 +90,7 @@ $(function() {
     }
   });
 
-  $('body').click(function() {    
+  $('body').click(function() {
     document.body.webkitRequestFullScreen();
 //    document.body.mozRequestFullScreen();
     $('.start-menu').css({ display: 'none' });
@@ -148,10 +148,3 @@ $(document).on('click', '.min-btn', function() {
   var wbox = $(this).parent().parent();
   wbox.css({ display: 'none' });
 });
-
-
-
-
-
-
-

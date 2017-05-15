@@ -12,7 +12,7 @@ $(document).ready(function() {
         // chatbox message in the beginning of the game
         parent.postMessage({
             type: 'chat-box-message',
-            message: 'This should be self explanatory, right? Let\'s send Jack a good email and get them to give away all their information.'
+            message: 'This should be self explanatory, right? Let\'s send a good email to the target and get them to give away all their information.'
 ,
         }, '*');
 
