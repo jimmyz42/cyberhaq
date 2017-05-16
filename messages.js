@@ -39,11 +39,28 @@ $(window).on('message', function(e) {
 });
 
 $(function() {
+  function checkInput(msg, correct, opts) {
+    opts = opts || [];
+    if(!opts.includes('dontTrim')) {
+      msg = msg.trim();
+      correct = correct.trim();
+    }
+    if(opts.includes('ignoreCase')) {
+      msg = msg.toLowerCase();
+      correct = correct.toLowerCase();
+    }
+    if(opts.includes('contains')) {
+      return correct.split(" ").every(v => msg.split(" ").includes(v));
+    } else {
+      return msg == correct;
+    }
+  }
+
   $('.chat').on('userMessage', function(e, msg) {
     console.log(msg);
     console.log( promptOpts['correct input']);
     console.log(msg === promptOpts['correct input']);
-    if(msg === promptOpts['correct input']) {
+    if(checkInput(msg, promptOpts['correct input'], promptOpts['opts'])) {
       console.log(promptOpts['correct message']);
       $('.chat').trigger('chatMessage', [promptOpts['correct message']]);
       promptOpts = {}; // done handling this prompt

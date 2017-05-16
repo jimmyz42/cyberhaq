@@ -224,20 +224,22 @@ var updateMessage = function() {
 	        setTimeout(function() {
 		        parent.postMessage({
 		            type: 'chat-box-prompt',
-				   'initial prompt': "Where's the meeting place?",
-				   'correct input': JSON.parse(window.sessionStorage.getItem("puzzleData"))["location"],
-				   'correct message': "That's right.",
-				   'incorrect message': "Not quite. Read the message again."
+				    'initial prompt': "Where's the meeting place?",
+				    'correct input': JSON.parse(window.sessionStorage.getItem("puzzleData"))["location"],
+				    'correct message': "That's right.",
+				    'incorrect message': "Not quite. Read the message again.",
+                    'opts': ['ignoreCase', 'contains'],
 				}, '*');
 	        }, 2000);
 
 	        setTimeout(function() {
 		        parent.postMessage({
 		            type: 'chat-box-prompt',
-				   'initial prompt': "Did the message mention any special app/program? What was the name?",
-				   'correct input': JSON.parse(window.sessionStorage.getItem("puzzleData"))["phishing"],
-				   'correct message': "Right again.",
-				   'incorrect message': "Not quite. Read the message again."
+				    'initial prompt': "Did the message mention any special app/program? What was the name?",
+				    'correct input': JSON.parse(window.sessionStorage.getItem("puzzleData"))["phishing"],
+				    'correct message': "Right again.",
+				    'incorrect message': "Not quite. Read the message again.",
+                    'opts': ['ignoreCase'],
 				}, '*');
 	        }, 4000);
 
