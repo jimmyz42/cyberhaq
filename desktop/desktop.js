@@ -56,7 +56,7 @@ $(function() {
 
   window.postMessage({
    type: 'chat-box-message',
-   message: "You're finally here! Follow my instructions and do everything I say to avoid detection. The hit I got was an intercepted message from " + window.sessionStorage.getItem("jackName") + " and one of his clients, some druggie. Go to http://breakmycipher.io to decrypt it."
+   message: "You're finally here! Follow my instructions and do everything I say to avoid detection. The hit I got was an intercepted message from " + window.sessionStorage.getItem("jackName") + " and one of his clients, some druggie. Go to the break my cipher app located on the desktop or the Start menu to decrypt it."
   }, '*');
 
   webpage_data.forEach(function(page) {
