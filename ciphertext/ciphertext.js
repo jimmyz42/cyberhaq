@@ -29,7 +29,7 @@ $( document ).ready(function() {
 
 	parent.postMessage({
         type: 'chat-box-message',
-        message: "Looks like you intercepted a message. Type the letters you think correspond with the ciphertext, " +
+        message: "Type the letters you think correspond with the ciphertext, " +
         	"and press 'Update Message' or press enter to check your answer.",
     }, '*');
 
@@ -263,8 +263,8 @@ var updateMessage = function() {
 		            type: 'chat-box-message',
 		            message: "For now, try to get their email. " + 
 		            "You could probably get it by setting up a wi-fi network at the client meeting place. " + 
-		            "Did you forget what to do already? Open a new tab, " + 
-		            "and use the aircrack application on Zicronium and create a fake hotspot.",
+		            "Minimize this window " + 
+		            "and open the aircrack application on Zicronium and create a fake hotspot.",
 		        }, '*');
 	        }, 10000);
 

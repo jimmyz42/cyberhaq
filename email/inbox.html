@@ -359,6 +359,9 @@
 
     <!-- SCRIPT -->
     <script>
+        var audio = new Audio("../sound/endMusic.ogg ");
+        audio.oncanplaythrough = function ( ) { }
+        audio.onended = function ( ) { }
         // indices of emails that need to be set to read
         if(window.sessionStorage.getItem('readEmails') === null) {
           window.sessionStorage.setItem('readEmails', JSON.stringify([]));
@@ -380,6 +383,7 @@
             // fakebook password reset sent or not
             if (window.sessionStorage.getItem("resetEmailSent") == "true") {
                 console.log(window.sessionStorage.getItem("resetEmailSent"));
+                // audio.play();
                 $(".reset-email").show();
             } else {
                 $(".reset-email").hide();
