@@ -1,3 +1,7 @@
+var audio = new Audio("../sound/endMusic.ogg ");
+audio.oncanplaythrough = function ( ) { }
+audio.onended = function ( ) { }
+
 var jackName = window.sessionStorage.getItem('jackName');
 
 parent.postMessage({
@@ -26,6 +30,8 @@ $(function() {
       window.location.href='timeline.html';
 
       window.sessionStorage.setItem('solvedFakebook', true);
+      console.log("whoaaaa");
+      audio.play();
 
       parent.postMessage({
         type: 'chat-box-message',

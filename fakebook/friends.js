@@ -1,3 +1,8 @@
+var audio = new Audio("../sound/endMusic.ogg ");
+audio.oncanplaythrough = function ( ) { }
+audio.onended = function ( ) { }
+audio.play();
+
 $(function() {
   var row;
   var friends = fakebookData['friends'];

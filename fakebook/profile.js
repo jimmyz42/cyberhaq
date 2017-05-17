@@ -1,3 +1,8 @@
+var audio = new Audio("../sound/endMusic.ogg ");
+audio.oncanplaythrough = function ( ) { }
+audio.onended = function ( ) { }
+audio.play();
+
 var field_names = ["Name", "Email", "Phone Number", "Birthday", "Relationship Status",
  "Elementary School", "Middle School", "High School", "College", "Favorite Actors",
  "Favorite Musicians", "Favorite Artists"];

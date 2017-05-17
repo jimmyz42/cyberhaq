@@ -1,3 +1,9 @@
+var audio = new Audio("../sound/endMusic.ogg ");
+audio.oncanplaythrough = function ( ) { }
+audio.onended = function ( ) { }
+audio.play();
+
+
 $(function() {
   var postStrings = [];
   var posts = fakebookData['posts'].map(function(obj) {
